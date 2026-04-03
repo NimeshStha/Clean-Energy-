@@ -1,80 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Feedback & Programmes | LumEn — SDG 7</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .page-banner { background: linear-gradient(135deg,var(--secondary),var(--mid)); padding: 3.5rem 2rem; text-align:center; position:relative; overflow:hidden; }
-    .page-banner::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 70% at 50% 50%, rgba(244,160,32,0.12) 0%, transparent 70%); }
-    .page-banner h1,.page-banner p { position:relative;z-index:1; }
-    .page-banner h1 { color:var(--white); }
-    .page-banner p  { color:var(--accent); margin-top:0.4rem; }
+    .page-banner {
+      background: linear-gradient(135deg, var(--secondary), var(--mid));
+      padding: 3.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(244, 160, 32, 0.12) 0%, transparent 70%);
+    }
+
+    .page-banner h1,
+    .page-banner p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-banner h1 {
+      color: var(--white);
+    }
+
+    .page-banner p {
+      color: var(--accent);
+      margin-top: 0.4rem;
+    }
 
     /* Programme section */
-    .programmes-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem; }
-    .sort-select { padding:0.45rem 1rem; border:1px solid var(--border); border-radius:8px; font-family:var(--font-display); font-size:0.85rem; cursor:pointer; background:var(--white); }
+    .programmes-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
 
-    .programmes-scroll { max-height:520px; overflow-y:auto; padding-right:0.4rem; }
-    .programmes-scroll::-webkit-scrollbar { width:5px; }
-    .programmes-scroll::-webkit-scrollbar-track { background:var(--border); border-radius:4px; }
-    .programmes-scroll::-webkit-scrollbar-thumb { background:var(--primary); border-radius:4px; }
+    .sort-select {
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      cursor: pointer;
+      background: var(--white);
+    }
 
-    .prog-card { background:var(--white); border-radius:var(--radius); padding:1.3rem; display:grid; grid-template-columns:90px 1fr auto; gap:1.2rem; align-items:center; margin-bottom:1rem; box-shadow:var(--shadow); transition:box-shadow var(--transition); }
-    .prog-card:hover { box-shadow:var(--shadow-lg); }
-    .prog-card img { width:90px; height:70px; object-fit:cover; border-radius:8px; }
-    .prog-card h4 { font-size:1rem; color:var(--secondary); margin-bottom:0.3rem; }
-    .prog-card p  { font-size:0.83rem; color:var(--text-muted); }
-    .prog-card .btn { white-space:nowrap; font-size:0.8rem; padding:0.45rem 1rem; }
-    .prog-card .btn:hover { transform:scale(1.04); box-shadow:0 4px 14px rgba(244,160,32,0.3); }
+    .programmes-scroll {
+      max-height: 520px;
+      overflow-y: auto;
+      padding-right: 0.4rem;
+    }
+
+    .programmes-scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .programmes-scroll::-webkit-scrollbar-track {
+      background: var(--border);
+      border-radius: 4px;
+    }
+
+    .programmes-scroll::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 4px;
+    }
+
+    .prog-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.3rem;
+      display: grid;
+      grid-template-columns: 90px 1fr auto;
+      gap: 1.2rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+      transition: box-shadow var(--transition);
+    }
+
+    .prog-card:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .prog-card img {
+      width: 90px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .prog-card h4 {
+      font-size: 1rem;
+      color: var(--secondary);
+      margin-bottom: 0.3rem;
+    }
+
+    .prog-card p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+
+    .prog-card .btn {
+      white-space: nowrap;
+      font-size: 0.8rem;
+      padding: 0.45rem 1rem;
+    }
+
+    .prog-card .btn:hover {
+      transform: scale(1.04);
+      box-shadow: 0 4px 14px rgba(244, 160, 32, 0.3);
+    }
 
     /* Reviews */
-    .rating-banner { background:var(--secondary); border-radius:var(--radius-lg); padding:1.8rem 2rem; display:flex; align-items:center; gap:2.5rem; flex-wrap:wrap; margin:3rem 0 1.5rem; }
-    .big-rating { font-family:var(--font-display); font-size:3.5rem; font-weight:800; color:var(--primary); line-height:1; }
-    .rating-info { color:#8aad9a; }
-    .rating-info strong { display:block; color:var(--accent); font-size:1.1rem; }
+    .rating-banner {
+      background: var(--secondary);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin: 3rem 0 1.5rem;
+    }
 
-    .reviews-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.2rem; margin-bottom:3rem; }
-    .review-card { background:var(--white); border-radius:var(--radius); padding:1.3rem; box-shadow:var(--shadow); }
-    .review-card h4 { font-size:0.95rem; color:var(--secondary); margin-bottom:0.5rem; }
-    .review-card p  { font-size:0.83rem; color:var(--text-muted); }
-    .review-meta  { display:flex; justify-content:space-between; align-items:center; margin-top:0.8rem; font-size:0.78rem; color:var(--text-muted); }
-    .review-score { background:var(--primary); color:var(--dark); font-weight:700; padding:0.15rem 0.5rem; border-radius:5px; }
-    .see-more { color:var(--primary); font-size:0.8rem; font-weight:600; }
+    .big-rating {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .rating-info {
+      color: #8aad9a;
+    }
+
+    .rating-info strong {
+      display: block;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+    }
+
+    .review-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.3rem;
+      box-shadow: var(--shadow);
+    }
+
+    .review-card h4 {
+      font-size: 0.95rem;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .review-card p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+
+    .review-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.8rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .review-score {
+      background: var(--primary);
+      color: var(--dark);
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 5px;
+    }
+
+    .see-more {
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
 
     /* Feedback form */
-    .form-section { background:var(--white); border-radius:var(--radius-lg); padding:2.5rem; box-shadow:var(--shadow-lg); }
-    .form-section h2 { margin-bottom:1.5rem; }
-
-    fieldset { border:1.5px solid var(--border); border-radius:var(--radius); padding:1.5rem; margin-bottom:1.5rem; }
-    legend { font-family:var(--font-display); font-weight:700; color:var(--secondary); padding:0 0.6rem; font-size:0.95rem; }
-
-    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
-    .form-group { display:flex; flex-direction:column; gap:0.4rem; margin-bottom:1rem; }
-    .form-group label { font-size:0.85rem; font-weight:600; color:var(--text); font-family:var(--font-display); }
-    .form-group input, .form-group textarea, .form-group select {
-      padding:0.6rem 0.85rem; border:1.5px solid var(--border); border-radius:8px;
-      font-family:var(--font-body); font-size:0.9rem; color:var(--text);
-      background:var(--light); transition:border-color var(--transition);
+    .form-section {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-lg);
     }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-      outline:none; border-color:var(--primary); background:var(--white);
+
+    .form-section h2 {
+      margin-bottom: 1.5rem;
     }
-    .form-group textarea { resize:vertical; min-height:100px; }
-    .char-counter { font-size:0.75rem; color:var(--text-muted); text-align:right; }
-    .field-error { font-size:0.78rem; color:#e74c3c; display:none; }
-    .field-error.show { display:block; }
-    .success-msg { display:none; background:rgba(126,207,155,0.2); border:1.5px solid var(--accent); border-radius:var(--radius); padding:1.2rem; text-align:center; color:var(--secondary); font-weight:600; }
-    .success-msg.show { display:block; }
+
+    fieldset {
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    legend {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--secondary);
+      padding: 0 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      font-family: var(--font-display);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      padding: 0.6rem 0.85rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--light);
+      transition: border-color var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: var(--white);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .char-counter {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: right;
+    }
+
+    .field-error {
+      font-size: 0.78rem;
+      color: #e74c3c;
+      display: none;
+    }
+
+    .field-error.show {
+      display: block;
+    }
+
+    .success-msg {
+      display: none;
+      background: rgba(126, 207, 155, 0.2);
+      border: 1.5px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      text-align: center;
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    .success-msg.show {
+      display: block;
+    }
 
     @media(max-width:640px) {
-      .form-row { grid-template-columns:1fr; }
-      .prog-card { grid-template-columns:1fr; text-align:center; }
-      .prog-card img { width:100%; height:160px; }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .prog-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .prog-card img {
+        width: 100%;
+        height: 160px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <header id="top">
@@ -121,18 +369,22 @@
 
       <div class="programmes-scroll" aria-label="Scrollable list of programmes">
         <div class="prog-card">
-          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=300&q=70" alt="Community solar installation">
+          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=300&q=70"
+            alt="Community solar installation">
           <div>
             <h4>Community Solar Co-op</h4>
-            <p>Join a local solar cooperative — share electricity and profits from a community-owned array. No roof needed.</p>
+            <p>Join a local solar cooperative — share electricity and profits from a community-owned array. No roof
+              needed.</p>
           </div>
           <a href="#" class="btn btn-primary">Join</a>
         </div>
         <div class="prog-card">
-          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=300&q=70" alt="Home insulation programme">
+          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=300&q=70"
+            alt="Home insulation programme">
           <div>
             <h4>Home Insulation Volunteering</h4>
-            <p>Give weekends to the Warm Homes initiative — helping vulnerable households insulate and reduce energy bills.</p>
+            <p>Give weekends to the Warm Homes initiative — helping vulnerable households insulate and reduce energy
+              bills.</p>
           </div>
           <a href="#" class="btn btn-primary">Get Involved</a>
         </div>
@@ -140,7 +392,8 @@
           <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=300&q=70" alt="Wind energy research">
           <div>
             <h4>Wind Energy Research Internship</h4>
-            <p>Summer placements with offshore wind companies. Open to engineering, data science, and environmental students.</p>
+            <p>Summer placements with offshore wind companies. Open to engineering, data science, and environmental
+              students.</p>
           </div>
           <a href="#" class="btn btn-primary">Apply</a>
         </div>
@@ -153,10 +406,12 @@
           <a href="#" class="btn btn-primary">Learn More</a>
         </div>
         <div class="prog-card">
-          <img src="https://images.unsplash.com/photo-1620714223084-8fcacc2dbed5?w=300&q=70" alt="Energy audit training">
+          <img src="https://images.unsplash.com/photo-1620714223084-8fcacc2dbed5?w=300&q=70"
+            alt="Energy audit training">
           <div>
             <h4>Free Energy Audit Training</h4>
-            <p>Online certification course teaching you to assess household and commercial energy efficiency — free for students.</p>
+            <p>Online certification course teaching you to assess household and commercial energy efficiency — free for
+              students.</p>
           </div>
           <a href="#" class="btn btn-primary">Enrol Free</a>
         </div>
@@ -175,19 +430,22 @@
     <div class="reviews-grid" aria-label="Participant reviews">
       <div class="review-card">
         <h4>Life-changing experience</h4>
-        <p>The community solar programme connected me with incredible people and gave me real-world renewable energy skills I couldn't get in class.</p>
+        <p>The community solar programme connected me with incredible people and gave me real-world renewable energy
+          skills I couldn't get in class.</p>
         <a href="#" class="see-more">See more</a>
         <div class="review-meta"><span>Priya M. · 12 Feb 2026</span><span class="review-score">10/10</span></div>
       </div>
       <div class="review-card">
         <h4>Great introduction to clean tech</h4>
-        <p>The EV ambassador programme was perfectly structured for busy students. Flexible hours and a genuinely useful certificate at the end.</p>
+        <p>The EV ambassador programme was perfectly structured for busy students. Flexible hours and a genuinely useful
+          certificate at the end.</p>
         <a href="#" class="see-more">See more</a>
         <div class="review-meta"><span>James O. · 3 Mar 2026</span><span class="review-score">9/10</span></div>
       </div>
       <div class="review-card">
         <h4>Highly recommend the internship</h4>
-        <p>Seven weeks with a wind energy firm gave me industry contacts and a dissertation topic. Apply early — spots fill fast.</p>
+        <p>Seven weeks with a wind energy firm gave me industry contacts and a dissertation topic. Apply early — spots
+          fill fast.</p>
         <a href="#" class="see-more">See more</a>
         <div class="review-meta"><span>Sofia K. · 18 Jan 2026</span><span class="review-score">8/10</span></div>
       </div>
@@ -266,13 +524,16 @@
           </div>
 
           <div class="form-group">
-            <label for="message">Your Feedback * <span id="char-counter" class="char-counter">500 characters remaining</span></label>
-            <textarea id="message" name="message" maxlength="500" rows="5" placeholder="Tell us about your experience..." required></textarea>
+            <label for="message">Your Feedback * <span id="char-counter" class="char-counter">500 characters
+                remaining</span></label>
+            <textarea id="message" name="message" maxlength="500" rows="5"
+              placeholder="Tell us about your experience..." required></textarea>
             <span class="field-error" id="err-msg">Please enter your feedback message.</span>
           </div>
         </fieldset>
 
-        <button type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Submit Feedback</button>
+        <button type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Submit
+          Feedback</button>
       </form>
     </section>
 
@@ -281,43 +542,61 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <div class="logo"><div class="logo-icon" aria-hidden="true">☀️</div><div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div></div>
+        <div class="logo">
+          <div class="logo-icon" aria-hidden="true">☀️</div>
+          <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+        </div>
         <p>A University of Westminster group project promoting SDG 7.</p>
       </div>
-      <div class="footer-links"><h4>Pages</h4><ul><li><a href="home.html">Home</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="ais.html">Simulator</a></li><li><a href="team.html">Team</a></li></ul></div>
-      <div class="footer-links"><h4>Student Pages</h4><ul><li><a href="pageEditor_ST3.html">Editor — ST3</a></li><li><a href="validation_ST3.html">Validation — ST3</a></li></ul></div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="ais.html">Simulator</a></li>
+          <li><a href="team.html">Team</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Student Pages</h4>
+        <ul>
+          <li><a href="pageEditor_ST3.html">Student 3</a></li>
+          <li><a href="validation_ST3.html">Validation ST3</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 LumEn Team — University of Westminster</span><span>Student 3 — Feedback &amp; Programmes</span></div>
+    <div class="footer-bottom"><span>© 2026 LumEn Team — University of Westminster</span><span>Student 3 — Feedback
+        &amp; Programmes</span></div>
   </footer>
 
   <a href="#top" class="go-top" aria-label="Return to top">↑</a>
 
   <script>
     // Live character counter
-    const msgEl    = document.getElementById('message');
+    const msgEl = document.getElementById('message');
     const counterEl = document.getElementById('char-counter');
-    const maxChars  = 500;
+    const maxChars = 500;
 
-    msgEl.addEventListener('input', function() {
+    msgEl.addEventListener('input', function () {
       const remaining = maxChars - this.value.length;
       counterEl.textContent = remaining + ' characters remaining';
       counterEl.style.color = remaining < 50 ? '#e74c3c' : 'var(--text-muted)';
     });
 
     // Form validation with JavaScript
-    document.getElementById('feedback-form').addEventListener('submit', function(e) {
+    document.getElementById('feedback-form').addEventListener('submit', function (e) {
       e.preventDefault();
       let valid = true;
 
       const fields = [
-        { id: 'fname',     err: 'err-fname', check: v => v.trim().length >= 2 },
-        { id: 'email',     err: 'err-email', check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
-        { id: 'programme', err: 'err-prog',  check: v => v !== '' },
-        { id: 'message',   err: 'err-msg',   check: v => v.trim().length >= 10 }
+        { id: 'fname', err: 'err-fname', check: v => v.trim().length >= 2 },
+        { id: 'email', err: 'err-email', check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+        { id: 'programme', err: 'err-prog', check: v => v !== '' },
+        { id: 'message', err: 'err-msg', check: v => v.trim().length >= 10 }
       ];
 
       fields.forEach(f => {
-        const el  = document.getElementById(f.id);
+        const el = document.getElementById(f.id);
         const err = document.getElementById(f.err);
         if (!f.check(el.value)) {
           err.classList.add('show');
@@ -337,4 +616,5 @@
   </script>
 
 </body>
+
 </html>
