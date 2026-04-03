@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | LumEn — SDG 7 Clean Energy</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Gallery Page Embedded CSS ── */
+
+    /* 1. Page header banner */
+    .page-banner {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--mid) 100%);
+      padding: 3.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(244,160,32,0.1) 0%, transparent 70%);
+    }
+    .page-banner h1 { color: var(--white); position: relative; z-index: 1; }
+    .page-banner p  { color: var(--accent); position: relative; z-index: 1; margin-top: 0.5rem; }
+
+    /* 2. Thumbnail grid */
+    .thumb-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.4rem;
+      padding: 2rem 0;
+    }
+
+    /* 3. Individual thumbnail card */
+    .thumb-card {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .thumb-card:hover,
+    .thumb-card:focus {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: var(--shadow-lg);
+      outline: 3px solid var(--primary);
+    }
+
+    .thumb-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .thumb-card:hover img { transform: scale(1.06); }
+
+    .thumb-label {
+      padding: 0.85rem 1rem;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--secondary);
+      border-top: 3px solid var(--primary);
+    }
+
+    .thumb-label span {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* 4. Modal overlay */
+    #modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(5,18,9,0.85);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      backdrop-filter: blur(4px);
+    }
+    #modal-overlay.open { display: flex; }
+
+    /* 5. Modal box */
+    #modal-box {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      max-width: 760px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+      position: relative;
+      animation: modalIn 0.3s ease;
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.92) translateY(20px); }
+      to   { opacity: 1; transform: scale(1)    translateY(0); }
+    }
+
+    #modal-box img {
+      width: 100%;
+      max-height: 360px;
+      object-fit: cover;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+
+    .modal-body { padding: 1.8rem; }
+    .modal-body h2 { color: var(--secondary); margin-bottom: 0.6rem; }
+    .modal-body p  { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
+
+    #modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 36px;
+      height: 36px;
+      background: rgba(0,0,0,0.4);
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      z-index: 10;
+    }
+    #modal-close:hover { background: rgba(0,0,0,0.7); }
+
+    /* User customisation controls */
+    .modal-controls {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 1rem 1.8rem;
+      background: var(--light);
+      border-top: 1px solid var(--border);
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    }
+
+    .modal-controls label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .modal-controls select,
+    .modal-controls input[type="color"] {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.3rem 0.5rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 640px) {
+      .thumb-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="top">
+    <div class="header-inner">
+      <a href="home.html" class="logo" aria-label="LumEn Home">
+        <div class="logo-icon" aria-hidden="true">☀️</div>
+        <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="ais.html">Simulator</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BANNER -->
+  <div class="page-banner">
+    <h1>Clean Energy Gallery</h1>
+    <p>Click any image to explore — and personalise the view to your taste</p>
+  </div>
+
+  <!-- MAIN -->
+  <main id="main-content">
+    <section aria-label="Photo gallery of clean energy topics">
+      <div class="thumb-grid" id="thumb-grid">
+        <!-- Thumbnails injected by JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="modal-box">
+      <button id="modal-close" aria-label="Close modal">✕</button>
+      <img id="modal-img" src="" alt="">
+      <div class="modal-body">
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+      </div>
+      <div class="modal-controls">
+        <label for="bg-color-pick">Background:</label>
+        <input type="color" id="bg-color-pick" value="#f0f7f2" aria-label="Choose modal background colour">
+
+        <label for="font-pick">Font:</label>
+        <select id="font-pick" aria-label="Choose modal font style">
+          <option value="'DM Sans', sans-serif">DM Sans (default)</option>
+          <option value="Georgia, serif">Georgia (Serif)</option>
+          <option value="'Courier New', monospace">Courier (Mono)</option>
+          <option value="'Syne', sans-serif">Syne (Display)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon" aria-hidden="true">☀️</div>
+          <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+        </div>
+        <p>A University of Westminster group project promoting SDG 7.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="ais.html">Simulator</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Student Pages</h4>
+        <ul>
+          <li><a href="pageEditor_ST1.html">Editor — ST1</a></li>
+          <li><a href="validation_ST1.html">Validation — ST1</a></li>
+          <li><a href="#" aria-label="Accessibility statement">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LumEn Team — University of Westminster</span>
+      <span>Student 1 — Gallery Page</span>
+    </div>
+  </footer>
+
+  <a href="#top" class="go-top" aria-label="Return to top">↑</a>
+
+  <script>
+    // ── Gallery Data ──
+    const galleryItems = [
+      {
+        id: 1,
+        title: 'Rooftop Solar Panels',
+        label: 'Solar Energy',
+        src: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80',
+        alt: 'Solar panels mounted on a rooftop generating electricity',
+        desc: 'Photovoltaic solar panels convert sunlight directly into electricity. Modern panels achieve 20–23% efficiency and can power an average UK home from just 12–15 panels. The cost of solar has dropped 89% since 2010, making rooftop solar the most affordable electricity source in history.'
+      },
+      {
+        id: 2,
+        title: 'Offshore Wind Farm',
+        label: 'Wind Power',
+        src: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=700&q=80',
+        alt: 'Offshore wind turbines in the North Sea generating clean electricity',
+        desc: 'Offshore wind turbines harness powerful, consistent coastal winds to generate electricity. The UK is the world leader in offshore wind capacity. A single large turbine can power over 1,000 homes for a year, and the sector is rapidly reducing costs through innovation.'
+      },
+      {
+        id: 3,
+        title: 'Hydroelectric Dam',
+        label: 'Hydro Power',
+        src: 'https://images.unsplash.com/photo-1558449028-b53a39d100fc?w=700&q=80',
+        alt: 'A large hydroelectric dam generating renewable energy from flowing water',
+        desc: 'Hydroelectric power harnesses the kinetic energy of falling or flowing water to generate electricity. It accounts for about 16% of global electricity production and is one of the oldest and most reliable renewable energy technologies, providing both baseload and flexible power.'
+      },
+      {
+        id: 4,
+        title: 'EV Battery Charging',
+        label: 'Energy Storage',
+        src: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=700&q=80',
+        alt: 'Electric vehicle plugged in and charging at a station',
+        desc: 'Battery storage is critical to enabling widespread renewable energy adoption. By storing surplus solar and wind power, batteries allow clean energy to be used when the sun isn\'t shining or wind isn\'t blowing. EV batteries can even feed power back to the grid via Vehicle-to-Grid technology.'
+      },
+      {
+        id: 5,
+        title: 'Smart Energy Meter',
+        label: 'Efficiency',
+        src: 'https://images.unsplash.com/photo-1620714223084-8fcacc2dbed5?w=700&q=80',
+        alt: 'Smart energy meter display showing real-time electricity consumption',
+        desc: 'Smart meters give households and businesses real-time visibility of energy use, helping to reduce waste and shift consumption to off-peak hours. Studies show smart meters can cut household energy bills by up to 15% through behaviour change alone — no new technology required.'
+      },
+      {
+        id: 6,
+        title: 'Community Solar Garden',
+        label: 'Community Energy',
+        src: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=700&q=80',
+        alt: 'A community solar installation with many panels in a field',
+        desc: 'Community energy projects allow people who can\'t install solar on their own homes to share the benefits of renewable energy. Subscribers receive credits on their bills from power generated by a shared array. Community solar democratises access to clean energy regardless of income or housing type.'
+      },
+      {
+        id: 7,
+        title: 'Geothermal Energy Plant',
+        label: 'Geothermal',
+        src: 'https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=700&q=80',
+        alt: 'Steam rising from a geothermal energy generation plant',
+        desc: 'Geothermal energy taps heat from beneath the Earth\'s surface to produce electricity and heating. Iceland meets nearly 100% of its heating needs geothermally, and countries near tectonic plate boundaries have enormous untapped potential that could contribute significantly to global clean energy goals.'
+      },
+      {
+        id: 8,
+        title: 'Bioenergy from Waste',
+        label: 'Bioenergy',
+        src: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=700&q=80',
+        alt: 'Anaerobic digestion facility converting organic waste to biogas',
+        desc: 'Bioenergy converts organic waste — food scraps, agricultural residues, and sewage — into biogas or electricity. This creates a circular economy where waste becomes a resource, reducing landfill emissions while generating clean power. Campus food waste could power student accommodation heating systems.'
+      }
+    ];
+
+    // Build thumbnails
+    const grid = document.getElementById('thumb-grid');
+
+    galleryItems.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'thumb-card';
+      card.tabIndex = 0;
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-label', `Open details for ${item.title}`);
+
+      card.innerHTML = `
+        <img src="${item.src}" alt="${item.alt}" loading="lazy">
+        <div class="thumb-label">${item.title}<span>${item.label}</span></div>
+      `;
+
+      // Click to open modal
+      card.addEventListener('click', () => openModal(item));
+      // Keyboard accessibility
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openModal(item); });
+
+      // JS-driven hover interaction feedback
+      card.addEventListener('mouseenter', () => card.style.outline = '3px solid rgba(244,160,32,0.5)');
+      card.addEventListener('mouseleave', () => card.style.outline = '');
+
+      grid.appendChild(card);
+    });
+
+    // Open modal
+    const overlay = document.getElementById('modal-overlay');
+    const modalImg   = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc  = document.getElementById('modal-desc');
+    const modalBox   = document.getElementById('modal-box');
+    const closeBtn   = document.getElementById('modal-close');
+
+    function openModal(item) {
+      modalImg.src = item.src;
+      modalImg.alt = item.alt;
+      modalTitle.textContent = item.title;
+      modalDesc.textContent  = item.desc;
+      overlay.classList.add('open');
+      closeBtn.focus();
+    }
+
+    function closeModal() {
+      overlay.classList.remove('open');
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on overlay click (outside box)
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) closeModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // User customisation — background colour
+    document.getElementById('bg-color-pick').addEventListener('input', function() {
+      modalBox.querySelector('.modal-body').style.backgroundColor = this.value;
+    });
+
+    // User customisation — font style
+    document.getElementById('font-pick').addEventListener('change', function() {
+      modalBox.querySelector('.modal-body').style.fontFamily = this.value;
+    });
+  </script>
+
+</body>
+</html>
