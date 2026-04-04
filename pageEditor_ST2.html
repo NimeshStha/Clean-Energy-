@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor — Student 2 | LumEn</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-banner {
+            background: linear-gradient(135deg, var(--secondary), var(--mid));
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .page-banner h1 {
+            color: var(--white);
+        }
+
+        .page-banner p {
+            color: var(--accent);
+            margin-top: 0.4rem;
+        }
+
+        .editor-layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .side-nav {
+            position: sticky;
+            top: calc(var(--nav-h) + 1.5rem);
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.2rem 1.4rem;
+            box-shadow: var(--shadow);
+            border-left: 3px solid var(--primary);
+            width: 240px;
+            min-width: 240px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-nav h4 {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            text-align: left;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .side-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            width: 100%;
+        }
+
+        .side-nav ul li {
+            width: 100%;
+        }
+
+        .side-nav ul li a {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            padding: 0.4rem 0;
+            text-align: left;
+            text-transform: none;
+            letter-spacing: normal;
+            font-weight: 400;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.2s ease, padding-left 0.2s ease;
+            width: 100%;
+        }
+
+        .side-nav ul li:last-child a {
+            border-bottom: none;
+        }
+
+        .side-nav ul li a:hover {
+            color: var(--primary);
+            padding-left: 0.5rem;
+        }
+
+        .content-block {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.8rem;
+            scroll-margin-top: calc(var(--nav-h) + 1rem);
+        }
+
+        .content-block h2 {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .content-block h3 {
+            color: var(--secondary);
+            margin: 1rem 0 0.4rem;
+            font-size: 1rem;
+        }
+
+        .content-block p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Meetings table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        th {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 0.6rem;
+            text-align: left;
+        }
+
+        td {
+            padding: 0.55rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            color: var(--text-muted);
+        }
+
+        tr:nth-child(even) td {
+            background: var(--light);
+        }
+
+        @media(max-width:768px) {
+            .editor-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .side-nav {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <span id="top" style="position:absolute;top:0;"></span>
+    <header>
+        <div class="header-inner">
+            <a href="home.html" class="logo" aria-label="LumEn Home">
+                <div class="logo-icon" aria-hidden="true">☀️</div>
+                <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+            </a>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <h1>Page Editor — Student 2</h1>
+        <p>Technical report · Group meetings · Contribution log</p>
+    </div>
+
+    <main id="main-content">
+        <div class="section-label" style="margin-top:1.5rem;">Student 2 · Splash Screen, Action Impact Simulator,
+            Content ST2</div>
+        <div class="editor-layout">
+
+            <!-- Sidebar -->
+            <aside>
+                <nav class="side-nav" aria-label="Page editor navigation">
+                    <h4>Contents</h4>
+                    <ul>
+                        <li><a href="#splash-page">Splash Screen</a></li>
+                        <li><a href="#simulator-page">Action Impact Simulator</a></li>
+                        <li><a href="#content-page">Content Page</a></li>
+                        <li><a href="#challenges">Challenges</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                        <li><a href="#compliance">Compliance</a></li>
+                        <li><a href="#meetings">Group Meetings</a></li>
+                        <li><a href="#references">References</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <div>
+
+                <div class="content-block" id="splash-page">
+                    <h2>Splash Screen</h2>
+                    <h3>Technical Description</h3>
+                    <p>The Splash Screen is the user's first point of contact with the LumEn website. It was built as a
+                        standalone page that does not use the shared HTML template, although it closely matches the
+                        website's
+                        agreed colour palette, typography, and tone. The full-screen background uses layered CSS
+                        radial-gradient() functions combined with a subtle grid overlay created using the CSS
+                        background-image property with repeating linear gradients to produce a structured, atmospheric
+                        backdrop. A decorative sun glow element is positioned using position: fixed with a
+                        radial-gradient
+                        and animated with a @keyframes pulseGlow rule that scales and fades the element continuously,
+                        adding visual depth without JavaScript. The CSS loader animation uses a rotating border element
+                        created with border-top-color on a circular div, animated via @keyframes spin — a pure CSS
+                        technique requiring no images or JavaScript. All text elements use CSS animation with @keyframes
+                        fadeDown and animation-delay staggering to produce a sequential reveal effect as the page loads.
+                    </p>
+                    <h3>JavaScript Functionality</h3>
+                    <p>Two JavaScript features are present. First, a countdown timer uses setInterval() to decrement a
+                        counter variable every 1,000 milliseconds and update the DOM text content of the countdown
+                        element,
+                        displaying "Entering site in 4…3…2…1" dynamically. Second, the Skip Intro button calls a
+                        skipIntro() function that immediately clears the interval timer using clearInterval() to cancel
+                        the
+                        auto-redirect, then navigates to home.html using window.location.href. The HTML meta refresh tag
+                        handles the automatic redirect as a fallback: &lt;meta http-equiv="refresh"
+                        content="4;url=home.html"&gt;.</p>
+                    <h3>Accessibility</h3>
+                    <p>The loading ring carries role="status" and an aria-label so screen readers announce it as a
+                        loading
+                        indicator. Decorative background elements use aria-hidden="true" to prevent them from being
+                        announced. The team names section has aria-label="Group members" to provide context. The skip
+                        button
+                        includes a descriptive aria-label explaining its purpose. All text maintains sufficient contrast
+                        against the dark background, exceeding WCAG AA requirements.</p>
+                    <h3>Link to Validation</h3>
+                    <p><a href="validation_ST2.html#splashVal">View Splash Screen validation evidence →</a></p>
+                    <h3>Link to Page</h3>
+                    <p><a href="splash.html" target="_blank">Open Splash Screen in new tab →</a></p>
+                </div>
+
+                <div class="content-block" id="simulator-page">
+                    <h2>Action Impact Simulator</h2>
+                    <h3>Technical Description</h3>
+                    <p>The Action Impact Simulator (ais.html) allows users to select clean energy actions and receive a
+                        dynamically calculated impact score. The page uses the shared HTML template and global CSS, with
+                        additional embedded CSS handling the action card grid layout, selection states, and the sticky
+                        feedback panel. The card grid uses CSS Grid with repeat(auto-fill, minmax(280px, 1fr)) to create
+                        a responsive layout that adapts from one to three columns depending on viewport width. Each
+                        action
+                        card is rendered dynamically by JavaScript using a forEach loop over an array of nine action
+                        objects, each containing a title, description, image, category, and impact points value. Cards
+                        are inserted into the DOM using innerHTML. The selected card state uses
+                        classList.add('selected')
+                        to apply a CSS border and background tint, and a CSS ::after pseudo-element displays a checkmark
+                        badge. The sticky feedback panel uses position: sticky with bottom: 0, remaining fixed at the
+                        bottom of the viewport as the user scrolls through the action cards.</p>
+                    <h3>JavaScript Functionality</h3>
+                    <p>A JavaScript Set object tracks which action IDs are currently selected. When a card is clicked,
+                        a toggle function checks whether the ID is in the Set using has() — if so it removes it with
+                        delete(), otherwise it adds it with add(). After every toggle, an updateFeedback() function
+                        iterates over the selected Set, looks up the corresponding action object, and sums the impact
+                        points. Conditional logic (if/else if/else) compares the total against three thresholds — Low
+                        (0–6), Medium (7–13), and High (14+) — and updates the badge text, badge CSS class, feedback
+                        message, and page background colour accordingly using document.body.style.background. A reset
+                        button clears the Set, removes all .selected classes from cards, and resets the feedback panel
+                        to its default state. Keyboard accessibility is implemented by listening for the Enter and Space
+                        keys on each card via a keydown event listener.</p>
+                    <h3>Accessibility</h3>
+                    <p>Each action card has role="checkbox" and aria-checked attributes that are toggled between "true"
+                        and "false" by the JavaScript selection logic, providing accurate state information to screen
+                        readers. Cards also carry descriptive aria-label attributes including the action title and
+                        impact
+                        points. The feedback panel uses role="region" and aria-live="polite" so screen readers announce
+                        score updates without interrupting the user. All images have meaningful alt text defined in the
+                        data array. The reset button has a descriptive aria-label.</p>
+                    <h3>Link to Validation</h3>
+                    <p><a href="validation_ST2.html#simulatorVal">View Simulator validation evidence →</a></p>
+                    <h3>Link to Page</h3>
+                    <p><a href="ais.html" target="_blank">Open Action Impact Simulator in new tab →</a></p>
+                </div>
+
+                <div class="content-block" id="content-page">
+                    <h2>Content Page — Wind Energy</h2>
+                    <h3>Technical Description</h3>
+                    <p>The Wind Energy content page follows the same two-column CSS Grid layout established by Student
+                        1's
+                        content page template: a 240px sticky sidebar on the left and a main article area on the right.
+                        The sidebar uses position: sticky with a top offset derived from the --nav-h CSS variable,
+                        keeping
+                        navigation accessible as the user scrolls through the long-form content. Each article section
+                        carries a scroll-margin-top value to account for the fixed header when users navigate via anchor
+                        links in the sidebar. The callout block uses a left border accent (border-left: 4px solid
+                        var(--primary)) with a semi-transparent amber background created using rgba() to visually
+                        distinguish key statistics from body text. Seven distinct content sections — Introduction, How
+                        Wind Works, Types of Wind Energy, Benefits, Student Actions, Global Picture, and References —
+                        ensure sufficient depth for meaningful internal navigation.</p>
+                    <h3>Accessibility</h3>
+                    <p>The sidebar nav is wrapped in an &lt;aside&gt; element with aria-label="On-page navigation" to
+                        distinguish it from the main navigation. All seven images carry descriptive alt text specific to
+                        their content context. A visible "Go to Top" button with aria-label is fixed to the bottom-right
+                        of the viewport using position: fixed. Heading hierarchy is maintained strictly throughout —
+                        one h1 for the page title, h2 for major sections, and h3 for subsections — supporting both
+                        readability and screen reader navigation.</p>
+                    <h3>Link to Validation</h3>
+                    <p><a href="validation_ST2.html#contentVal">View Content Page validation evidence →</a></p>
+                    <h3>Link to Page</h3>
+                    <p><a href="content_ST2.html" target="_blank">Open Wind Energy Content Page in new tab →</a></p>
+                </div>
+
+                <div class="content-block" id="challenges">
+                    <h2>Challenges and Lessons Learned</h2>
+                    <p>The most significant challenge in building the Splash Screen was implementing the countdown timer
+                        alongside the CSS-based auto-redirect without them conflicting. The meta refresh tag fires
+                        independently of JavaScript, so if the skip button cleared the JS timer but the meta tag still
+                        redirected, users would be forced to the home page regardless. The solution was to rely on
+                        JavaScript's window.location.href for the actual redirect and treat the meta tag purely as a
+                        no-JS fallback — a distinction that required careful thinking about progressive enhancement.
+                        For the Action Impact Simulator, the main challenge was managing the dynamic rendering of cards
+                        alongside accessible ARIA state. Initially, aria-checked was not being updated on selection,
+                        meaning screen reader users received no feedback when selecting or deselecting cards. Adding
+                        setAttribute('aria-checked', 'true/false') inside the toggle function resolved this. This
+                        experience taught me that accessibility cannot be bolted on after the fact — it must be
+                        considered at every stage of JavaScript-driven DOM manipulation.</p>
+                </div>
+
+                <div class="content-block" id="accessibility">
+                    <h2>Accessibility Considerations</h2>
+                    <p>Across all pages I implemented, accessibility was approached as a design requirement rather than
+                        an afterthought. The Splash Screen uses ARIA roles on the loader and hidden attributes on
+                        decorative elements. The Action Impact Simulator uses role="checkbox" and aria-live to keep
+                        screen reader users informed of both card selection state and score updates in real time. The
+                        Wind Energy content page uses semantic HTML5 sectioning elements throughout — &lt;article&gt;,
+                        &lt;section&gt;, &lt;aside&gt;, &lt;nav&gt; — to provide a meaningful document outline.
+                        All interactive elements across my pages are keyboard accessible, tested by navigating with
+                        Tab and Enter keys only. Colour contrast on all text elements meets or exceeds the WCAG 2.1
+                        AA standard of 4.5:1 for normal text.</p>
+                </div>
+
+                <div class="content-block" id="compliance">
+                    <h2>Compliance with JANET Regulations</h2>
+                    <p>All pages I created comply with JANET regulations governing web page publication at UK
+                        universities.
+                        All content is original and written specifically for this coursework — no text has been copied
+                        from the UN SDGs website or any other external source. Statistical claims (e.g. wind capacity
+                        growth figures) are attributed to named sources — the Global Wind Energy Council and the
+                        International Energy Agency — and referenced in full in the References section of each page.
+                        All images are sourced from Unsplash under their free commercial licence, with no attribution
+                        legally required, though sources are noted in references as good practice. The Splash Screen
+                        and Simulator collect no personal data. No offensive, discriminatory, or defamatory content
+                        is present on any page. The work represents my own honest effort and does not involve
+                        plagiarism or collusion.</p>
+                </div>
+
+                <div class="content-block" id="meetings">
+                    <h2>Group Meetings and Contribution Log</h2>
+                    <table aria-label="Group meeting log">
+                        <thead>
+                            <tr>
+                                <th>Meeting</th>
+                                <th>Date &amp; Time</th>
+                                <th>Format</th>
+                                <th>Objective</th>
+                                <th>Attended</th>
+                                <th>Individual Contribution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>3 Feb 2026, 14:00</td>
+                                <td>Face-to-face</td>
+                                <td>Choose SDG and assign roles</td>
+                                <td>Yes</td>
+                                <td>Agreed to take responsibility for the Splash Screen and Action Impact Simulator.
+                                    Contributed to discussion on choosing SDG 7.</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>10 Feb 2026, 15:00</td>
+                                <td>Online (Teams)</td>
+                                <td>Agree visual identity and colour palette</td>
+                                <td>Yes</td>
+                                <td>Agreed on the dark green and amber colour scheme. Suggested the animated loader
+                                    concept for the splash screen.</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>17 Feb 2026, 14:00</td>
+                                <td>Face-to-face</td>
+                                <td>Share template draft with team</td>
+                                <td>Yes</td>
+                                <td>Received the shared HTML template and global CSS from Student 1. Asked clarifying
+                                    questions about folder structure and file naming conventions.</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>3 Mar 2026, 15:30</td>
+                                <td>Online (Teams)</td>
+                                <td>Integration review</td>
+                                <td>Yes</td>
+                                <td>Demonstrated the working Splash Screen countdown and skip functionality. Shared
+                                    early draft of the Simulator card layout for group feedback.</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>17 Mar 2026, 14:00</td>
+                                <td>Hybrid</td>
+                                <td>Testing and validation</td>
+                                <td>Yes</td>
+                                <td>Ran W3C validation on splash.html and ais.html. Resolved an unclosed div tag in the
+                                    simulator feedback panel flagged by the validator.</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>25 Mar 2026, 16:00</td>
+                                <td>Online (Teams)</td>
+                                <td>Final review and submission prep</td>
+                                <td>Yes</td>
+                                <td>Confirmed all file names matched the agreed naming convention. Completed the Page
+                                    Editor write-up and uploaded pages to the university web server.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-block" id="references">
+                    <h2>References</h2>
+                    <ul style="list-style:none;">
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">Duckett, J. (2011) <em>HTML
+                                and
+                                CSS: Design and Build Websites.</em> Indianapolis: John Wiley &amp; Sons.</li>
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">MDN Web Docs (2025)
+                            <em>setInterval() — Web APIs.</em> Available at: <a
+                                href="#">https://developer.mozilla.org/en-US/docs/Web/API/setInterval</a> (Accessed: 10
+                            Feb
+                            2026).
+                        </li>
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">Global Wind Energy Council
+                            (2024) <em>Global Wind Report 2024.</em> Available at: <a href="#">https://gwec.net/</a>
+                            (Accessed: 20 Mar 2026).</li>
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">Unsplash (2026) <em>Free
+                                high-resolution photos.</em> Available at: <a href="#">https://unsplash.com/</a>
+                            (Accessed:
+                            1 Mar 2026).</li>
+                        <li style="padding:0.4rem 0;">W3C (2025) <em>Web Content Accessibility Guidelines (WCAG)
+                                2.1.</em>
+                            Available at: <a href="#">https://www.w3.org/WAI/WCAG21/</a> (Accessed: 20 Mar 2026).</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon" aria-hidden="true">☀️</div>
+                    <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+                </div>
+                <p>University of Westminster — 4COSC011W Group Project 2026.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="splash.html">Splash Screen</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Validation</h4>
+                <ul>
+                    <li><a href="validation_ST2.html">Validation — ST2</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 LumEn Team — University of Westminster · 4COSC011W</span>
+            <span>Student 2 — Page Editor</span>
+        </div>
+    </footer>
+
+    <a href="#top" class="go-top" aria-label="Return to top">↑</a>
+
+</body>
+
+</html>

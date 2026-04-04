@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Storage | LumEn — SDG 7</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* Side nav */
+        .side-nav {
+            position: sticky;
+            top: calc(var(--nav-h) + 1.5rem);
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.2rem 1.4rem;
+            box-shadow: var(--shadow);
+            border-left: 3px solid var(--primary);
+            width: 240px;
+            min-width: 240px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-nav h4 {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            text-align: left;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .side-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            width: 100%;
+        }
+
+        .side-nav ul li {
+            width: 100%;
+        }
+
+        .side-nav ul li a {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            padding: 0.4rem 0;
+            text-align: left;
+            text-transform: none;
+            letter-spacing: normal;
+            font-weight: 400;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.2s ease, padding-left 0.2s ease;
+            width: 100%;
+        }
+
+        .side-nav ul li:last-child a {
+            border-bottom: none;
+        }
+
+        .side-nav ul li a:hover {
+            color: var(--primary);
+            padding-left: 0.5rem;
+        }
+
+        /* Article */
+        article section {
+            margin-bottom: 3rem;
+            scroll-margin-top: calc(var(--nav-h) + 1rem);
+        }
+
+        article section img {
+            width: 100%;
+            border-radius: var(--radius);
+            margin: 1.2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        article section h2 {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        article section h3 {
+            color: var(--secondary);
+            margin: 1.2rem 0 0.5rem;
+        }
+
+        article p {
+            color: var(--text-muted);
+        }
+
+        .callout {
+            background: rgba(244, 160, 32, 0.08);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1rem 1.3rem;
+            margin: 1.5rem 0;
+        }
+
+        .callout p {
+            color: var(--secondary);
+            font-style: italic;
+        }
+
+        @media(max-width:768px) {
+            .page-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .side-nav {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <span id="top" style="position:absolute;top:0;"></span>
+    <header>
+        <div class="header-inner">
+            <a href="home.html" class="logo" aria-label="LumEn Home">
+                <div class="logo-icon" aria-hidden="true">☀️</div>
+                <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+            </a>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top-content">
+        <div class="page-layout">
+
+            <!-- Side Navigation -->
+            <aside>
+                <nav class="side-nav" aria-label="On-page navigation">
+                    <h4>On This Page</h4>
+                    <ul>
+                        <li><a href="#intro">Introduction</a></li>
+                        <li><a href="#how-it-works">How Storage Works</a></li>
+                        <li><a href="#types">Types of Storage</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#student-actions">Student Actions</a></li>
+                        <li><a href="#global-picture">Global Picture</a></li>
+                        <li><a href="#references">References</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Article Content -->
+            <article>
+
+                <section id="intro">
+                    <div class="section-label">SDG 7 · Content Page</div>
+                    <h1>Energy Storage: Powering a Smarter Grid</h1>
+                    <p>Energy storage is one of the most critical and rapidly evolving technologies in the clean energy
+                        transition. As the world increasingly relies on solar and wind power — sources that generate
+                        electricity
+                        only when the sun shines or the wind blows — the ability to store that energy and use it on
+                        demand has
+                        become essential. Without storage, surplus renewable energy is wasted and grids still depend on
+                        fossil
+                        fuels to fill gaps. With it, a fully clean, reliable, and affordable energy system becomes
+                        genuinely
+                        achievable — directly supporting SDG 7's vision of sustainable energy for all.</p>
+                    <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=900&q=80"
+                        alt="Electric vehicle plugged into a charging station representing modern battery energy storage technology">
+                </section>
+
+                <section id="how-it-works">
+                    <h2>How Energy Storage Works</h2>
+                    <p>Energy storage systems capture electricity when it is abundant and cheap — typically when solar
+                        or wind
+                        output is high — and release it when demand is high or generation is low. This process of
+                        charging and
+                        discharging smooths out the natural variability of renewable energy, making clean power
+                        available around
+                        the clock rather than only at certain times of day or in certain weather conditions.</p>
+                    <h3>The Charging and Discharging Cycle</h3>
+                    <p>In a lithium-ion battery, for example, charging causes lithium ions to move from the cathode to
+                        the
+                        anode through an electrolyte, storing chemical energy. When discharging, the ions flow back,
+                        releasing
+                        energy as electricity. Modern battery management systems monitor temperature, voltage, and
+                        charge levels
+                        thousands of times per second to maximise efficiency and lifespan, typically achieving
+                        round-trip
+                        efficiencies of 85–95%.</p>
+                    <div class="callout">
+                        <p>"Battery storage capacity is doubling roughly every three years. By 2030, the global
+                            installed base
+                            of grid-scale batteries is expected to reach 1,500 gigawatt-hours — enough to power the
+                            entire UK
+                            for over two weeks." — BloombergNEF, 2024</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80"
+                        alt="Electronic circuit board representing the technology behind modern battery management systems">
+                </section>
+
+                <section id="types">
+                    <h2>Types of Energy Storage</h2>
+                    <p>Energy storage is not a single technology — it encompasses a wide range of systems suited to
+                        different
+                        timescales, scales, and applications.</p>
+                    <h3>Lithium-Ion Batteries</h3>
+                    <p>The dominant technology for both grid-scale and consumer storage today. Lithium-ion batteries
+                        power
+                        everything from smartphones and laptops to electric vehicles and utility-scale storage
+                        installations.
+                        Their energy density, falling costs — down over 90% since 2010 — and rapid response time make
+                        them the
+                        go-to solution for short-duration storage of up to four hours. Tesla's Megapack and similar
+                        products
+                        are now deployed at scale across Australia, the USA, and the UK.</p>
+                    <h3>Pumped-Storage Hydropower</h3>
+                    <p>The most widely deployed form of large-scale energy storage globally, accounting for over 90% of
+                        installed storage capacity worldwide. Water is pumped uphill to a reservoir when electricity is
+                        cheap,
+                        then released through turbines when demand peaks. While geographically constrained, pumped hydro
+                        can
+                        store energy for days or weeks — far longer than batteries — making it ideal for seasonal
+                        balancing.</p>
+                    <h3>Hydrogen Storage</h3>
+                    <p>Green hydrogen — produced by using surplus renewable electricity to split water into hydrogen and
+                        oxygen
+                        via electrolysis — can be stored in tanks and converted back to electricity in fuel cells when
+                        needed.
+                        While currently less efficient than batteries, hydrogen offers the prospect of very
+                        long-duration storage
+                        across seasons, and is a promising fuel for industries that cannot easily electrify, such as
+                        shipping and
+                        heavy manufacturing.</p>
+                    <h3>Thermal Storage</h3>
+                    <p>Thermal energy storage captures heat or cold for later use. Molten salt thermal storage is used
+                        in
+                        concentrated solar power plants to store heat from the sun and generate electricity after dark.
+                        Ice
+                        storage systems in commercial buildings freeze water overnight using cheap off-peak electricity
+                        and use
+                        the ice to cool the building during the day, reducing peak demand significantly.</p>
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=80"
+                        alt="Solar panels connected to a storage system representing the integration of generation and battery storage">
+                </section>
+
+                <section id="benefits">
+                    <h2>Benefits of Energy Storage</h2>
+                    <p>Energy storage delivers benefits that extend far beyond simply keeping the lights on — it
+                        transforms
+                        how entire energy systems function.</p>
+                    <h3>Enabling Higher Renewable Penetration</h3>
+                    <p>Storage is the key that unlocks 100% renewable energy grids. Without it, grids must keep fossil
+                        fuel
+                        power stations on standby to respond to sudden drops in solar or wind output. With sufficient
+                        storage,
+                        those standby plants become unnecessary — storage fills the gaps instead, displacing the last
+                        and most
+                        polluting sources of electricity generation.</p>
+                    <h3>Reducing Energy Bills</h3>
+                    <p>Households and businesses with battery storage can charge during cheap off-peak periods —
+                        including from
+                        their own solar panels — and discharge during expensive peak hours, dramatically reducing
+                        electricity
+                        bills. In countries with time-of-use tariffs, home battery owners regularly cut their bills by
+                        40–60%.
+                        As battery prices continue to fall, this benefit is becoming accessible to a growing proportion
+                        of
+                        households.</p>
+                    <h3>Improving Energy Access</h3>
+                    <p>In remote communities without grid connections, battery storage paired with solar panels provides
+                        reliable electricity for the first time. Off-grid solar-plus-storage systems are transforming
+                        lives
+                        across sub-Saharan Africa and South Asia, powering homes, schools, health clinics, and small
+                        businesses
+                        at a fraction of the cost of diesel generators — directly advancing SDG 7's goal of universal
+                        energy
+                        access.</p>
+                    <img src="https://images.unsplash.com/photo-1620714223084-8fcacc2dbed5?w=900&q=80"
+                        alt="Energy efficient technology representing the cost and efficiency benefits of modern storage systems">
+                </section>
+
+                <section id="student-actions">
+                    <h2>What Students Can Do</h2>
+                    <p>Energy storage might feel like an industrial-scale technology, but students have more influence
+                        over
+                        its growth than they might think.</p>
+                    <h3>1. Consider an EV or E-Bike</h3>
+                    <p>Electric vehicles are mobile batteries. As Vehicle-to-Grid (V2G) technology matures, EVs will be
+                        able
+                        to sell stored electricity back to the grid during peak hours, earning their owners money while
+                        stabilising renewable energy supply. Even choosing an e-bike over a petrol vehicle reduces
+                        demand on
+                        fossil-fuel infrastructure and supports the electrification transition.</p>
+                    <h3>2. Use Smart Charging and Time-of-Use Tariffs</h3>
+                    <p>If you charge a phone, laptop, or electric vehicle, use smart charging features to schedule
+                        charging
+                        for overnight or early morning when electricity is cheapest and the grid is greenest. Many
+                        energy
+                        providers now offer time-of-use tariffs specifically designed for EV owners and smart home
+                        users.</p>
+                    <h3>3. Advocate for Storage Investment</h3>
+                    <p>Write to your university or local council urging investment in battery storage alongside any new
+                        solar or wind installations. Many institutions install solar panels without accompanying
+                        storage,
+                        meaning surplus energy is exported at low prices rather than used on-site. Pairing the two
+                        maximises
+                        the value and impact of renewable investments.</p>
+                    <h3>4. Study Energy Storage Technologies</h3>
+                    <p>The storage sector faces an acute shortage of skilled engineers, chemists, data scientists, and
+                        policy
+                        experts. University modules in electrochemistry, power systems, and materials science all
+                        provide
+                        relevant foundations. Organisations like the Faraday Institution offer student research
+                        opportunities
+                        specifically focused on battery technology development.</p>
+                    <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=900&q=80"
+                        alt="Student using a laptop to research energy storage technology and clean energy solutions">
+                </section>
+
+                <section id="global-picture">
+                    <h2>The Global Picture</h2>
+                    <p>Global energy storage capacity has grown exponentially in recent years, reaching over 45
+                        gigawatt-hours
+                        of installed battery storage by the end of 2023 — a tenfold increase from just five years
+                        earlier.
+                        The USA, China, and Australia are leading the deployment of grid-scale batteries, while Germany
+                        and the
+                        UK are driving growth in residential storage markets. Australia's Hornsdale Power Reserve — one
+                        of the
+                        world's largest lithium-ion battery installations — has saved electricity consumers hundreds of
+                        millions
+                        of dollars by stabilising the grid and reducing the need for expensive fossil fuel peaker
+                        plants.</p>
+                    <p>The International Energy Agency estimates that the world needs to deploy 50 times more battery
+                        storage
+                        by 2030 than exists today in order to meet global climate and energy access targets. This
+                        represents one
+                        of the largest industrial scale-ups in history — and one of the greatest economic opportunities
+                        of the
+                        coming decade. With battery costs expected to fall a further 40–50% by 2030, energy storage is
+                        transitioning from a niche technology to a fundamental pillar of the global energy system,
+                        enabling
+                        the clean, reliable, and affordable future that SDG 7 envisions.</p>
+                    <img src="https://images.unsplash.com/photo-1548337138-e87d889cc369?w=900&q=80"
+                        alt="Large scale infrastructure representing the global expansion of energy storage capacity">
+                </section>
+
+                <section id="references">
+                    <h2>References</h2>
+                    <ul style="list-style:none;">
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">BloombergNEF (2024)
+                            <em>Energy
+                                Storage Market Outlook 2024.</em> Available at: <a href="#">https://about.bnef.com/</a>
+                            (Accessed: 24 Mar 2026).</li>
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">International Energy Agency
+                            (2023)
+                            <em>Battery Storage.</em> Available at: <a
+                                href="#">https://www.iea.org/energy-system/electricity/battery-storage</a> (Accessed: 24
+                            Mar
+                            2026).
+                        </li>
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">Faraday Institution (2024)
+                            <em>Battery Research.</em> Available at: <a href="#">https://faraday.ac.uk/</a> (Accessed:
+                            25 Mar 2026).
+                        </li>
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">United Nations (2023)
+                            <em>SDG 7 —
+                                Affordable and Clean Energy.</em> Available at: <a
+                                href="#">https://sdgs.un.org/goals/goal7</a> (Accessed: 20 Mar 2026).</li>
+                        <li style="padding:0.4rem 0;">Energy Saving Trust (2024) <em>Home Battery Storage.</em>
+                            Available at:
+                            <a href="#">https://energysavingtrust.org.uk/</a> (Accessed: 25 Mar 2026).
+                        </li>
+                    </ul>
+                </section>
+
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon" aria-hidden="true">☀️</div>
+                    <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+                </div>
+                <p>University of Westminster — 4COSC011W Group Project 2026.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Student Pages</h4>
+                <ul>
+                    <li><a href="pageEditor_ST4.html">Editor — ST4</a></li>
+                    <li><a href="validation_ST4.html">Validation — ST4</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 LumEn Team — University of Westminster</span>
+            <span>Student 4 — Content Page: Energy Storage</span>
+        </div>
+    </footer>
+
+    <a href="#top" class="go-top" aria-label="Return to top of page">↑</a>
+
+</body>
+
+</html>

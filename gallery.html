@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,14 +17,26 @@
       position: relative;
       overflow: hidden;
     }
+
     .page-banner::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(244,160,32,0.1) 0%, transparent 70%);
+      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(244, 160, 32, 0.1) 0%, transparent 70%);
     }
-    .page-banner h1 { color: var(--white); position: relative; z-index: 1; }
-    .page-banner p  { color: var(--accent); position: relative; z-index: 1; margin-top: 0.5rem; }
+
+    .page-banner h1 {
+      color: var(--white);
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-banner p {
+      color: var(--accent);
+      position: relative;
+      z-index: 1;
+      margin-top: 0.5rem;
+    }
 
     /* 2. Thumbnail grid */
     .thumb-grid {
@@ -59,7 +72,9 @@
       transition: transform 0.4s ease;
     }
 
-    .thumb-card:hover img { transform: scale(1.06); }
+    .thumb-card:hover img {
+      transform: scale(1.06);
+    }
 
     .thumb-label {
       padding: 0.85rem 1rem;
@@ -84,14 +99,17 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(5,18,9,0.85);
+      background: rgba(5, 18, 9, 0.85);
       z-index: 2000;
       align-items: center;
       justify-content: center;
       padding: 1.5rem;
       backdrop-filter: blur(4px);
     }
-    #modal-overlay.open { display: flex; }
+
+    #modal-overlay.open {
+      display: flex;
+    }
 
     /* 5. Modal box */
     #modal-box {
@@ -101,14 +119,21 @@
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
       position: relative;
       animation: modalIn 0.3s ease;
     }
 
     @keyframes modalIn {
-      from { opacity: 0; transform: scale(0.92) translateY(20px); }
-      to   { opacity: 1; transform: scale(1)    translateY(0); }
+      from {
+        opacity: 0;
+        transform: scale(0.92) translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
     }
 
     #modal-box img {
@@ -118,9 +143,20 @@
       border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     }
 
-    .modal-body { padding: 1.8rem; }
-    .modal-body h2 { color: var(--secondary); margin-bottom: 0.6rem; }
-    .modal-body p  { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
+    .modal-body {
+      padding: 1.8rem;
+    }
+
+    .modal-body h2 {
+      color: var(--secondary);
+      margin-bottom: 0.6rem;
+    }
+
+    .modal-body p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
 
     #modal-close {
       position: absolute;
@@ -128,7 +164,7 @@
       right: 1rem;
       width: 36px;
       height: 36px;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0, 0, 0, 0.4);
       border: none;
       border-radius: 50%;
       color: #fff;
@@ -140,7 +176,10 @@
       transition: background 0.2s;
       z-index: 10;
     }
-    #modal-close:hover { background: rgba(0,0,0,0.7); }
+
+    #modal-close:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
 
     /* User customisation controls */
     .modal-controls {
@@ -173,10 +212,13 @@
     }
 
     @media (max-width: 640px) {
-      .thumb-grid { grid-template-columns: 1fr 1fr; }
+      .thumb-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- HEADER -->
@@ -375,17 +417,17 @@
 
     // Open modal
     const overlay = document.getElementById('modal-overlay');
-    const modalImg   = document.getElementById('modal-img');
+    const modalImg = document.getElementById('modal-img');
     const modalTitle = document.getElementById('modal-title');
-    const modalDesc  = document.getElementById('modal-desc');
-    const modalBox   = document.getElementById('modal-box');
-    const closeBtn   = document.getElementById('modal-close');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalBox = document.getElementById('modal-box');
+    const closeBtn = document.getElementById('modal-close');
 
     function openModal(item) {
       modalImg.src = item.src;
       modalImg.alt = item.alt;
       modalTitle.textContent = item.title;
-      modalDesc.textContent  = item.desc;
+      modalDesc.textContent = item.desc;
       overlay.classList.add('open');
       closeBtn.focus();
     }
@@ -407,15 +449,16 @@
     });
 
     // User customisation — background colour
-    document.getElementById('bg-color-pick').addEventListener('input', function() {
+    document.getElementById('bg-color-pick').addEventListener('input', function () {
       modalBox.querySelector('.modal-body').style.backgroundColor = this.value;
     });
 
     // User customisation — font style
-    document.getElementById('font-pick').addEventListener('change', function() {
+    document.getElementById('font-pick').addEventListener('change', function () {
       modalBox.querySelector('.modal-body').style.fontFamily = this.value;
     });
   </script>
 
 </body>
+
 </html>

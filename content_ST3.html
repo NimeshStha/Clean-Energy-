@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydropower | LumEn — SDG 7</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* Side nav */
+        .side-nav {
+            position: sticky;
+            top: calc(var(--nav-h) + 1.5rem);
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.2rem 1.4rem;
+            box-shadow: var(--shadow);
+            border-left: 3px solid var(--primary);
+            width: 240px;
+            min-width: 240px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-nav h4 {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            text-align: left;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .side-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            width: 100%;
+        }
+
+        .side-nav ul li {
+            width: 100%;
+        }
+
+        .side-nav ul li a {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            padding: 0.4rem 0;
+            text-align: left;
+            text-transform: none;
+            letter-spacing: normal;
+            font-weight: 400;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.2s ease, padding-left 0.2s ease;
+            width: 100%;
+        }
+
+        .side-nav ul li:last-child a {
+            border-bottom: none;
+        }
+
+        .side-nav ul li a:hover {
+            color: var(--primary);
+            padding-left: 0.5rem;
+        }
+
+        /* Article */
+        article section {
+            margin-bottom: 3rem;
+            scroll-margin-top: calc(var(--nav-h) + 1rem);
+        }
+
+        article section img {
+            width: 100%;
+            border-radius: var(--radius);
+            margin: 1.2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        article section h2 {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        article section h3 {
+            color: var(--secondary);
+            margin: 1.2rem 0 0.5rem;
+        }
+
+        article p {
+            color: var(--text-muted);
+        }
+
+        .callout {
+            background: rgba(244, 160, 32, 0.08);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1rem 1.3rem;
+            margin: 1.5rem 0;
+        }
+
+        .callout p {
+            color: var(--secondary);
+            font-style: italic;
+        }
+
+        @media(max-width:768px) {
+            .page-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .side-nav {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <span id="top" style="position:absolute;top:0;"></span>
+    <header>
+        <div class="header-inner">
+            <a href="home.html" class="logo" aria-label="LumEn Home">
+                <div class="logo-icon" aria-hidden="true">☀️</div>
+                <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+            </a>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top-content">
+        <div class="page-layout">
+
+            <!-- Side Navigation -->
+            <aside>
+                <nav class="side-nav" aria-label="On-page navigation">
+                    <h4>On This Page</h4>
+                    <ul>
+                        <li><a href="#intro">Introduction</a></li>
+                        <li><a href="#how-it-works">How Hydropower Works</a></li>
+                        <li><a href="#types">Types of Hydropower</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#student-actions">Student Actions</a></li>
+                        <li><a href="#global-picture">Global Picture</a></li>
+                        <li><a href="#references">References</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Article Content -->
+            <article>
+
+                <section id="intro">
+                    <div class="section-label">SDG 7 · Content Page</div>
+                    <h1>Hydropower: Energy from Flowing Water</h1>
+                    <p>Hydropower is the world's oldest and largest source of renewable electricity, accounting for
+                        approximately 16% of global electricity generation. By harnessing the natural movement of water
+                        through
+                        rivers, reservoirs, and tidal flows, hydropower plants generate clean, reliable energy that
+                        supports
+                        SDG 7 — ensuring access to affordable, reliable, sustainable, and modern energy for all. Unlike
+                        solar and
+                        wind, hydropower can generate electricity continuously, making it a vital backbone of clean
+                        energy grids
+                        worldwide.</p>
+                    <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?w=900&q=80"
+                        alt="Large hydroelectric dam with water flowing through spillways generating renewable electricity">
+                </section>
+
+                <section id="how-it-works">
+                    <h2>How Hydropower Works</h2>
+                    <p>Hydropower plants convert the potential energy of water held at height into kinetic energy as it
+                        falls,
+                        and then into electrical energy using turbines and generators. Water flows from a reservoir or
+                        river
+                        through a penstock — a large pipe or channel — spinning turbine blades connected to a generator.
+                        The
+                        faster and greater the volume of water flow, the more electricity is produced.</p>
+                    <h3>Key Components</h3>
+                    <p>A conventional hydroelectric plant consists of a dam or weir to control water flow, a reservoir
+                        to store
+                        water, intake gates, a penstock channel, turbines, generators, and transmission equipment.
+                        Control systems
+                        regulate how much water flows through at any time, allowing operators to ramp electricity output
+                        up or
+                        down within seconds — a flexibility that makes hydropower uniquely valuable for balancing grids
+                        that
+                        increasingly rely on intermittent wind and solar power.</p>
+                    <div class="callout">
+                        <p>"Hydropower is the world's largest source of renewable electricity, providing 57% of all
+                            renewable
+                            power generation globally and acting as a critical balancing tool for modern energy grids."
+                            — International Hydropower Association, 2023</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=900&q=80"
+                        alt="River flowing through a valley representing the natural water cycle that powers hydroelectric plants">
+                </section>
+
+                <section id="types">
+                    <h2>Types of Hydropower</h2>
+                    <p>Hydropower comes in several forms, ranging from massive dams to small run-of-river installations,
+                        making it adaptable to a wide variety of geographies and energy needs.</p>
+                    <h3>Conventional Reservoir Hydropower</h3>
+                    <p>The most common form, where a dam creates a large reservoir. Water is released in a controlled
+                        manner
+                        through turbines to generate electricity. These plants can store energy for weeks or months,
+                        providing
+                        reliable power on demand regardless of weather conditions. Examples include the Hoover Dam in
+                        the USA and
+                        the Three Gorges Dam in China — the world's largest power station of any kind.</p>
+                    <h3>Run-of-River Hydropower</h3>
+                    <p>Run-of-river plants divert a portion of a river's natural flow through turbines without creating
+                        a large
+                        reservoir. They have a much smaller environmental footprint than dam-based systems and are well
+                        suited to
+                        mountainous regions with fast-flowing rivers. Many small and medium run-of-river schemes operate
+                        across
+                        Scotland, Norway, and the Alps.</p>
+                    <h3>Pumped-Storage Hydropower</h3>
+                    <p>Pumped-storage plants act as giant rechargeable batteries for the electricity grid. During
+                        periods of
+                        low demand or excess renewable generation, water is pumped uphill to an upper reservoir. When
+                        demand
+                        peaks, water is released back through turbines to generate electricity rapidly. This technology
+                        is
+                        critical to integrating large amounts of solar and wind power into national grids.</p>
+                    <img src="https://images.unsplash.com/photo-1580613280295-e3ad2f01dbd9?w=900&q=80"
+                        alt="Mountain reservoir and valley representing pumped storage and run-of-river hydropower systems">
+                </section>
+
+                <section id="benefits">
+                    <h2>Benefits of Hydropower</h2>
+                    <p>Hydropower offers a unique combination of reliability, longevity, and environmental benefits that
+                        distinguishes it from other renewable energy sources.</p>
+                    <h3>Environmental Impact</h3>
+                    <p>Once constructed, hydropower plants produce negligible direct greenhouse gas emissions during
+                        operation.
+                        Many plants operate for 50 to 100 years with minimal maintenance, providing decades of clean
+                        electricity
+                        from a single installation. Unlike solar panels or wind turbines, the core infrastructure of a
+                        hydro
+                        plant does not require periodic replacement, reducing its long-term material footprint
+                        significantly.</p>
+                    <h3>Reliability and Grid Stability</h3>
+                    <p>Hydropower's ability to respond instantly to changes in electricity demand makes it uniquely
+                        valuable.
+                        Countries like Norway generate nearly 90% of their electricity from hydropower and use the
+                        flexibility of
+                        their reservoirs to export electricity to neighbouring countries when demand is high. This
+                        dispatchable
+                        nature — the ability to generate on command — makes hydro an essential partner for variable
+                        renewables
+                        like wind and solar.</p>
+                    <h3>Economic and Social Benefits</h3>
+                    <p>Hydropower projects bring significant economic development to host regions, creating construction
+                        jobs,
+                        permanent operational roles, and improving infrastructure access. In many developing nations,
+                        small-scale
+                        hydropower provides first-time electricity access to rural communities that are far from
+                        national grids,
+                        enabling businesses, schools, and health clinics to operate reliably.</p>
+                    <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=900&q=80"
+                        alt="Clean energy infrastructure symbolising the economic and environmental benefits of renewable power">
+                </section>
+
+                <section id="student-actions">
+                    <h2>What Students Can Do</h2>
+                    <p>While building a dam isn't on the student to-do list, there are several meaningful ways to
+                        support
+                        hydropower and the broader clean energy transition.</p>
+                    <h3>1. Learn About Your Local Energy Mix</h3>
+                    <p>Find out what percentage of your region's electricity comes from hydropower and other renewables.
+                        Tools
+                        like the National Grid ESO's carbon intensity API (UK) show real-time data on where your
+                        electricity
+                        comes from. Understanding this helps you make informed choices and advocate for better policy.
+                    </p>
+                    <h3>2. Support Sustainable Hydropower Campaigns</h3>
+                    <p>Not all hydropower is created equal — large dam projects can displace communities and damage
+                        ecosystems. Support organisations that advocate for sustainable hydropower certification
+                        standards, such
+                        as the Hydropower Sustainability Council, which ensures projects meet environmental and social
+                        benchmarks.
+                    </p>
+                    <h3>3. Reduce Energy Waste During Peak Hours</h3>
+                    <p>Grid operators rely on hydro reservoirs to meet peak electricity demand. By shifting your heavy
+                        energy
+                        use — charging laptops, cooking, running washing machines — to off-peak hours, you reduce strain
+                        on the
+                        grid and help conserve reservoir levels for when they are needed most.</p>
+                    <h3>4. Explore Careers in Water and Energy</h3>
+                    <p>The hydropower sector needs engineers, environmental scientists, hydrologists, policy experts,
+                        and
+                        project managers. Many universities offer water resources and renewable energy modules.
+                        Internships with
+                        organisations like the Environment Agency or energy firms can provide direct experience in the
+                        sector.
+                    </p>
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=80"
+                        alt="Student engaging with clean energy research representing career opportunities in the hydropower sector">
+                </section>
+
+                <section id="global-picture">
+                    <h2>The Global Picture</h2>
+                    <p>Hydropower currently provides over 4,300 terawatt-hours of electricity annually — more than all
+                        other
+                        renewable energy sources combined. China, Brazil, Canada, the USA, and Russia are the world's
+                        top hydro
+                        producers. Brazil generates over 60% of its national electricity from hydropower, while
+                        Paraguay's Itaipu
+                        Dam supplies nearly 90% of that country's entire electricity needs.</p>
+                    <p>Despite its maturity, hydropower still has significant untapped potential. Africa and Asia both
+                        have
+                        large undeveloped hydro resources that could provide affordable clean electricity to hundreds of
+                        millions
+                        of people currently without reliable power access. The International Energy Agency projects that
+                        global
+                        hydropower capacity will grow by 17% by 2030, with much of this growth occurring in emerging
+                        economies.
+                        When combined with expanding solar and wind capacity, hydropower's storage and flexibility
+                        capabilities
+                        make it an irreplaceable pillar of the clean energy future.</p>
+                    <img src="https://images.unsplash.com/photo-1548337138-e87d889cc369?w=900&q=80"
+                        alt="Vast natural landscape representing the global scale of hydropower resources and clean energy potential">
+                </section>
+
+                <section id="references">
+                    <h2>References</h2>
+                    <ul style="list-style:none;">
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">International Hydropower
+                            Association
+                            (2023) <em>Hydropower Status Report 2023.</em> Available at: <a
+                                href="#">https://www.hydropower.org/</a> (Accessed: 22 Mar 2026).</li>
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">International Energy Agency
+                            (2023)
+                            <em>Hydropower.</em> Available at: <a
+                                href="#">https://www.iea.org/energy-system/renewables/hydropower</a> (Accessed: 22 Mar
+                            2026).
+                        </li>
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">United Nations (2023)
+                            <em>SDG 7 —
+                                Affordable and Clean Energy.</em> Available at: <a
+                                href="#">https://sdgs.un.org/goals/goal7</a>
+                            (Accessed: 20 Mar 2026).</li>
+                        <li style="padding:0.4rem 0;">Hydropower Sustainability Council (2024) <em>Hydropower
+                                Sustainability
+                                Standard.</em> Available at: <a href="#">https://www.hydrosustainability.org/</a>
+                            (Accessed: 23 Mar
+                            2026).</li>
+                    </ul>
+                </section>
+
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon" aria-hidden="true">☀️</div>
+                    <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+                </div>
+                <p>University of Westminster — 4COSC011W Group Project 2026.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Student Pages</h4>
+                <ul>
+                    <li><a href="pageEditor_ST3.html">Editor — ST3</a></li>
+                    <li><a href="validation_ST3.html">Validation — ST3</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 LumEn Team — University of Westminster</span>
+            <span>Student 3 — Content Page: Hydropower</span>
+        </div>
+    </footer>
+
+    <a href="#top" class="go-top" aria-label="Return to top of page">↑</a>
+
+</body>
+
+</html>

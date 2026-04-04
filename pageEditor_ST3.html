@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor — Student 3 | LumEn</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-banner {
+            background: linear-gradient(135deg, var(--secondary), var(--mid));
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .page-banner h1 {
+            color: var(--white);
+        }
+
+        .page-banner p {
+            color: var(--accent);
+            margin-top: 0.4rem;
+        }
+
+        .editor-layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .side-nav {
+            position: sticky;
+            top: calc(var(--nav-h) + 1.5rem);
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.2rem 1.4rem;
+            box-shadow: var(--shadow);
+            border-left: 3px solid var(--primary);
+            width: 240px;
+            min-width: 240px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-nav h4 {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            text-align: left;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .side-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            width: 100%;
+        }
+
+        .side-nav ul li {
+            width: 100%;
+        }
+
+        .side-nav ul li a {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            padding: 0.4rem 0;
+            text-align: left;
+            text-transform: none;
+            letter-spacing: normal;
+            font-weight: 400;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.2s ease, padding-left 0.2s ease;
+            width: 100%;
+        }
+
+        .side-nav ul li:last-child a {
+            border-bottom: none;
+        }
+
+        .side-nav ul li a:hover {
+            color: var(--primary);
+            padding-left: 0.5rem;
+        }
+
+        .content-block {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.8rem;
+            scroll-margin-top: calc(var(--nav-h)+1rem);
+        }
+
+        .content-block h2 {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .content-block h3 {
+            color: var(--secondary);
+            margin: 1rem 0 0.4rem;
+            font-size: 1rem;
+        }
+
+        .content-block p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Meetings table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        th {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 0.6rem;
+            text-align: left;
+        }
+
+        td {
+            padding: 0.55rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            color: var(--text-muted);
+        }
+
+        tr:nth-child(even) td {
+            background: var(--light);
+        }
+
+        @media(max-width:768px) {
+            .editor-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .side-nav {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="top">
+        <div class="header-inner">
+            <a href="home.html" class="logo" aria-label="LumEn Home">
+                <div class="logo-icon" aria-hidden="true">☀️</div>
+                <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+            </a>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <h1>Page Editor — Student 3</h1>
+        <p>Technical report · Group meetings · Contribution log</p>
+    </div>
+
+    <main id="main-content">
+        <div class="section-label" style="margin-top:1.5rem;">Student 3 · Feedback, Team, Content ST3</div>
+        <div class="editor-layout">
+
+            <!-- Sidebar -->
+            <aside>
+                <nav class="side-nav" aria-label="Page editor navigation">
+                    <h4>Contents</h4>
+                    <ul>
+                        <li><a href="#feedback-page">Feedback Page</a></li>
+                        <li><a href="#team-page">Team Page</a></li>
+                        <li><a href="#content-page">Content Page</a></li>
+                        <li><a href="#challenges">Challenges</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                        <li><a href="#compliance">Compliance</a></li>
+                        <li><a href="#meetings">Group Meetings</a></li>
+                        <li><a href="#references">References</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <div>
+
+                <div class="content-block" id="feedback-page">
+                    <h2>Feedback &amp; Programmes Page</h2>
+                    <h3>Technical Description</h3>
+                    <p>The Feedback page combines two distinct sections: a scrollable programme directory and a
+                        validated
+                        feedback form. The programme directory uses a fixed-height container with
+                        <code>overflow-y: auto</code>
+                        and a custom styled scrollbar built with <code>::-webkit-scrollbar</code> pseudo-elements. Each
+                        programme
+                        card uses CSS Grid with three columns (thumbnail, text, button) to achieve a consistent
+                        horizontal layout.
+                        The feedback form is structured using HTML5 <code>&lt;fieldset&gt;</code> and
+                        <code>&lt;legend&gt;</code>
+                        elements for semantic grouping. JavaScript handles live client-side validation on form
+                        submission — each
+                        required field is tested against a condition function, and error spans are toggled using
+                        <code>classList.add/remove('show')</code>. A live character counter on the message textarea
+                        updates on
+                        every <code>input</code> event and turns red when fewer than 50 characters remain. On successful
+                        validation the form is hidden and a success message block is made visible using
+                        <code>classList.add('show')</code>.
+                    </p>
+                    <h3>Accessibility</h3>
+                    <p>All form inputs have explicitly associated <code>&lt;label&gt;</code> elements linked by matching
+                        <code>for</code> and <code>id</code> attributes. Required fields are marked with an asterisk and
+                        programmatically indicated via the <code>required</code> attribute. Error messages use
+                        <code>role="alert"</code> on the success notification so screen readers announce it
+                        automatically. The
+                        multiple-select interest list includes an <code>aria-label</code>. The scrollable programme list
+                        has an
+                        <code>aria-label</code> describing it as a scrollable region. Colour contrast on all form
+                        elements meets
+                        WCAG AA standards, and focus styles are preserved on inputs and buttons.
+                    </p>
+                    <h3>Link to Validation</h3>
+                    <p><a href="validation_ST3.html#feedbackVal">View Feedback Page validation evidence →</a></p>
+                    <h3>Link to Page</h3>
+                    <p><a href="feedback.html" target="_blank">Open Feedback &amp; Programmes Page in new tab →</a></p>
+                </div>
+
+                <div class="content-block" id="team-page">
+                    <h2>Team Page</h2>
+                    <h3>Technical Description</h3>
+                    <p>The Team page uses a CSS Grid layout with three equal columns to display team member cards. Each
+                        card
+                        is built entirely with CSS — no JavaScript is required for the hover interaction. The reveal of
+                        the
+                        member details panel is achieved using a <code>max-height</code> transition from <code>0</code>
+                        to
+                        <code>300px</code> combined with an <code>opacity</code> transition, triggered by the
+                        <code>:hover</code> and <code>:focus</code> pseudo-classes on the parent
+                        <code>.member-block</code>
+                        container. The image scaling and lift effect on hover uses <code>transform: scale()</code> and
+                        <code>translateY()</code> with CSS transitions. An <code>::after</code> pseudo-element on the
+                        thumbnail
+                        provides a linear-gradient colour overlay that grounds the name badge text against any
+                        background image.
+                        The bottom detail panel uses <code>border-top</code> with the primary amber colour as a visual
+                        anchor
+                        linking it to the card above.
+                    </p>
+                    <h3>Accessibility</h3>
+                    <p>Each <code>.member-block</code> has <code>tabindex="0"</code> so keyboard users can focus it and
+                        trigger the hover state through <code>:focus</code>. Each card carries a descriptive
+                        <code>aria-label</code> that identifies the student and their role. The team grid container has
+                        an
+                        <code>aria-label</code>. Images use meaningful alt text describing each person's role rather
+                        than a
+                        generic caption. The page heading hierarchy is maintained (h1 for the page banner, h2 would be
+                        used for
+                        named sections if they existed).
+                    </p>
+                    <h3>Link to Validation</h3>
+                    <p><a href="validation_ST3.html#teamVal">View Team Page validation evidence →</a></p>
+                    <h3>Link to Page</h3>
+                    <p><a href="team.html" target="_blank">Open Team Page in new tab →</a></p>
+                </div>
+
+                <div class="content-block" id="content-page">
+                    <h2>Content Page — Hydro Power</h2>
+                    <h3>Technical Description</h3>
+                    <p>The Hydro Power content page follows the same two-column CSS Grid structure established in the
+                        shared
+                        template: a sticky sidebar for internal navigation and a main article column. The page uses
+                        <code>scroll-margin-top</code> on each section to offset the fixed navigation bar when jumping
+                        to anchor
+                        links. A data visualisation block uses CSS-only bar charts built with inline
+                        <code>width</code> percentages and background colour fills — no chart library is required. A
+                        callout
+                        block highlights key statistics using <code>border-left</code> and a semi-transparent
+                        <code>rgba()</code> background. Image captions are implemented as
+                        <code>&lt;figcaption&gt;</code>
+                        elements inside <code>&lt;figure&gt;</code> wrappers for semantic correctness. The page also
+                        includes
+                        a related links section to the other three content pages for cross-navigation.
+                    </p>
+                    <h3>Accessibility</h3>
+                    <p>The sidebar is wrapped in <code>&lt;aside&gt;</code> with
+                        <code>aria-label="On-page navigation"</code>.
+                        Heading hierarchy is strict (h1 for page title, h2 for major sections, h3 for subsections). All
+                        images
+                        have descriptive alt text. Figure captions supplement but do not duplicate alt text. The Go to
+                        Top
+                        button carries a descriptive <code>aria-label</code>. The CSS-only bar chart includes visually
+                        hidden
+                        text values using a <code>.sr-only</code> class for screen reader users.</p>
+                    <h3>Link to Validation</h3>
+                    <p><a href="validation_ST3.html#contentVal">View Content Page validation evidence →</a></p>
+                    <h3>Link to Page</h3>
+                    <p><a href="content_ST3.html" target="_blank">Open Hydro Power Content Page in new tab →</a></p>
+                </div>
+
+                <div class="content-block" id="challenges">
+                    <h2>Challenges and Lessons Learned</h2>
+                    <p>The most significant challenge was implementing reliable client-side form validation in
+                        JavaScript. Early
+                        iterations triggered all errors simultaneously on submit, which overwhelmed users visually. The
+                        solution
+                        was refactoring the validation logic into a declarative array of field objects — each containing
+                        the field
+                        ID, error element ID, and a check function — so the validation loop is consistent and easy to
+                        extend. This
+                        taught me the value of data-driven programming patterns over repetitive conditional blocks. A
+                        secondary
+                        challenge arose with the Team page hover reveal: using <code>height: auto</code> in a CSS
+                        transition
+                        does not animate smoothly because the browser cannot interpolate from a fixed value to
+                        <code>auto</code>.
+                        Switching to <code>max-height</code> with a known upper bound resolved the issue and produced a
+                        clean
+                        slide-down effect. This deepened my understanding of how browsers compute layout during
+                        transitions.</p>
+                </div>
+
+                <div class="content-block" id="accessibility">
+                    <h2>Accessibility Considerations</h2>
+                    <p>Across all pages I implemented semantic HTML5 elements
+                        (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>,
+                        <code>&lt;aside&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;fieldset&gt;</code>,
+                        <code>&lt;legend&gt;</code>, <code>&lt;figure&gt;</code>, <code>&lt;figcaption&gt;</code>,
+                        <code>&lt;footer&gt;</code>) to provide meaningful document structure for assistive
+                        technologies.
+                        All interactive elements are keyboard accessible — form inputs, buttons, and team cards can all
+                        be
+                        reached and operated without a mouse. Colour contrast meets WCAG AA standards throughout. All
+                        images
+                        have descriptive alt text conveying meaning relevant to context. ARIA roles and labels are
+                        applied where
+                        HTML semantics alone are insufficient, such as on the scrollable programme list, the modal
+                        success
+                        alert, and the team member cards.
+                    </p>
+                </div>
+
+                <div class="content-block" id="compliance">
+                    <h2>Compliance with JANET Regulations</h2>
+                    <p>All pages published comply with JANET regulations governing web page publication at UK
+                        universities. The
+                        website content is original, created by the team for educational purposes, and does not
+                        reproduce
+                        copyrighted material without attribution. External images are sourced from Unsplash under their
+                        free-to-use licence and are credited in the references sections. The feedback form does not
+                        transmit
+                        data to any server — submission is handled entirely client-side for demonstration purposes, and
+                        no
+                        personal data is stored or processed. No discriminatory, defamatory, or offensive content is
+                        present.
+                        The pages reflect honest, original academic work and do not misrepresent findings or plagiarise
+                        external
+                        sources.</p>
+                </div>
+
+                <div class="content-block" id="meetings">
+                    <h2>Group Meetings and Contribution Log</h2>
+                    <table aria-label="Group meeting log">
+                        <thead>
+                            <tr>
+                                <th>Meeting</th>
+                                <th>Date &amp; Time</th>
+                                <th>Format</th>
+                                <th>Objective</th>
+                                <th>Attended</th>
+                                <th>Individual Contribution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>3 Feb 2026, 14:00</td>
+                                <td>Face-to-face</td>
+                                <td>Choose SDG and assign roles</td>
+                                <td>Yes</td>
+                                <td>Agreed to take responsibility for the Feedback page and Team page. Contributed to
+                                    the SDG 7
+                                    topic discussion.</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>10 Feb 2026, 15:00</td>
+                                <td>Online (Teams)</td>
+                                <td>Agree visual identity and colour palette</td>
+                                <td>Yes</td>
+                                <td>Reviewed Student 1's colour palette proposals and confirmed accessibility contrast
+                                    ratios for the
+                                    feedback form fields.</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>17 Feb 2026, 14:00</td>
+                                <td>Face-to-face</td>
+                                <td>Share template draft with team</td>
+                                <td>Yes</td>
+                                <td>Received template walkthrough from Student 1. Began planning the feedback form
+                                    fieldset
+                                    structure and programme card layout.</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>3 Mar 2026, 15:30</td>
+                                <td>Online (Teams)</td>
+                                <td>Integration review</td>
+                                <td>Yes</td>
+                                <td>Demonstrated the JavaScript form validation and live character counter to the group.
+                                    Discussed
+                                    the CSS max-height transition technique used on the Team page cards.</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>17 Mar 2026, 14:00</td>
+                                <td>Hybrid</td>
+                                <td>Testing and validation</td>
+                                <td>Yes</td>
+                                <td>Ran W3C HTML and CSS validation on feedback.html and team.html. Corrected a missing
+                                    <code>for</code> attribute on the interests label and resolved a stray closing tag
+                                    in the
+                                    programme section.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>25 Mar 2026, 16:00</td>
+                                <td>Online (Teams)</td>
+                                <td>Final review and submission prep</td>
+                                <td>Yes</td>
+                                <td>Completed this Page Editor document. Reviewed all file names for submission
+                                    compliance. Confirmed
+                                    footer attribution text across my pages.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-block" id="references">
+                    <h2>References</h2>
+                    <ul style="list-style:none;">
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">Duckett, J. (2011) <em>HTML
+                                and CSS:
+                                Design and Build Websites.</em> Indianapolis: John Wiley &amp; Sons.</li>
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">MDN Web Docs (2025)
+                            <em>HTML Forms
+                                — Client-side form validation.</em> Available at: <a
+                                href="#">https://developer.mozilla.org/</a> (Accessed: 20 Feb 2026).</li>
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">MDN Web Docs (2025) <em>CSS
+                                Transitions.</em> Available at: <a href="#">https://developer.mozilla.org/</a>
+                            (Accessed: 5 Mar 2026).</li>
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">Unsplash (2026) <em>Free
+                                high-resolution photos.</em> Available at: <a href="#">https://unsplash.com/</a>
+                            (Accessed: 1 Mar
+                            2026).</li>
+                        <li style="padding:0.4rem 0;">W3C (2025) <em>Web Content Accessibility Guidelines (WCAG)
+                                2.1.</em>
+                            Available at: <a href="#">https://www.w3.org/WAI/WCAG21/</a> (Accessed: 20 Mar 2026).</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon" aria-hidden="true">☀️</div>
+                    <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+                </div>
+                <p>University of Westminster — 4COSC011W Group Project 2026.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Validation</h4>
+                <ul>
+                    <li><a href="validation_ST3.html">Validation — ST3</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom"><span>© 2026 LumEn Team — University of Westminster · 4COSC011W</span><span>Student 3
+                —
+                Page Editor</span></div>
+    </footer>
+
+    <a href="#top" class="go-top" aria-label="Return to top">↑</a>
+
+</body>
+
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor — Student 4 (Collaborative) | LumEn</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-banner {
+            background: linear-gradient(135deg, var(--secondary), var(--mid));
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .page-banner h1 {
+            color: var(--white);
+        }
+
+        .page-banner p {
+            color: var(--accent);
+            margin-top: 0.4rem;
+        }
+
+        .collab-notice {
+            background: rgba(244, 160, 32, 0.1);
+            border: 1.5px solid var(--primary);
+            border-radius: var(--radius);
+            padding: 1rem 1.4rem;
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .collab-notice .icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .collab-notice p {
+            font-size: 0.88rem;
+            color: var(--secondary);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .collab-notice strong {
+            color: var(--primary-dark);
+        }
+
+        .contrib-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            padding: 0.15rem 0.55rem;
+            border-radius: 4px;
+            margin-right: 0.3rem;
+            vertical-align: middle;
+        }
+
+        .tag-st1 {
+            background: rgba(244, 160, 32, 0.15);
+            color: #c97d0a;
+            border: 1px solid rgba(244, 160, 32, 0.4);
+        }
+
+        .tag-st2 {
+            background: rgba(126, 207, 155, 0.15);
+            color: #2a7a50;
+            border: 1px solid rgba(126, 207, 155, 0.4);
+        }
+
+        .tag-st3 {
+            background: rgba(26, 58, 42, 0.1);
+            color: #1a3a2a;
+            border: 1px solid rgba(26, 58, 42, 0.3);
+        }
+
+        .editor-layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .side-nav {
+            position: sticky;
+            top: calc(var(--nav-h) + 1.5rem);
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.2rem 1.4rem;
+            box-shadow: var(--shadow);
+            border-left: 3px solid var(--primary);
+            width: 240px;
+            min-width: 240px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-nav h4 {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            text-align: left;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .side-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            width: 100%;
+        }
+
+        .side-nav ul li {
+            width: 100%;
+        }
+
+        .side-nav ul li a {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            padding: 0.4rem 0;
+            text-align: left;
+            text-transform: none;
+            letter-spacing: normal;
+            font-weight: 400;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.2s ease, padding-left 0.2s ease;
+            width: 100%;
+        }
+
+        .side-nav ul li:last-child a {
+            border-bottom: none;
+        }
+
+        .side-nav ul li a:hover {
+            color: var(--primary);
+            padding-left: 0.5rem;
+        }
+
+        .content-block {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.8rem;
+            scroll-margin-top: calc(var(--nav-h)+1rem);
+        }
+
+        .content-block h2 {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .content-block h3 {
+            color: var(--secondary);
+            margin: 1rem 0 0.4rem;
+            font-size: 1rem;
+        }
+
+        .content-block p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Meetings table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        th {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 0.6rem;
+            text-align: left;
+        }
+
+        td {
+            padding: 0.55rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            color: var(--text-muted);
+        }
+
+        tr:nth-child(even) td {
+            background: var(--light);
+        }
+
+        @media(max-width:768px) {
+            .editor-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .side-nav {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="top">
+        <div class="header-inner">
+            <a href="home.html" class="logo" aria-label="LumEn Home">
+                <div class="logo-icon" aria-hidden="true">☀️</div>
+                <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+            </a>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <h1>Page Editor — Collaborative (ST4)</h1>
+        <p>Technical report · Group meetings · Contribution log</p>
+    </div>
+
+    <main id="main-content">
+        <div class="section-label" style="margin-top:1.5rem;">Students 1, 2 &amp; 3 · Profile Page, Sitemap</div>
+        <div class="editor-layout">
+
+            <!-- Sidebar -->
+            <aside>
+                <nav class="side-nav" aria-label="Page editor navigation">
+                    <h4>Contents</h4>
+                    <ul>
+                        <li><a href="#collab-context">Collaboration Context</a></li>
+                        <li><a href="#profile-page">Profile Page</a></li>
+                        <li><a href="#sitemap-page">Sitemap Page</a></li>
+                        <li><a href="#challenges">Challenges</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                        <li><a href="#compliance">Compliance</a></li>
+                        <li><a href="#meetings">Group Meetings</a></li>
+                        <li><a href="#references">References</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <div>
+
+                <div class="collab-notice" id="collab-context">
+                    <div class="icon">🤝</div>
+                    <p>
+                        <strong>Collaborative submission — Students 1, 2 &amp; 3.</strong> This group consists of three
+                        members.
+                        The Profile page and Sitemap page, which would ordinarily be assigned to a fourth student, were
+                        completed
+                        as a shared team effort. All three students contributed to the planning, implementation,
+                        testing, and
+                        documentation of both pages. Individual contributions are identified throughout this report
+                        using the
+                        tags <span class="contrib-tag tag-st1">ST1</span> <span class="contrib-tag tag-st2">ST2</span>
+                        <span class="contrib-tag tag-st3">ST3</span>.
+                    </p>
+                </div>
+
+                <div class="content-block" id="profile-page">
+                    <h2>User Profile Page</h2>
+                    <h3>Technical Description</h3>
+                    <p>
+                        The User Profile page was designed and built jointly by all three team members. The page
+                        implements a
+                        multi-step profile builder driven entirely by JavaScript — no backend or server is involved. The
+                        layout
+                        uses a two-column CSS Grid: a controls panel on the left and a profile output panel on the
+                        right.
+                        <span class="contrib-tag tag-st1">ST1</span> was responsible for the overall page layout, CSS
+                        Grid
+                        structure, and the visual styling of the step buttons, progress bar, and profile field cards,
+                        ensuring
+                        the page integrated cleanly with the shared template.
+                    </p>
+                    <p>
+                        <span class="contrib-tag tag-st2">ST2</span> implemented the core JavaScript logic: a
+                        <code>profileData</code> object stores all user responses across three steps; the
+                        <code>runStep()</code> function uses the browser's native <code>prompt()</code> API to collect
+                        input
+                        and writes values back to the object; the <code>updateProgress()</code> function iterates over
+                        all
+                        nine data keys using <code>Object.values()</code> to calculate completion percentage and updates
+                        the
+                        progress bar width via inline style. The confirmation banner is revealed via
+                        <code>classList.add('show')</code> when all nine fields are populated.
+                    </p>
+                    <p>
+                        <span class="contrib-tag tag-st3">ST3</span> wrote the profile output section, including the
+                        step
+                        reveal animation (<code>@keyframes fadeIn</code> combined with
+                        <code>classList.add('visible')</code>),
+                        the empty state placeholder, and the revisit buttons. ST3 also tested the full three-step user
+                        journey
+                        across multiple browsers and devices, logging and fixing an issue where cancelled prompts
+                        incorrectly
+                        cleared previously saved values.
+                    </p>
+                    <h3>Accessibility</h3>
+                    <p>All step buttons have descriptive <code>aria-label</code> attributes. The profile output sections
+                        use <code>aria-label</code> on each container div. The confirmation banner uses
+                        <code>role="alert"</code>
+                        so screen readers announce it automatically when it appears. The controls panel and output panel
+                        are
+                        within <code>&lt;main&gt;</code>, preserving landmark navigation. The progress bar is
+                        accompanied by a
+                        visible text percentage label so the information is not conveyed by colour alone. All
+                        interactive
+                        buttons are keyboard focusable.
+                    </p>
+                    <h3>Link to Validation</h3>
+                    <p><a href="validation_ST4.html#profileVal">View Profile Page validation evidence →</a></p>
+                    <h3>Link to Page</h3>
+                    <p><a href="profile.html" target="_blank">Open User Profile Page in new tab →</a></p>
+                </div>
+
+                <div class="content-block" id="sitemap-page">
+                    <h2>Sitemap Page</h2>
+                    <h3>Technical Description</h3>
+                    <p>
+                        The Sitemap page presents the full architecture of the LumEn website as an interactive SVG
+                        diagram
+                        embedded directly in the HTML. The entire diagram is a single inline <code>&lt;svg&gt;</code>
+                        element
+                        with a fixed <code>viewBox</code> of <code>0 0 1000 620</code> and <code>width="100%"</code>,
+                        making
+                        it fully responsive without JavaScript.
+                        <span class="contrib-tag tag-st1">ST1</span> planned the site hierarchy, determined the node
+                        positions
+                        and connector paths, and drew the initial SVG layout — placing nodes at precise coordinates for
+                        the
+                        five-level tree: Splash → Home → Main Pages → Content/Sub-pages → Editors/Validation.
+                    </p>
+                    <p>
+                        <span class="contrib-tag tag-st2">ST2</span> implemented the interactive features: each node is
+                        wrapped in an SVG <code>&lt;a&gt;</code> element with a <code>class="node-link"</code> and an
+                        <code>href</code> pointing to the corresponding page, making the entire map navigable. Arrow
+                        connectors
+                        use an SVG <code>&lt;marker&gt;</code> element referenced via
+                        <code>marker-end="url(#arrow)"</code>.
+                        CSS hover and focus rules animate the node fill and stroke colours to provide clear interactive
+                        feedback. ST2 also added the <code>&lt;title&gt;</code> and <code>&lt;desc&gt;</code> elements
+                        on the
+                        root SVG for accessibility.
+                    </p>
+                    <p>
+                        <span class="contrib-tag tag-st3">ST3</span> wrote the legend block at the base of the SVG,
+                        distinguishing the three node types (key pages, main pages, sub-pages) by fill colour with
+                        labelled
+                        colour swatches. ST3 also reviewed the final connector lines against the submitted file list to
+                        confirm
+                        every page in the project is represented, and corrected a merge conflict in the SVG source that
+                        had left
+                        duplicate legend markup from two different git branches.
+                    </p>
+                    <h3>Accessibility</h3>
+                    <p>The root <code>&lt;svg&gt;</code> carries <code>role="img"</code> and an <code>aria-label</code>
+                        describing the diagram. A <code>&lt;title&gt;</code> and <code>&lt;desc&gt;</code> element
+                        inside the
+                        SVG provide a text summary for screen readers. Each clickable node has an
+                        <code>aria-label</code> on
+                        its wrapping <code>&lt;a&gt;</code> element and an inner <code>&lt;title&gt;</code> child for
+                        tooltip
+                        and AT support. Focus styles are applied via CSS so keyboard users can see which node is active.
+                        The
+                        page uses a semantic <code>&lt;main&gt;</code> landmark and a descriptive
+                        <code>&lt;h1&gt;</code>
+                        heading in the banner.
+                    </p>
+                    <h3>Link to Validation</h3>
+                    <p><a href="validation_ST4.html#sitemapVal">View Sitemap Page validation evidence →</a></p>
+                    <h3>Link to Page</h3>
+                    <p><a href="sitemap.html" target="_blank">Open Sitemap Page in new tab →</a></p>
+                </div>
+
+                <div class="content-block" id="challenges">
+                    <h2>Challenges and Lessons Learned</h2>
+                    <p>Coordinating three people on two pages that neither belonged to any single student introduced
+                        unique
+                        challenges around ownership and consistency. The main technical difficulty on the Profile page
+                        was the
+                        browser's native <code>prompt()</code> behaviour — cancelling a dialog returns
+                        <code>null</code>, which
+                        we initially used to overwrite existing saved values. The fix was a simple guard: only update
+                        the data
+                        object if the returned value is non-null and non-empty, preserving prior answers on revisit.
+                        This was
+                        identified during ST3's cross-browser testing and patched by ST2.
+                    </p>
+                    <p>On the Sitemap, coordinating SVG connector line coordinates across three contributors proved
+                        error-prone — small edits to node positions broke connecting lines written by someone else. We
+                        resolved
+                        this by agreeing on a fixed coordinate grid before any implementation began, treating node
+                        centres as
+                        named constants in a shared planning document. The git merge conflict in the legend was a direct
+                        result
+                        of two students editing the same SVG region simultaneously; resolving it reinforced the
+                        importance of
+                        branch discipline and clear task boundaries even within a small group.</p>
+                </div>
+
+                <div class="content-block" id="accessibility">
+                    <h2>Accessibility Considerations</h2>
+                    <p>Across both pages the team implemented semantic HTML5 landmarks
+                        (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>,
+                        <code>&lt;footer&gt;</code>) consistent with the shared template. The SVG sitemap is fully
+                        accessible
+                        to screen readers through <code>role="img"</code>, <code>&lt;title&gt;</code>,
+                        <code>&lt;desc&gt;</code>, and per-node <code>aria-label</code> attributes. The Profile page
+                        progress
+                        bar is supplemented by visible text so colour is never the sole carrier of information. All
+                        interactive
+                        elements — step buttons, revisit buttons, SVG node links — are keyboard focusable and carry
+                        meaningful
+                        labels. WCAG AA colour contrast is maintained throughout, consistent with the global palette
+                        defined
+                        in the shared CSS.
+                    </p>
+                </div>
+
+                <div class="content-block" id="compliance">
+                    <h2>Compliance with JANET Regulations</h2>
+                    <p>Both pages comply with JANET regulations governing web page publication at UK universities. All
+                        content is original and produced collaboratively by the three team members for educational
+                        purposes.
+                        No copyrighted material is reproduced without attribution. The Profile page collects user input
+                        through
+                        browser prompt dialogs only — no data is transmitted to any server or stored beyond the current
+                        browser
+                        session, and no personal data is persisted. The Sitemap page contains no third-party content. No
+                        discriminatory, defamatory, or offensive content is present on either page. The submission
+                        reflects
+                        honest collaborative academic work and does not misrepresent individual or group contributions.
+                    </p>
+                </div>
+
+                <div class="content-block" id="meetings">
+                    <h2>Group Meetings and Contribution Log</h2>
+                    <table aria-label="Group meeting log">
+                        <thead>
+                            <tr>
+                                <th>Meeting</th>
+                                <th>Date &amp; Time</th>
+                                <th>Format</th>
+                                <th>Objective</th>
+                                <th>Attended</th>
+                                <th>Collaborative Contribution (ST4 work)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>3 Feb 2026, 14:00</td>
+                                <td>Face-to-face</td>
+                                <td>Choose SDG and assign roles</td>
+                                <td>All three</td>
+                                <td>The group identified that with three members, the Profile and Sitemap pages would be
+                                    completed
+                                    collaboratively. Initial ownership of each sub-task was agreed: ST1 — layout and SVG
+                                    planning;
+                                    ST2 — JavaScript and SVG interactivity; ST3 — testing and output sections.</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>10 Feb 2026, 15:00</td>
+                                <td>Online (Teams)</td>
+                                <td>Agree visual identity and colour palette</td>
+                                <td>All three</td>
+                                <td>ST1 applied the agreed colour palette to the Profile page layout mockup. The team
+                                    confirmed
+                                    the three node fill colours to be used in the SVG sitemap legend.</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>17 Feb 2026, 14:00</td>
+                                <td>Face-to-face</td>
+                                <td>Share template draft with team</td>
+                                <td>All three</td>
+                                <td>ST1 shared the SVG coordinate grid plan with the group. ST2 presented a working
+                                    prototype of
+                                    the <code>runStep()</code> prompt flow. The team agreed the three-step structure and
+                                    the nine
+                                    data fields for the Profile page.</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>3 Mar 2026, 15:30</td>
+                                <td>Online (Teams)</td>
+                                <td>Integration review</td>
+                                <td>All three</td>
+                                <td>ST2 demonstrated the completed JavaScript profile builder. ST3 reported the
+                                    null-overwrite bug
+                                    found during testing; ST2 patched it live during the call. ST1 showed the
+                                    near-complete SVG
+                                    diagram and the group reviewed connector accuracy together.</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>17 Mar 2026, 14:00</td>
+                                <td>Hybrid</td>
+                                <td>Testing and validation</td>
+                                <td>All three</td>
+                                <td>ST3 ran W3C HTML and CSS validation on profile.html and sitemap.html. ST1 and ST2
+                                    resolved
+                                    the git merge conflict in the SVG legend. All three reviewed the aria attributes on
+                                    both pages
+                                    against the WCAG checklist.</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>25 Mar 2026, 16:00</td>
+                                <td>Online (Teams)</td>
+                                <td>Final review and submission prep</td>
+                                <td>All three</td>
+                                <td>All three students reviewed this Page Editor document together, dividing the writing
+                                    of each
+                                    section. Final file naming and footer attribution text for both pages was confirmed
+                                    by the group
+                                    collectively before submission.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-block" id="references">
+                    <h2>References</h2>
+                    <ul style="list-style:none;">
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">Duckett, J. (2011) <em>HTML
+                                and CSS:
+                                Design and Build Websites.</em> Indianapolis: John Wiley &amp; Sons.</li>
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">MDN Web Docs (2025) <em>SVG
+                                — Scalable
+                                Vector Graphics.</em> Available at: <a href="#">https://developer.mozilla.org/</a>
+                            (Accessed: 12 Mar 2026).</li>
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">MDN Web Docs (2025)
+                            <em>Window:
+                                prompt() method.</em> Available at: <a href="#">https://developer.mozilla.org/</a>
+                            (Accessed: 20 Feb 2026).
+                        </li>
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">MDN Web Docs (2025)
+                            <em>ARIA: alert
+                                role.</em> Available at: <a href="#">https://developer.mozilla.org/</a> (Accessed: 18
+                            Mar 2026).
+                        </li>
+                        <li style="padding:0.4rem 0;">W3C (2025) <em>Web Content Accessibility Guidelines (WCAG)
+                                2.1.</em>
+                            Available at: <a href="#">https://www.w3.org/WAI/WCAG21/</a> (Accessed: 20 Mar 2026).</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon" aria-hidden="true">☀️</div>
+                    <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+                </div>
+                <p>University of Westminster — 4COSC011W Group Project 2026.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Validation</h4>
+                <ul>
+                    <li><a href="validation_ST4.html">Validation — ST4</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom"><span>© 2026 LumEn Team — University of Westminster · 4COSC011W</span><span>Students
+                1,
+                2 &amp; 3 — Collaborative Page Editor</span></div>
+    </footer>
+
+    <a href="#top" class="go-top" aria-label="Return to top">↑</a>
+
+</body>
+
+</html>

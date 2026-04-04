@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind Energy | LumEn — SDG 7</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* Side nav */
+        .side-nav {
+            position: sticky;
+            top: calc(var(--nav-h) + 1.5rem);
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.2rem 1.4rem;
+            box-shadow: var(--shadow);
+            border-left: 3px solid var(--primary);
+            width: 240px;
+            min-width: 240px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-nav h4 {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            text-align: left;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .side-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            width: 100%;
+        }
+
+        .side-nav ul li {
+            width: 100%;
+        }
+
+        .side-nav ul li a {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            padding: 0.4rem 0;
+            text-align: left;
+            text-transform: none;
+            letter-spacing: normal;
+            font-weight: 400;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.2s ease, padding-left 0.2s ease;
+            width: 100%;
+        }
+
+        .side-nav ul li:last-child a {
+            border-bottom: none;
+        }
+
+        .side-nav ul li a:hover {
+            color: var(--primary);
+            padding-left: 0.5rem;
+        }
+
+        /* Article */
+        article section {
+            margin-bottom: 3rem;
+            scroll-margin-top: calc(var(--nav-h) + 1rem);
+        }
+
+        article section img {
+            width: 100%;
+            border-radius: var(--radius);
+            margin: 1.2rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        article section h2 {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        article section h3 {
+            color: var(--secondary);
+            margin: 1.2rem 0 0.5rem;
+        }
+
+        article p {
+            color: var(--text-muted);
+        }
+
+        .callout {
+            background: rgba(244, 160, 32, 0.08);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1rem 1.3rem;
+            margin: 1.5rem 0;
+        }
+
+        .callout p {
+            color: var(--secondary);
+            font-style: italic;
+        }
+
+        @media(max-width:768px) {
+            .page-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .side-nav {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <span id="top" style="position:absolute;top:0;"></span>
+    <header>
+        <div class="header-inner">
+            <a href="home.html" class="logo" aria-label="LumEn Home">
+                <div class="logo-icon" aria-hidden="true">☀️</div>
+                <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+            </a>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top-content">
+        <div class="page-layout">
+
+            <!-- Side Navigation -->
+            <aside>
+                <nav class="side-nav" aria-label="On-page navigation">
+                    <h4>On This Page</h4>
+                    <ul>
+                        <li><a href="#intro">Introduction</a></li>
+                        <li><a href="#how-it-works">How Wind Works</a></li>
+                        <li><a href="#types">Types of Wind Energy</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#student-actions">Student Actions</a></li>
+                        <li><a href="#global-picture">Global Picture</a></li>
+                        <li><a href="#references">References</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Article Content -->
+            <article>
+
+                <section id="intro">
+                    <div class="section-label">SDG 7 · Content Page</div>
+                    <h1>Wind Energy: Harnessing the Power of Air</h1>
+                    <p>Wind energy is one of the fastest-growing and most cost-effective sources of renewable
+                        electricity in the
+                        world. By converting the kinetic energy of moving air into electricity, wind turbines offer a
+                        clean,
+                        inexhaustible power source that plays a central role in achieving SDG 7 — ensuring access to
+                        affordable,
+                        reliable, sustainable, and modern energy for all.</p>
+                    <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=900&q=80"
+                        alt="Offshore wind turbines standing in the sea generating clean electricity at sunset">
+                </section>
+
+                <section id="how-it-works">
+                    <h2>How Wind Energy Works</h2>
+                    <p>Wind turbines work by using large rotor blades — typically 50 to 80 metres long — to capture the
+                        kinetic
+                        energy of moving air. As wind pushes against the blades, they spin a shaft connected to a
+                        generator, which
+                        converts rotational motion into electrical energy. The electricity is then fed into the national
+                        grid or
+                        used locally.</p>
+                    <h3>Key Components</h3>
+                    <p>A wind turbine consists of rotor blades, a nacelle (housing the generator and gearbox), a tower,
+                        and
+                        foundation structures. Modern turbines also include computerised yaw systems that rotate the
+                        nacelle to
+                        face into the wind, and pitch control systems that adjust blade angles to optimise efficiency
+                        and protect
+                        against storm damage.</p>
+                    <div class="callout">
+                        <p>"Wind power capacity has grown more than tenfold in the past two decades, and in 2023 alone,
+                            the world
+                            added a record 117 gigawatts of new wind capacity." — Global Wind Energy Council, 2024</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=900&q=80"
+                        alt="Wind turbines on a hillside generating renewable electricity for local communities">
+                </section>
+
+                <section id="types">
+                    <h2>Types of Wind Energy</h2>
+                    <p>Wind energy is deployed in two main forms, each suited to different environments and scales of
+                        generation.</p>
+                    <h3>Onshore Wind</h3>
+                    <p>Onshore wind farms are built on land, typically in open countryside, hills, or coastal areas with
+                        consistent wind speeds. They are less expensive to build and maintain than offshore
+                        installations and
+                        currently provide the majority of global wind capacity. Countries like Germany, the USA, China,
+                        and Spain
+                        have extensive onshore wind networks.</p>
+                    <h3>Offshore Wind</h3>
+                    <p>Offshore wind turbines are installed in shallow coastal waters where wind speeds are higher and
+                        more
+                        consistent than on land. Although more expensive to construct, offshore turbines can be built
+                        larger —
+                        some exceeding 15 megawatts — and generate significantly more electricity per unit. The UK leads
+                        the world
+                        in offshore wind capacity, with major wind farms in the North Sea powering millions of homes.
+                    </p>
+                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=900&q=80"
+                        alt="Aerial view of a large wind farm showing turbines arranged across open landscape">
+                </section>
+
+                <section id="benefits">
+                    <h2>Benefits of Wind Energy</h2>
+                    <p>Wind energy delivers significant environmental, economic, and social benefits that make it a
+                        cornerstone
+                        of the global clean energy transition.</p>
+                    <h3>Environmental Impact</h3>
+                    <p>Once installed, wind turbines produce zero direct carbon emissions during operation. Over its
+                        lifetime, a
+                        single large offshore turbine can offset over 50,000 tonnes of CO₂ — equivalent to taking 10,000
+                        cars off
+                        the road for a year. Wind energy uses no water during generation, unlike fossil fuel or nuclear
+                        plants,
+                        making it particularly valuable in water-scarce regions.</p>
+                    <h3>Economic Benefits</h3>
+                    <p>The wind energy sector supports hundreds of thousands of jobs globally in manufacturing,
+                        installation,
+                        and maintenance. The cost of onshore wind has fallen by over 70% since 2010, making it one of
+                        the cheapest
+                        sources of new electricity generation in most countries. Wind farms also generate rental income
+                        for
+                        landowners and tax revenues for local communities.</p>
+                    <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=900&q=80"
+                        alt="Clean energy infrastructure representing the economic and environmental benefits of wind power">
+                </section>
+
+                <section id="student-actions">
+                    <h2>What Students Can Do</h2>
+                    <p>You don't need to own a wind turbine to contribute to the wind energy revolution. Here are four
+                        impactful
+                        actions any student can take:</p>
+                    <h3>1. Switch to a Green Energy Tariff</h3>
+                    <p>Choosing a 100% renewable electricity tariff for your home or student accommodation directly
+                        funds wind
+                        and solar generation. Many providers now offer green tariffs at comparable or lower prices to
+                        standard
+                        contracts — switching takes less than ten minutes online.</p>
+                    <h3>2. Support Wind Energy Policy</h3>
+                    <p>Write to your local MP or councillor supporting the expansion of onshore and offshore wind.
+                        Planning
+                        permission remains one of the biggest barriers to new wind development in the UK. Collective
+                        student
+                        voices carry significant political weight.</p>
+                    <h3>3. Reduce Peak Demand</h3>
+                    <p>Wind energy is most abundant at certain times of day. Using smart appliances and shifting
+                        energy-intensive
+                        tasks — like laundry or dishwashing — to off-peak hours helps balance the grid and makes wind
+                        power more
+                        effective at displacing fossil fuels.</p>
+                    <h3>4. Study or Work in the Sector</h3>
+                    <p>The wind energy industry faces a significant skills shortage. Engineering, data science,
+                        environmental
+                        science, and business students all have valuable roles to play. Many companies offer summer
+                        internships and
+                        graduate schemes specifically targeting university students.</p>
+                    <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=900&q=80"
+                        alt="Student researching wind energy on a laptop, contributing to clean energy awareness">
+                </section>
+
+                <section id="global-picture">
+                    <h2>The Global Picture</h2>
+                    <p>Wind energy now generates over 2,000 terawatt-hours of electricity annually — enough to power
+                        more than
+                        500 million average homes. China, the USA, Germany, India, and the UK are the top five producers
+                        of wind
+                        energy globally. In Denmark, wind turbines regularly generate more than 100% of the country's
+                        electricity
+                        demand on windy days, with the surplus exported to neighbouring countries.</p>
+                    <p>The International Energy Agency estimates that wind power must triple by 2030 to meet global
+                        climate targets. Advances in floating offshore wind technology are opening up deep-water sites
+                        previously
+                        inaccessible to turbines, dramatically expanding the potential resource. Combined with falling
+                        costs and
+                        improving battery storage, wind is set to become the world's single largest source of
+                        electricity by 2035.
+                    </p>
+                    <img src="https://images.unsplash.com/photo-1548337138-e87d889cc369?w=900&q=80"
+                        alt="Wind turbines on rolling hills representing global expansion of wind energy capacity">
+                </section>
+
+                <section id="references">
+                    <h2>References</h2>
+                    <ul style="list-style:none;">
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">Global Wind Energy Council
+                            (2024)
+                            <em>Global Wind Report 2024.</em> Available at: <a href="#">https://gwec.net/</a> (Accessed:
+                            20 Mar
+                            2026).
+                        </li>
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">International Energy Agency
+                            (2023)
+                            <em>Wind Power.</em> Available at: <a
+                                href="#">https://www.iea.org/energy-system/renewables/wind</a>
+                            (Accessed: 21 Mar 2026).
+                        </li>
+                        <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">United Nations (2023)
+                            <em>SDG 7 —
+                                Affordable and Clean Energy.</em> Available at: <a
+                                href="#">https://sdgs.un.org/goals/goal7</a>
+                            (Accessed: 20 Mar 2026).</li>
+                        <li style="padding:0.4rem 0;">Energy Saving Trust (2024) <em>Wind Turbines.</em> Available at:
+                            <a href="#">https://energysavingtrust.org.uk/</a> (Accessed: 21 Mar 2026).</li>
+                    </ul>
+                </section>
+
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon" aria-hidden="true">☀️</div>
+                    <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+                </div>
+                <p>University of Westminster — 4COSC011W Group Project 2026.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Student Pages</h4>
+                <ul>
+                    <li><a href="pageEditor_ST2.html">Editor — ST2</a></li>
+                    <li><a href="validation_ST2.html">Validation — ST2</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 LumEn Team — University of Westminster</span>
+            <span>Student 2 — Content Page: Wind Energy</span>
+        </div>
+    </footer>
+
+    <a href="#top" class="go-top" aria-label="Return to top of page">↑</a>
+
+</body>
+
+</html>
