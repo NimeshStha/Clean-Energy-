@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,9 @@
     /* ── AIS Embedded CSS (min 5 rules) ── */
 
     /* 1. Page background — changes dynamically via JS */
-    body { transition: background 0.6s ease; }
+    body {
+      transition: background 0.6s ease;
+    }
 
     .page-banner {
       background: linear-gradient(135deg, var(--secondary) 0%, var(--mid) 100%);
@@ -18,15 +21,28 @@
       position: relative;
       overflow: hidden;
     }
+
     .page-banner::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(244,160,32,0.12) 0%, transparent 70%);
+      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(244, 160, 32, 0.12) 0%, transparent 70%);
     }
-    .page-banner h1, .page-banner p { position: relative; z-index:1; }
-    .page-banner h1 { color: var(--white); }
-    .page-banner p  { color: var(--accent); margin-top: 0.4rem; }
+
+    .page-banner h1,
+    .page-banner p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-banner h1 {
+      color: var(--white);
+    }
+
+    .page-banner p {
+      color: var(--accent);
+      margin-top: 0.4rem;
+    }
 
     /* 2. Action cards grid */
     .actions-grid {
@@ -49,8 +65,9 @@
       outline: none;
     }
 
-    .action-card:hover, .action-card:focus {
-      border-color: rgba(244,160,32,0.5);
+    .action-card:hover,
+    .action-card:focus {
+      border-color: rgba(244, 160, 32, 0.5);
       transform: translateY(-3px);
       box-shadow: var(--shadow-lg);
     }
@@ -58,7 +75,7 @@
     /* 4. Selected state */
     .action-card.selected {
       border-color: var(--primary);
-      background: rgba(244,160,32,0.06);
+      background: rgba(244, 160, 32, 0.06);
     }
 
     .action-card.selected::after {
@@ -127,12 +144,20 @@
       flex-wrap: wrap;
       border-top: 3px solid var(--primary);
       z-index: 100;
-      box-shadow: 0 -8px 30px rgba(0,0,0,0.2);
+      box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.2);
     }
 
-    .feedback-stats { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+    .feedback-stats {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-    .fb-stat { text-align: center; }
+    .fb-stat {
+      text-align: center;
+    }
+
     .fb-stat .num {
       font-family: var(--font-display);
       font-size: 1.6rem;
@@ -140,9 +165,20 @@
       color: var(--primary);
       line-height: 1;
     }
-    .fb-stat .lbl { font-size: 0.72rem; color: #6a9076; margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.07em; }
 
-    .feedback-msg { flex: 1; min-width: 180px; }
+    .fb-stat .lbl {
+      font-size: 0.72rem;
+      color: #6a9076;
+      margin-top: 0.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .feedback-msg {
+      flex: 1;
+      min-width: 180px;
+    }
+
     .feedback-msg .level-badge {
       display: inline-block;
       padding: 0.2rem 0.7rem;
@@ -154,15 +190,32 @@
       letter-spacing: 0.08em;
       margin-bottom: 0.4rem;
     }
-    .level-low    { background: #e74c3c; color: #fff; }
-    .level-medium { background: var(--primary); color: var(--dark); }
-    .level-high   { background: var(--accent); color: var(--dark); }
 
-    .feedback-msg p { font-size: 0.88rem; color: #8aad9a; line-height: 1.5; margin: 0; }
+    .level-low {
+      background: #e74c3c;
+      color: #fff;
+    }
+
+    .level-medium {
+      background: var(--primary);
+      color: var(--dark);
+    }
+
+    .level-high {
+      background: var(--accent);
+      color: var(--dark);
+    }
+
+    .feedback-msg p {
+      font-size: 0.88rem;
+      color: #8aad9a;
+      line-height: 1.5;
+      margin: 0;
+    }
 
     #reset-btn {
       background: transparent;
-      border: 1.5px solid rgba(255,255,255,0.2);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
       color: #8aad9a;
       padding: 0.5rem 1.2rem;
       border-radius: 8px;
@@ -170,18 +223,28 @@
       font-size: 0.82rem;
       cursor: pointer;
       transition: all 0.2s;
+      margin-right: 4rem;
     }
-    #reset-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+    #reset-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
 
     @media (max-width: 640px) {
-      #feedback-panel { flex-direction: column; align-items: flex-start; }
+      #feedback-panel {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- HEADER -->
-  <header id="top">
+  <span id="top" style="position:absolute;top:0;"></span>
+  <header>
     <div class="header-inner">
       <a href="home.html" class="logo" aria-label="LumEn Home">
         <div class="logo-icon" aria-hidden="true">☀️</div>
@@ -395,32 +458,32 @@
         if (a) total += a.points;
       });
 
-      document.getElementById('score-num').textContent    = total;
+      document.getElementById('score-num').textContent = total;
       document.getElementById('selected-num').textContent = selected.size;
 
       const badge = document.getElementById('level-badge');
-      const msg   = document.getElementById('level-msg');
+      const msg = document.getElementById('level-msg');
 
       // Impact levels — Low: 0–6, Medium: 7–13, High: 14+
       if (total === 0) {
         badge.textContent = 'No Impact Yet';
-        badge.className   = 'level-badge level-low';
-        msg.textContent   = 'Select actions above to begin calculating your clean energy impact.';
+        badge.className = 'level-badge level-low';
+        msg.textContent = 'Select actions above to begin calculating your clean energy impact.';
         document.body.style.background = '';
       } else if (total <= 6) {
         badge.textContent = '🌱 Low Impact';
-        badge.className   = 'level-badge level-low';
-        msg.textContent   = `Good start! ${total} points. Small actions add up — try selecting a few more to increase your impact.`;
+        badge.className = 'level-badge level-low';
+        msg.textContent = `Good start! ${total} points. Small actions add up — try selecting a few more to increase your impact.`;
         document.body.style.background = 'linear-gradient(135deg, #f0f7f2 0%, #e8f5eb 100%)';
       } else if (total <= 13) {
         badge.textContent = '⚡ Medium Impact';
-        badge.className   = 'level-badge level-medium';
-        msg.textContent   = `Impressive! ${total} points. You're making a real difference. Keep going — high impact is within reach!`;
+        badge.className = 'level-badge level-medium';
+        msg.textContent = `Impressive! ${total} points. You're making a real difference. Keep going — high impact is within reach!`;
         document.body.style.background = 'linear-gradient(135deg, #fff8e7 0%, #fef3cc 100%)';
       } else {
         badge.textContent = '🌟 High Impact';
-        badge.className   = 'level-badge level-high';
-        msg.textContent   = `Outstanding! ${total} points. You're a clean energy champion. Consider sharing these actions with others!`;
+        badge.className = 'level-badge level-high';
+        msg.textContent = `Outstanding! ${total} points. You're a clean energy champion. Consider sharing these actions with others!`;
         document.body.style.background = 'linear-gradient(135deg, #e8f8ef 0%, #c9f0db 100%)';
       }
     }
@@ -437,4 +500,5 @@
   </script>
 
 </body>
+
 </html>

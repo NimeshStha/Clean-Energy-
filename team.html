@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Team | LumEn — SDG 7</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .page-banner { background:linear-gradient(135deg,var(--secondary),var(--mid)); padding:3.5rem 2rem; text-align:center; position:relative; overflow:hidden; }
-    .page-banner::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 70% at 50% 50%, rgba(244,160,32,0.12) 0%, transparent 70%); }
-    .page-banner h1,.page-banner p { position:relative; z-index:1; }
-    .page-banner h1 { color:var(--white); }
-    .page-banner p  { color:var(--accent); margin-top:0.4rem; }
+    .page-banner {
+      background: linear-gradient(135deg, var(--secondary), var(--mid));
+      padding: 3.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(244, 160, 32, 0.12) 0%, transparent 70%);
+    }
+
+    .page-banner h1,
+    .page-banner p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-banner h1 {
+      color: var(--white);
+    }
+
+    .page-banner p {
+      color: var(--accent);
+      margin-top: 0.4rem;
+    }
 
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
       padding: 3rem 0;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     /* Member card container */
@@ -61,7 +88,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(13,31,23,0.75) 0%, transparent 55%);
+      background: linear-gradient(to top, rgba(13, 31, 23, 0.75) 0%, transparent 55%);
       transition: opacity 0.35s;
     }
 
@@ -108,27 +135,49 @@
       padding: 1.3rem;
     }
 
-    .member-details h4 { color: var(--secondary); font-size:0.95rem; margin-bottom:0.5rem; }
-    .member-details p  { font-size:0.82rem; color:var(--text-muted); line-height:1.6; }
-    .member-details ul { margin-top:0.6rem; }
-    .member-details ul li {
-      font-size:0.8rem;
-      color:var(--text-muted);
-      padding:0.2rem 0;
-      display:flex;
-      gap:0.4rem;
-      align-items:flex-start;
+    .member-details h4 {
+      color: var(--secondary);
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
     }
-    .member-details ul li::before { content:'→'; color:var(--primary); flex-shrink:0; }
+
+    .member-details p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .member-details ul {
+      margin-top: 0.6rem;
+    }
+
+    .member-details ul li {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding: 0.2rem 0;
+      display: flex;
+      gap: 0.4rem;
+      align-items: flex-start;
+    }
+
+    .member-details ul li::before {
+      content: '→';
+      color: var(--primary);
+      flex-shrink: 0;
+    }
 
     @media(max-width:640px) {
-      .team-grid { grid-template-columns:1fr 1fr; gap:1rem; }
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
     }
+  
   </style>
 </head>
-<body>
 
-  <header id="top">
+<body>
+  <span id="top" style="position:absolute;top:0;"></span>
+  <header>
     <div class="header-inner">
       <a href="home.html" class="logo" aria-label="LumEn Home">
         <div class="logo-icon" aria-hidden="true">☀️</div>
@@ -155,7 +204,8 @@
 
   <main id="main-content">
     <div class="section-label" style="margin-top:2rem;">The LumEn Team</div>
-    <p class="section-sub">Four students from the University of Westminster collaborating to promote SDG 7 — Affordable and Clean Energy.</p>
+    <p class="section-sub">Four students from the University of Westminster collaborating to promote SDG 7 — Affordable
+      and Clean Energy.</p>
 
     <div class="team-grid" aria-label="Team members">
 
@@ -163,14 +213,15 @@
       <div class="member-block" tabindex="0" aria-label="Student 1 — Template and Home Page developer">
         <div class="member-thumb">
           <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
-               alt="Portrait of Student 1 — template and home page developer">
+            alt="Portrait of Student 1 — template and home page developer">
           <div class="member-role-badge">
             Student 1<span>Template &amp; Home Page</span>
           </div>
         </div>
         <div class="member-details">
           <h4>Full Name — Student 1</h4>
-          <p>Led the visual design of LumEn, building the shared HTML template and global CSS used by all team members.</p>
+          <p>Led the visual design of LumEn, building the shared HTML template and global CSS used by all team members.
+          </p>
           <ul>
             <li>HTML Template &amp; Global CSS</li>
             <li>Home Page &amp; Gallery</li>
@@ -183,14 +234,15 @@
       <div class="member-block" tabindex="0" aria-label="Student 2 — Splash screen and simulator developer">
         <div class="member-thumb">
           <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80"
-               alt="Portrait of Student 2 — splash screen and simulator developer">
+            alt="Portrait of Student 2 — splash screen and simulator developer">
           <div class="member-role-badge">
             Student 2<span>Splash &amp; Simulator</span>
           </div>
         </div>
         <div class="member-details">
           <h4>Full Name — Student 2</h4>
-          <p>Created the animated splash screen and the interactive SDG Action Impact Simulator with dynamic scoring.</p>
+          <p>Created the animated splash screen and the interactive SDG Action Impact Simulator with dynamic scoring.
+          </p>
           <ul>
             <li>Splash Screen with JS countdown</li>
             <li>Action Impact Simulator (AIS)</li>
@@ -203,14 +255,15 @@
       <div class="member-block" tabindex="0" aria-label="Student 3 — Feedback and team page developer">
         <div class="member-thumb">
           <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80"
-               alt="Portrait of Student 3 — feedback and team page developer">
+            alt="Portrait of Student 3 — feedback and team page developer">
           <div class="member-role-badge">
             Student 3<span>Feedback &amp; Team</span>
           </div>
         </div>
         <div class="member-details">
           <h4>Full Name — Student 3</h4>
-          <p>Designed the programme directory, review system, and validated feedback form with live character counting.</p>
+          <p>Designed the programme directory, review system, and validated feedback form with live character counting.
+          </p>
           <ul>
             <li>Feedback &amp; Programme Directory</li>
             <li>Team page (this page)</li>
@@ -219,39 +272,42 @@
         </div>
       </div>
 
-      <!-- Member 4 -->
-      <div class="member-block" tabindex="0" aria-label="Student 4 — Profile and sitemap developer">
-        <div class="member-thumb">
-          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80"
-               alt="Portrait of Student 4 — user profile and sitemap developer">
-          <div class="member-role-badge">
-            Student 4<span>Profile &amp; Sitemap</span>
-          </div>
-        </div>
-        <div class="member-details">
-          <h4>Full Name — Student 4</h4>
-          <p>Built the progressive JS-driven user profile builder and an interactive SVG sitemap showing the site hierarchy.</p>
-          <ul>
-            <li>User Profile Page (JS prompts)</li>
-            <li>SVG Interactive Sitemap</li>
-            <li>Content Page — Energy Storage</li>
-          </ul>
-        </div>
-      </div>
 
     </div>
   </main>
 
   <footer>
     <div class="footer-inner">
-      <div class="footer-brand"><div class="logo"><div class="logo-icon" aria-hidden="true">☀️</div><div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div></div><p>University of Westminster — 4COSC011W Group Project 2026.</p></div>
-      <div class="footer-links"><h4>Pages</h4><ul><li><a href="home.html">Home</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="ais.html">Simulator</a></li><li><a href="feedback.html">Feedback</a></li></ul></div>
-      <div class="footer-links"><h4>Student Pages</h4><ul><li><a href="pageEditor_ST3.html">Editor — ST3</a></li><li><a href="validation_ST3.html">Validation — ST3</a></li></ul></div>
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon" aria-hidden="true">☀️</div>
+          <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+        </div>
+        <p>University of Westminster — 4COSC011W Group Project 2026.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="ais.html">Simulator</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Student Pages</h4>
+        <ul>
+          <li><a href="pageEditor_ST3.html">Editor — ST3</a></li>
+          <li><a href="validation_ST3.html">Validation — ST3</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 LumEn Team — University of Westminster</span><span>Student 3 — Team Page</span></div>
+    <div class="footer-bottom"><span>© 2026 LumEn Team — University of Westminster</span><span>Student 3 — Team
+        Page</span></div>
   </footer>
 
   <a href="#top" class="go-top" aria-label="Return to top">↑</a>
 
 </body>
+
 </html>
