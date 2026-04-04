@@ -31,12 +31,18 @@
 
     .side-nav {
       position: sticky;
-      top: calc(var(--nav-h)+1.5rem);
+      top: calc(var(--nav-h) + 1.5rem);
       background: var(--white);
       border-radius: var(--radius);
-      padding: 1.3rem;
+      padding: 1.2rem 1.4rem;
       box-shadow: var(--shadow);
       border-left: 3px solid var(--primary);
+      width: 240px;
+      min-width: 240px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      /* ← stacks h4 above ul cleanly */
     }
 
     .side-nav h4 {
@@ -44,23 +50,48 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--primary);
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.8rem;
+      text-align: left;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--primary);
+      /* ← underline separates header from links */
     }
 
     .side-nav ul {
       list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+    }
+
+    .side-nav ul li {
+      width: 100%;
     }
 
     .side-nav ul li a {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
       text-decoration: none;
       display: block;
-      padding: 0.25rem 0.35rem;
+      padding: 0.4rem 0;
+      /* ← uniform padding, no left indent */
+      text-align: left;
+      text-transform: none;
+      letter-spacing: normal;
+      font-weight: 400;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s ease, padding-left 0.2s ease;
+      width: 100%;
+    }
+
+    .side-nav ul li:last-child a {
+      border-bottom: none;
     }
 
     .side-nav ul li a:hover {
-      color: lightorange;
+      color: var(--primary);
+      padding-left: 0.5rem;
     }
 
     .content-block {
