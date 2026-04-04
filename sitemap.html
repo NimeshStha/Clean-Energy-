@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sitemap | LumEn — SDG 7</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .page-banner { background:linear-gradient(135deg,var(--secondary),var(--mid)); padding:3.5rem 2rem; text-align:center; position:relative; overflow:hidden; }
-    .page-banner::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 70% at 50% 50%, rgba(244,160,32,0.12) 0%, transparent 70%); }
-    .page-banner h1,.page-banner p { position:relative; z-index:1; }
-    .page-banner h1 { color:var(--white); }
-    .page-banner p  { color:var(--accent); margin-top:0.4rem; }
+    .page-banner {
+      background: linear-gradient(135deg, var(--secondary), var(--mid));
+      padding: 3.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-    .sitemap-wrap { background:var(--white); border-radius:var(--radius-lg); padding:2rem; box-shadow:var(--shadow-lg); margin-top:2rem; overflow-x:auto; }
+    .page-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(244, 160, 32, 0.12) 0%, transparent 70%);
+    }
+
+    .page-banner h1,
+    .page-banner p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-banner h1 {
+      color: var(--white);
+    }
+
+    .page-banner p {
+      color: var(--accent);
+      margin-top: 0.4rem;
+    }
+
+    .sitemap-wrap {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+      margin-top: 2rem;
+      overflow-x: auto;
+    }
 
     /* SVG node hover styles */
     .node-link:hover rect,
@@ -23,13 +55,19 @@
       stroke: #f4a020;
     }
 
-    .node-link:focus { outline: 3px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+    .node-link:focus {
+      outline: 3px solid var(--primary);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
 
-    .node-link rect, .node-link circle {
+    .node-link rect,
+    .node-link circle {
       transition: fill 0.2s ease, stroke 0.2s ease;
     }
   </style>
 </head>
+
 <body>
   <span id="top" style="position:absolute;top:0;"></span>
   <header>
@@ -59,152 +97,180 @@
 
   <main id="main-content">
     <div class="sitemap-wrap">
-      <svg viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg"
-           width="100%" role="img" aria-label="LumEn website structure sitemap">
+      <svg viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg" width="100%" role="img"
+        aria-label="LumEn website structure sitemap">
         <title>LumEn Website Sitemap</title>
         <desc>Visual sitemap showing the hierarchy of the LumEn SDG 7 website</desc>
 
         <!-- Definitions -->
         <defs>
           <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-            <path d="M0,0 L0,6 L8,3 z" fill="#c8ddd2"/>
+            <path d="M0,0 L0,6 L8,3 z" fill="#c8ddd2" />
           </marker>
         </defs>
 
         <!-- Background -->
-        <rect width="1000" height="620" fill="#f0f7f2" rx="16"/>
+        <rect width="1000" height="620" fill="#f0f7f2" rx="16" />
 
         <!-- ── CONNECTOR LINES ── -->
         <!-- Splash → Home -->
-        <line x1="500" y1="90" x2="500" y2="140" stroke="#c8ddd2" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="500" y1="90" x2="500" y2="140" stroke="#c8ddd2" stroke-width="2" marker-end="url(#arrow)" />
 
         <!-- Home → children (6 lines) -->
-        <line x1="500" y1="190" x2="120"  y2="270" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)"/>
-        <line x1="500" y1="190" x2="260"  y2="270" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)"/>
-        <line x1="500" y1="190" x2="400"  y2="270" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)"/>
-        <line x1="500" y1="190" x2="540"  y2="270" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)"/>
-        <line x1="500" y1="190" x2="680"  y2="270" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)"/>
-        <line x1="500" y1="190" x2="820"  y2="270" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)"/>
+        <line x1="500" y1="190" x2="120" y2="270" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)" />
+        <line x1="500" y1="190" x2="260" y2="270" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)" />
+        <line x1="500" y1="190" x2="400" y2="270" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)" />
+        <line x1="500" y1="190" x2="540" y2="270" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)" />
+        <line x1="500" y1="190" x2="680" y2="270" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)" />
+        <line x1="500" y1="190" x2="820" y2="270" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)" />
 
         <!-- Content pages under Home -->
-        <line x1="400" y1="315" x2="160" y2="400" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)"/>
-        <line x1="400" y1="315" x2="280" y2="400" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)"/>
-        <line x1="400" y1="315" x2="400" y2="400" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)"/>
-        <line x1="400" y1="315" x2="520" y2="400" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)"/>
+        <line x1="400" y1="315" x2="160" y2="400" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)" />
+        <line x1="400" y1="315" x2="280" y2="400" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)" />
+        <line x1="400" y1="315" x2="400" y2="400" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)" />
+        <line x1="400" y1="315" x2="520" y2="400" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)" />
 
         <!-- Profile → Page editors -->
-        <line x1="680" y1="315" x2="680" y2="400" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)"/>
+        <line x1="680" y1="315" x2="680" y2="400" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)" />
         <!-- Sitemap → Validation -->
-        <line x1="820" y1="315" x2="820" y2="400" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)"/>
+        <line x1="820" y1="315" x2="820" y2="400" stroke="#c8ddd2" stroke-width="1.5" marker-end="url(#arrow)" />
 
         <!-- ── NODES ── -->
 
         <!-- SPLASH — top level -->
         <a href="splash.html" class="node-link" aria-label="Splash Screen page">
           <title>Splash Screen</title>
-          <rect x="420" y="40" width="160" height="44" rx="8" fill="#1a3a2a" stroke="#f4a020" stroke-width="2"/>
-          <text x="500" y="67" text-anchor="middle" font-family="Syne,sans-serif" font-size="12" font-weight="700" fill="#f4a020">Splash Screen</text>
+          <rect x="420" y="40" width="160" height="44" rx="8" fill="#1a3a2a" stroke="#f4a020" stroke-width="2" />
+          <text x="500" y="67" text-anchor="middle" font-family="Syne,sans-serif" font-size="12" font-weight="700"
+            fill="#f4a020">Splash Screen</text>
         </a>
 
         <!-- HOME — second level -->
         <a href="home.html" class="node-link" aria-label="Home page">
           <title>Home Page</title>
-          <rect x="430" y="148" width="140" height="40" rx="8" fill="#f4a020" stroke="#c97d0a" stroke-width="2"/>
-          <text x="500" y="173" text-anchor="middle" font-family="Syne,sans-serif" font-size="12" font-weight="700" fill="#0d1f17">Home</text>
+          <rect x="430" y="148" width="140" height="40" rx="8" fill="#f4a020" stroke="#c97d0a" stroke-width="2" />
+          <text x="500" y="173" text-anchor="middle" font-family="Syne,sans-serif" font-size="12" font-weight="700"
+            fill="#0d1f17">Home</text>
         </a>
 
         <!-- Third level: main pages -->
         <a href="gallery.html" class="node-link" aria-label="Gallery page">
           <title>Gallery</title>
-          <rect x="60" y="270" width="120" height="40" rx="8" fill="#1e3d2c" stroke="#7ecf9b" stroke-width="1.5"/>
-          <text x="120" y="295" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" fill="#7ecf9b">Gallery</text>
+          <rect x="60" y="270" width="120" height="40" rx="8" fill="#1e3d2c" stroke="#7ecf9b" stroke-width="1.5" />
+          <text x="120" y="295" text-anchor="middle" font-family="Syne,sans-serif" font-size="11"
+            fill="#7ecf9b">Gallery</text>
         </a>
 
         <a href="ais.html" class="node-link" aria-label="Action Impact Simulator page">
           <title>Action Impact Simulator</title>
-          <rect x="195" y="270" width="130" height="40" rx="8" fill="#1e3d2c" stroke="#7ecf9b" stroke-width="1.5"/>
-          <text x="260" y="290" text-anchor="middle" font-family="Syne,sans-serif" font-size="10" fill="#7ecf9b">Action Impact</text>
-          <text x="260" y="304" text-anchor="middle" font-family="Syne,sans-serif" font-size="10" fill="#7ecf9b">Simulator</text>
+          <rect x="195" y="270" width="130" height="40" rx="8" fill="#1e3d2c" stroke="#7ecf9b" stroke-width="1.5" />
+          <text x="260" y="290" text-anchor="middle" font-family="Syne,sans-serif" font-size="10" fill="#7ecf9b">Action
+            Impact</text>
+          <text x="260" y="304" text-anchor="middle" font-family="Syne,sans-serif" font-size="10"
+            fill="#7ecf9b">Simulator</text>
         </a>
 
         <!-- Content Pages node -->
         <a href="content_ST1.html" class="node-link" aria-label="Content pages">
           <title>Content Pages</title>
-          <rect x="340" y="270" width="120" height="40" rx="8" fill="#1e3d2c" stroke="#7ecf9b" stroke-width="1.5"/>
-          <text x="400" y="295" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" fill="#7ecf9b">Content Pages</text>
+          <rect x="340" y="270" width="120" height="40" rx="8" fill="#1e3d2c" stroke="#7ecf9b" stroke-width="1.5" />
+          <text x="400" y="295" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" fill="#7ecf9b">Content
+            Pages</text>
         </a>
 
         <a href="feedback.html" class="node-link" aria-label="Feedback page">
           <title>Feedback</title>
-          <rect x="478" y="270" width="120" height="40" rx="8" fill="#1e3d2c" stroke="#7ecf9b" stroke-width="1.5"/>
-          <text x="538" y="295" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" fill="#7ecf9b">Feedback</text>
+          <rect x="478" y="270" width="120" height="40" rx="8" fill="#1e3d2c" stroke="#7ecf9b" stroke-width="1.5" />
+          <text x="538" y="295" text-anchor="middle" font-family="Syne,sans-serif" font-size="11"
+            fill="#7ecf9b">Feedback</text>
         </a>
 
         <a href="team.html" class="node-link" aria-label="Team page">
           <title>Team</title>
-          <rect x="615" y="270" width="130" height="40" rx="8" fill="#1e3d2c" stroke="#7ecf9b" stroke-width="1.5"/>
-          <text x="680" y="290" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" fill="#7ecf9b">Profile /</text>
-          <text x="680" y="304" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" fill="#7ecf9b">Team</text>
+          <rect x="615" y="270" width="130" height="40" rx="8" fill="#1e3d2c" stroke="#7ecf9b" stroke-width="1.5" />
+          <text x="680" y="290" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" fill="#7ecf9b">Profile
+            /</text>
+          <text x="680" y="304" text-anchor="middle" font-family="Syne,sans-serif" font-size="11"
+            fill="#7ecf9b">Team</text>
         </a>
 
         <a href="sitemap.html" class="node-link" aria-label="Sitemap page (current page)">
           <title>Sitemap (current page)</title>
-          <rect x="755" y="270" width="130" height="40" rx="8" fill="#f4a020" stroke="#c97d0a" stroke-width="2"/>
-          <text x="820" y="295" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" font-weight="700" fill="#0d1f17">Sitemap ★</text>
+          <rect x="755" y="270" width="130" height="40" rx="8" fill="#f4a020" stroke="#c97d0a" stroke-width="2" />
+          <text x="820" y="295" text-anchor="middle" font-family="Syne,sans-serif" font-size="11" font-weight="700"
+            fill="#0d1f17">Sitemap ★</text>
         </a>
 
         <!-- Content sub-pages (4th level) -->
         <a href="content_ST1.html" class="node-link" aria-label="Content page Student 1 - Solar Power">
           <title>Content ST1 — Solar Power</title>
-          <rect x="100" y="400" width="110" height="48" rx="6" fill="#f0f7f2" stroke="#c8ddd2" stroke-width="1.5"/>
-          <text x="155" y="420" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a3a2a" font-weight="600">Solar Power</text>
-          <text x="155" y="435" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#5a7468">Student 1</text>
+          <rect x="100" y="400" width="110" height="48" rx="6" fill="#f0f7f2" stroke="#c8ddd2" stroke-width="1.5" />
+          <text x="155" y="420" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a3a2a"
+            font-weight="600">Solar Power</text>
+          <text x="155" y="435" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9"
+            fill="#5a7468">Student 1</text>
         </a>
 
         <a href="content_ST2.html" class="node-link" aria-label="Content page Student 2 - Wind Energy">
           <title>Content ST2 — Wind Energy</title>
-          <rect x="220" y="400" width="110" height="48" rx="6" fill="#f0f7f2" stroke="#c8ddd2" stroke-width="1.5"/>
-          <text x="275" y="420" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a3a2a" font-weight="600">Wind Energy</text>
-          <text x="275" y="435" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#5a7468">Student 2</text>
+          <rect x="220" y="400" width="110" height="48" rx="6" fill="#f0f7f2" stroke="#c8ddd2" stroke-width="1.5" />
+          <text x="275" y="420" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a3a2a"
+            font-weight="600">Wind Energy</text>
+          <text x="275" y="435" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9"
+            fill="#5a7468">Student 2</text>
         </a>
 
         <a href="content_ST3.html" class="node-link" aria-label="Content page Student 3 - Hydro Power">
           <title>Content ST3 — Hydro Power</title>
-          <rect x="340" y="400" width="110" height="48" rx="6" fill="#f0f7f2" stroke="#c8ddd2" stroke-width="1.5"/>
-          <text x="395" y="420" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a3a2a" font-weight="600">Hydro Power</text>
-          <text x="395" y="435" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#5a7468">Student 3</text>
+          <rect x="340" y="400" width="110" height="48" rx="6" fill="#f0f7f2" stroke="#c8ddd2" stroke-width="1.5" />
+          <text x="395" y="420" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a3a2a"
+            font-weight="600">Hydro Power</text>
+          <text x="395" y="435" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9"
+            fill="#5a7468">Student 3</text>
         </a>
 
         <a href="content_ST4.html" class="node-link" aria-label="Content page Student 4 - Energy Storage">
           <title>Content ST4 — Energy Storage</title>
-          <rect x="460" y="400" width="120" height="48" rx="6" fill="#f0f7f2" stroke="#c8ddd2" stroke-width="1.5"/>
-          <text x="520" y="420" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a3a2a" font-weight="600">Energy Storage</text>
-          <text x="520" y="435" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#5a7468">Student 4</text>
+          <rect x="460" y="400" width="120" height="48" rx="6" fill="#f0f7f2" stroke="#c8ddd2" stroke-width="1.5" />
+          <text x="520" y="420" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a3a2a"
+            font-weight="600">Energy Storage</text>
+          <text x="520" y="435" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9"
+            fill="#5a7468">Student 4</text>
         </a>
 
         <!-- Page Editors node -->
         <a href="pageEditor_ST1.html" class="node-link" aria-label="Page Editor pages">
           <title>Page Editors (all students)</title>
-          <rect x="615" y="400" width="130" height="48" rx="6" fill="#f0f7f2" stroke="#c8ddd2" stroke-width="1.5"/>
-          <text x="680" y="420" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a3a2a" font-weight="600">Page Editors</text>
-          <text x="680" y="435" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#5a7468">ST1 · ST2 · ST3 · ST4</text>
+          <rect x="615" y="400" width="130" height="48" rx="6" fill="#f0f7f2" stroke="#c8ddd2" stroke-width="1.5" />
+          <text x="680" y="420" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a3a2a"
+            font-weight="600">Page Editors</text>
+          <text x="680" y="435" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#5a7468">ST1 ·
+            ST2 · ST3 · ST4</text>
         </a>
 
         <!-- Validation node -->
         <a href="validation_ST1.html" class="node-link" aria-label="Validation pages">
           <title>Validation Pages (all students)</title>
-          <rect x="754" y="400" width="132" height="48" rx="6" fill="#f0f7f2" stroke="#c8ddd2" stroke-width="1.5"/>
-          <text x="820" y="420" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a3a2a" font-weight="600">Validation Pages</text>
-          <text x="820" y="435" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#5a7468">ST1 · ST2 · ST3 · ST4</text>
+          <rect x="754" y="400" width="132" height="48" rx="6" fill="#f0f7f2" stroke="#c8ddd2" stroke-width="1.5" />
+          <text x="820" y="420" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1a3a2a"
+            font-weight="600">Validation Pages</text>
+          <text x="820" y="435" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#5a7468">ST1 ·
+            ST2 · ST3 · ST4</text>
         </a>
 
         <!-- Legend -->
-        <rect x="20" y="540" width="14" height="14" rx="3" fill="#f4a020"/>
+        <rect x="20" y="540" width="14" height="14" rx="3" fill="#f4a020" />
         <text x="40" y="552" font-family="DM Sans,sans-serif" font-size="11" fill="#5a7468">Active / Key pages</text>
-        <rect x="160" y="540" width="14" height="14" rx="3" fill="#1e3d2c" stroke="#7ecf9b" stroke-width="1"/>
+        <rect x="160" y="540" width="14" height="14" rx="3" fill="#1e3d2c" stroke="#7ecf9b" stroke-width="1" />
         <text x="180" y="552" font-family="DM Sans,sans-serif" font-size="11" fill="#5a7468">Main pages</text>
+<<<<<<< HEAD
         <rect x="270" y="540" width="14" height="14" rx="3" fill="#f0f7f2" stroke="#c8ddd2" stroke-width="1"/>
         <text x="290" y="552" font-family="DM Sans,sans-serif" font-size="11" fill="#5a7468">Sub-pages / student pages</text>
+=======
+        <rect x="270" y="540" width="14" height="14" rx="3" fill="#f0f7f2" stroke="#c8ddd2" stroke-width="1" />
+        <text x="290" y="552" font-family="DM Sans,sans-serif" font-size="11" fill="#5a7468">Sub-pages / student
+          pages</text>
+>>>>>>> 691e5878aea397c3c8eca8e57a351451b8735de9
 
       </svg>
     </div>
@@ -212,14 +278,36 @@
 
   <footer>
     <div class="footer-inner">
-      <div class="footer-brand"><div class="logo"><div class="logo-icon" aria-hidden="true">☀️</div><div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div></div><p>University of Westminster — 4COSC011W Group Project 2026.</p></div>
-      <div class="footer-links"><h4>Pages</h4><ul><li><a href="home.html">Home</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="team.html">Team</a></li><li><a href="profile.html">Profile</a></li></ul></div>
-      <div class="footer-links"><h4>Student Pages</h4><ul><li><a href="pageEditor_ST4.html">Editor — ST4</a></li><li><a href="validation_ST4.html">Validation — ST4</a></li></ul></div>
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon" aria-hidden="true">☀️</div>
+          <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+        </div>
+        <p>University of Westminster — 4COSC011W Group Project 2026.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Student Pages</h4>
+        <ul>
+          <li><a href="pageEditor_ST4.html">Together</a></li>
+          <li><a href="validation_ST4.html">Validation</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 LumEn Team — University of Westminster</span><span>Student 4 — Sitemap</span></div>
+    <div class="footer-bottom"><span>© 2026 LumEn Team — University of Westminster</span><span>Student 4 —
+        Sitemap</span></div>
   </footer>
 
   <a href="#top" class="go-top" aria-label="Return to top">↑</a>
 
 </body>
+
 </html>

@@ -1,48 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Solar Power | LumEn — SDG 7</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .page-layout { display:grid; grid-template-columns:240px 1fr; gap:2.5rem; align-items:start; }
+    .page-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
 
     /* Side nav */
     .side-nav {
-      position:sticky;
-      top:calc(var(--nav-h) + 1.5rem);
-      background:var(--white);
-      border-radius:var(--radius);
-      padding:1.4rem;
-      box-shadow:var(--shadow);
-      border-left:3px solid var(--primary);
+      position: sticky;
+      top: calc(var(--nav-h) + 1.5rem);
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: var(--shadow);
+      border-left: 3px solid var(--primary);
     }
-    .side-nav h4 { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--primary); margin-bottom:0.8rem; }
-    .side-nav ul { list-style:none; }
-    .side-nav ul li { margin-bottom:0.4rem; }
-    .side-nav ul li a { font-size:0.85rem; color:var(--text-muted); text-decoration:none; transition:color var(--transition); display:block; padding:0.2rem 0; }
-    .side-nav ul li a:hover { color:var(--primary); }
+
+    .side-nav h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+
+    .side-nav ul {
+      list-style: none;
+    }
+
+    .side-nav ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    .side-nav ul li a {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color var(--transition);
+      display: block;
+      padding: 0.2rem 0;
+    }
+
+    .side-nav ul li a:hover {
+      color: var(--primary);
+    }
 
     /* Article */
-    article section { margin-bottom:3rem; scroll-margin-top:calc(var(--nav-h) + 1rem); }
-    article section img {
-      width:100%; border-radius:var(--radius); margin:1.2rem 0;
-      box-shadow:var(--shadow);
+    article section {
+      margin-bottom: 3rem;
+      scroll-margin-top: calc(var(--nav-h) + 1rem);
     }
-    article section h2 { color:var(--secondary); border-bottom:2px solid var(--border); padding-bottom:0.5rem; margin-bottom:1rem; }
-    article section h3 { color:var(--secondary); margin:1.2rem 0 0.5rem; }
-    article p { color:var(--text-muted); }
 
-    .callout { background:rgba(244,160,32,0.08); border-left:4px solid var(--primary); border-radius:0 var(--radius) var(--radius) 0; padding:1rem 1.3rem; margin:1.5rem 0; }
-    .callout p { color:var(--secondary); font-style:italic; }
+    article section img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin: 1.2rem 0;
+      box-shadow: var(--shadow);
+    }
+
+    article section h2 {
+      color: var(--secondary);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    article section h3 {
+      color: var(--secondary);
+      margin: 1.2rem 0 0.5rem;
+    }
+
+    article p {
+      color: var(--text-muted);
+    }
+
+    .callout {
+      background: rgba(244, 160, 32, 0.08);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.3rem;
+      margin: 1.5rem 0;
+    }
+
+    .callout p {
+      color: var(--secondary);
+      font-style: italic;
+    }
 
     @media(max-width:768px) {
-      .page-layout { grid-template-columns:1fr; }
-      .side-nav { position:static; }
+      .page-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side-nav {
+        position: static;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <header id="top">
@@ -89,56 +154,93 @@
         <section id="intro">
           <div class="section-label">SDG 7 · Content Page</div>
           <h1>Solar Power: Charging the Future</h1>
-          <p>Solar energy is the most abundant energy source on Earth. Every hour, the sun delivers more energy to our planet than humanity uses in an entire year. Harnessing this resource is one of the most powerful tools we have for achieving SDG 7 — ensuring access to affordable, reliable, sustainable, and modern energy for all.</p>
-          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=80" alt="Large solar panel array mounted on a rooftop, generating clean electricity">
+          <p>Solar energy is the most abundant energy source on Earth. Every hour, the sun delivers more energy to our
+            planet than humanity uses in an entire year. Harnessing this resource is one of the most powerful tools we
+            have for achieving SDG 7 — ensuring access to affordable, reliable, sustainable, and modern energy for all.
+          </p>
+          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=80"
+            alt="Large solar panel array mounted on a rooftop, generating clean electricity">
         </section>
 
         <section id="how-it-works">
           <h2>How Solar Power Works</h2>
-          <p>Solar photovoltaic (PV) panels are made of semiconductor cells, usually silicon, that absorb photons from sunlight and release electrons, generating direct current (DC) electricity. An inverter then converts this to alternating current (AC) for household and grid use.</p>
+          <p>Solar photovoltaic (PV) panels are made of semiconductor cells, usually silicon, that absorb photons from
+            sunlight and release electrons, generating direct current (DC) electricity. An inverter then converts this
+            to alternating current (AC) for household and grid use.</p>
           <h3>Key Components</h3>
-          <p>A typical solar installation consists of PV panels, mounting structures, an inverter, a meter, and potentially battery storage. Modern panels achieve efficiencies between 18–23%, meaning roughly one-fifth of all sunlight hitting the panel is converted to electricity.</p>
-          <div class="callout"><p>"The cost of solar electricity has fallen by 89% over the last decade, making it the cheapest source of electricity in history in most parts of the world." — IRENA, 2023</p></div>
-          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=900&q=80" alt="Aerial view of a large community solar farm with hundreds of panels">
+          <p>A typical solar installation consists of PV panels, mounting structures, an inverter, a meter, and
+            potentially battery storage. Modern panels achieve efficiencies between 18–23%, meaning roughly one-fifth of
+            all sunlight hitting the panel is converted to electricity.</p>
+          <div class="callout">
+            <p>"The cost of solar electricity has fallen by 89% over the last decade, making it the cheapest source of
+              electricity in history in most parts of the world." — IRENA, 2023</p>
+          </div>
+          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=900&q=80"
+            alt="Aerial view of a large community solar farm with hundreds of panels">
         </section>
 
         <section id="benefits">
           <h2>Benefits of Solar Energy</h2>
-          <p>Solar power offers a wide range of environmental, economic, and social benefits that make it central to the clean energy transition.</p>
+          <p>Solar power offers a wide range of environmental, economic, and social benefits that make it central to the
+            clean energy transition.</p>
           <h3>Environmental Impact</h3>
-          <p>Once installed, solar panels produce zero direct emissions. Over a 25-year lifespan, a typical home solar system offsets around 100 tonnes of CO₂ — equivalent to planting 2,500 trees. Solar produces no water pollution, noise, or hazardous waste during operation.</p>
+          <p>Once installed, solar panels produce zero direct emissions. Over a 25-year lifespan, a typical home solar
+            system offsets around 100 tonnes of CO₂ — equivalent to planting 2,500 trees. Solar produces no water
+            pollution, noise, or hazardous waste during operation.</p>
           <h3>Economic Benefits</h3>
-          <p>Beyond reducing electricity bills, solar panels can generate surplus power that is sold back to the grid via Feed-in Tariffs or Smart Export Guarantees. With payback periods now as low as 5–7 years in the UK, solar is increasingly attractive for households and businesses alike.</p>
-          <img src="https://images.unsplash.com/photo-1620714223084-8fcacc2dbed5?w=900&q=80" alt="Energy saving LED light representing reduced electricity bills through solar energy">
+          <p>Beyond reducing electricity bills, solar panels can generate surplus power that is sold back to the grid
+            via Feed-in Tariffs or Smart Export Guarantees. With payback periods now as low as 5–7 years in the UK,
+            solar is increasingly attractive for households and businesses alike.</p>
+          <img src="https://images.unsplash.com/photo-1620714223084-8fcacc2dbed5?w=900&q=80"
+            alt="Energy saving LED light representing reduced electricity bills through solar energy">
         </section>
 
         <section id="student-actions">
           <h2>What Students Can Do</h2>
-          <p>You don't need to own a home to contribute to the solar revolution. Here are four impactful actions any student can take:</p>
+          <p>You don't need to own a home to contribute to the solar revolution. Here are four impactful actions any
+            student can take:</p>
           <h3>1. Community Solar Subscriptions</h3>
-          <p>Many energy providers now offer community solar subscriptions — you pay a small monthly fee and receive bill credits from a shared solar installation nearby. No roof, no problem.</p>
+          <p>Many energy providers now offer community solar subscriptions — you pay a small monthly fee and receive
+            bill credits from a shared solar installation nearby. No roof, no problem.</p>
           <h3>2. Campus Solar Advocacy</h3>
-          <p>Lobby your student union and sustainability office to install solar panels on campus. Many universities have achieved net-zero buildings through student-led campaigns. Collective voice is powerful.</p>
+          <p>Lobby your student union and sustainability office to install solar panels on campus. Many universities
+            have achieved net-zero buildings through student-led campaigns. Collective voice is powerful.</p>
           <h3>3. Switch Your Tariff</h3>
-          <p>Switching your home or student accommodation to a renewable electricity tariff takes ten minutes and directly funds solar and wind generation. Providers like Octopus Energy and Bulb have made this straightforward and affordable.</p>
+          <p>Switching your home or student accommodation to a renewable electricity tariff takes ten minutes and
+            directly funds solar and wind generation. Providers like Octopus Energy and Bulb have made this
+            straightforward and affordable.</p>
           <h3>4. Spread Awareness</h3>
-          <p>Use social media to share accurate, motivating facts about solar progress. Misinformation about the cost and reliability of renewables is one of the biggest barriers to adoption. Trusted information from peers matters.</p>
-          <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=900&q=80" alt="Student using smartphone to share information about renewable energy online">
+          <p>Use social media to share accurate, motivating facts about solar progress. Misinformation about the cost
+            and reliability of renewables is one of the biggest barriers to adoption. Trusted information from peers
+            matters.</p>
+          <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=900&q=80"
+            alt="Student using smartphone to share information about renewable energy online">
         </section>
 
         <section id="global-picture">
           <h2>The Global Picture</h2>
-          <p>Globally, solar capacity has surpassed 1 terawatt — enough to power nearly 200 million homes. Countries like China, the USA, India, and Germany lead in installed capacity, but costs have fallen enough for developing nations to leapfrog fossil fuels entirely. In parts of sub-Saharan Africa, off-grid solar kits are providing first-ever electricity access to millions of households.</p>
-          <p>The UN estimates that meeting SDG 7 by 2030 requires tripling renewable energy investment — and solar is set to be the dominant contributor. With battery storage now affordable, the intermittency challenge is being solved, paving the way for a solar-dominated grid.</p>
-          <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=900&q=80" alt="Global renewable energy installation showing the scale of clean power deployment">
+          <p>Globally, solar capacity has surpassed 1 terawatt — enough to power nearly 200 million homes. Countries
+            like China, the USA, India, and Germany lead in installed capacity, but costs have fallen enough for
+            developing nations to leapfrog fossil fuels entirely. In parts of sub-Saharan Africa, off-grid solar kits
+            are providing first-ever electricity access to millions of households.</p>
+          <p>The UN estimates that meeting SDG 7 by 2030 requires tripling renewable energy investment — and solar is
+            set to be the dominant contributor. With battery storage now affordable, the intermittency challenge is
+            being solved, paving the way for a solar-dominated grid.</p>
+          <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=900&q=80"
+            alt="Global renewable energy installation showing the scale of clean power deployment">
         </section>
 
         <section id="references">
           <h2>References</h2>
           <ul style="list-style:none;">
-            <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">IRENA (2023) <em>Renewable Power Generation Costs in 2022.</em> Available at: <a href="#">https://www.irena.org/</a> (Accessed: 20 Mar 2026).</li>
-            <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">United Nations (2023) <em>SDG 7 — Affordable and Clean Energy.</em> Available at: <a href="#">https://sdgs.un.org/goals/goal7</a> (Accessed: 20 Mar 2026).</li>
-            <li style="padding:0.4rem 0;">Energy Saving Trust (2024) <em>Solar Panels.</em> Available at: <a href="#">https://energysavingtrust.org.uk/</a> (Accessed: 21 Mar 2026).</li>
+            <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">IRENA (2023) <em>Renewable Power
+                Generation Costs in 2022.</em> Available at: <a href="#">https://www.irena.org/</a> (Accessed: 20 Mar
+              2026).</li>
+            <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">United Nations (2023) <em>SDG 7 —
+                Affordable and Clean Energy.</em> Available at: <a href="#">https://sdgs.un.org/goals/goal7</a>
+              (Accessed: 20 Mar 2026).</li>
+            <li style="padding:0.4rem 0;">Energy Saving Trust (2024) <em>Solar Panels.</em> Available at: <a
+                href="#">https://energysavingtrust.org.uk/</a> (Accessed: 21 Mar 2026).</li>
           </ul>
         </section>
 
@@ -148,14 +250,36 @@
 
   <footer>
     <div class="footer-inner">
-      <div class="footer-brand"><div class="logo"><div class="logo-icon" aria-hidden="true">☀️</div><div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div></div><p>University of Westminster — 4COSC011W Group Project 2026.</p></div>
-      <div class="footer-links"><h4>Pages</h4><ul><li><a href="home.html">Home</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="ais.html">Simulator</a></li><li><a href="team.html">Team</a></li></ul></div>
-      <div class="footer-links"><h4>Student Pages</h4><ul><li><a href="pageEditor_ST1.html">Editor — ST1</a></li><li><a href="validation_ST1.html">Validation — ST1</a></li></ul></div>
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon" aria-hidden="true">☀️</div>
+          <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+        </div>
+        <p>University of Westminster — 4COSC011W Group Project 2026.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="ais.html">Simulator</a></li>
+          <li><a href="team.html">Team</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Student Pages</h4>
+        <ul>
+          <li><a href="pageEditor_ST1.html">Editor — ST1</a></li>
+          <li><a href="validation_ST1.html">Validation — ST1</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 LumEn Team — University of Westminster</span><span>Student 1 — Content Page: Solar Power</span></div>
+    <div class="footer-bottom"><span>© 2026 LumEn Team — University of Westminster</span><span>Student 1 — Content Page:
+        Solar Power</span></div>
   </footer>
 
   <a href="#top" class="go-top" aria-label="Return to top of page">↑</a>
 
 </body>
+
 </html>
