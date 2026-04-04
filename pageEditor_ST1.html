@@ -34,15 +34,12 @@
       top: calc(var(--nav-h) + 1.5rem);
       background: var(--white);
       border-radius: var(--radius);
-      padding: 1.2rem 1.4rem;
+      padding: 1.4rem;
       box-shadow: var(--shadow);
       border-left: 3px solid var(--primary);
       width: 240px;
       min-width: 240px;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      /* ← stacks h4 above ul cleanly */
     }
 
     .side-nav h4 {
@@ -61,12 +58,8 @@
       list-style: none;
       display: flex;
       flex-direction: column;
+      /* ← forces vertical stacking */
       gap: 0;
-      width: 100%;
-    }
-
-    .side-nav ul li {
-      width: 100%;
     }
 
     .side-nav ul li a {
@@ -413,11 +406,11 @@
       <div class="footer-links">
         <h4>Validation</h4>
         <ul>
-          <li><a href="validation_ST1.html">Validation — ST1</a></li>
+          <li><a href="validation_ST1.html">Validation ST1</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 LumEn Team — University of Westminster · 4COSC011W</span><span>Student 1 —
+    <div class="footer-bottom"><span>©️ 2026 LumEn Team — University of Westminster · 4COSC011W</span><span>Student 1 —
         Page Editor</span></div>
   </footer>
 
