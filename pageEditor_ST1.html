@@ -250,7 +250,7 @@
             this array to create &lt;div&gt; elements and inject them into the DOM grid. JavaScript event listeners
             handle the hover interaction (border outline change via element.style), the click-to-expand modal (classList
             manipulation to add the .open class), and the close behaviour (click on close button, click outside modal,
-            and Escape key). User customisation — changing the modal background colour and font family — is handled via
+            and Escape key). User customisation changing the modal background colour and font family is handled via
             input and change event listeners that update the modal box's inline styles using the DOM style API.</p>
           <h3>Accessibility</h3>
           <p>All gallery cards have tabIndex="0", role="button", and descriptive aria-label attributes for keyboard
@@ -286,10 +286,10 @@
           <h2>Challenges and Lessons Learned</h2>
           <p>The main challenge was building a shared CSS template that all four team members could use without
             conflict. Early iterations caused style collisions when students added page-specific rules that overrode
-            global ones. The solution was enforcing CSS specificity discipline — all page-specific rules use class
+            global ones. The solution was enforcing CSS specificity discipline all page-specific rules use class
             selectors scoped to the page (e.g., .hero for the home page) and are clearly commented as "DO NOT OVERRIDE
             IN GLOBAL CSS". This taught me the importance of CSS architecture in team environments and the value of
-            naming conventions. A secondary challenge was the JavaScript-rendered gallery — ensuring screen reader
+            naming conventions. A secondary challenge was the JavaScript-rendered gallery ensuring screen reader
             accessibility required learning about aria-live regions and focus management, which deepened my
             understanding of inclusive design beyond visual appearance.</p>
         </div>
@@ -299,7 +299,7 @@
           <p>Across all pages I implemented: semantic HTML5 elements (&lt;header&gt;, &lt;main&gt;, &lt;nav&gt;,
             &lt;aside&gt;, &lt;article&gt;, &lt;section&gt;, &lt;footer&gt;) to provide meaningful document structure
             for screen readers. All interactive elements are keyboard accessible. Colour contrast meets WCAG AA
-            standards — the primary amber on dark background achieves a ratio above 4.5:1. All images have descriptive
+            standards the primary amber on dark background achieves a ratio above 4.5:1. All images have descriptive
             alt text that conveys meaning rather than just describing the image format. ARIA labels supplement
             interactive elements where HTML semantics alone are insufficient.</p>
         </div>
@@ -390,13 +390,13 @@
             <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">Duckett, J. (2011) <em>HTML and CSS:
                 Design and Build Websites.</em> Indianapolis: John Wiley &amp; Sons.</li>
             <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">MDN Web Docs (2025) <em>CSS Custom
-                Properties.</em> Available at: <a href="#">https://developer.mozilla.org/</a> (Accessed: 15 Feb 2026).
+                Properties.</em> Available at: <a href="https://developer.mozilla.org/">https://developer.mozilla.org/</a> (Accessed: 15 Feb 2026).
             </li>
             <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">Unsplash (2026) <em>Free
-                high-resolution photos.</em> Available at: <a href="#">https://unsplash.com/</a> (Accessed: 1 Mar 2026).
+                high-resolution photos.</em> Available at: <a href="https://unsplash.com/">https://unsplash.com/</a> (Accessed: 1 Mar 2026).
             </li>
             <li style="padding:0.4rem 0;">W3C (2025) <em>Web Content Accessibility Guidelines (WCAG) 2.1.</em> Available
-              at: <a href="#">https://www.w3.org/WAI/WCAG21/</a> (Accessed: 20 Mar 2026).</li>
+              at: <a href="https://www.w3.org/WAI/WCAG21/">https://www.w3.org/WAI/WCAG21/</a> (Accessed: 20 Mar 2026).</li>
           </ul>
         </div>
 
