@@ -117,6 +117,16 @@
       font-style: italic;
     }
 
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
     @media(max-width:768px) {
       .page-layout {
         grid-template-columns: 1fr;
@@ -171,6 +181,8 @@
     <div class="page-layout">
       <aside>
         <nav class="side-nav" aria-label="On-page navigation">
+          <h2 class="visually-hidden">Page navigation</h2>
+          <h3 class="visually-hidden">Sections</h3>
           <h4>On This Page</h4>
           <ul>
             <li><a href="#intro">Introduction</a></li>
@@ -184,10 +196,11 @@
       </aside>
 
       <article>
-
+        <h1 class="visually-hidden">Solar Power — SDG 7 Clean Energy</h1>
+        <h2 class="visually-hidden">Solar Power Article</h2>
         <section id="intro">
           <div class="section-label">SDG 7 · Content Page</div>
-          <h1>Solar Power: Charging the Future</h1>
+          <h2>Solar Power: Charging the Future</h2>
           <p>Solar energy is the most abundant energy source on Earth. Every hour, the sun delivers more energy to our
             planet than humanity uses in an entire year. Harnessing this resource is one of the most powerful tools we
             have for achieving SDG 7 ensuring access to affordable, reliable, sustainable, and modern energy for all.
@@ -266,13 +279,16 @@
           <h3>Key Data Sources</h3>
           <ul style="list-style:none;">
             <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">IRENA (2023) <em>Renewable Power
-                Generation Costs in 2022.</em> Available at: <a href="https://www.irena.org/">https://www.irena.org/</a> (Accessed: 20 Mar
+                Generation Costs in 2022.</em> Available at: <a href="https://www.irena.org/">https://www.irena.org/</a>
+              (Accessed: 20 Mar
               2026).</li>
             <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">United Nations (2023) <em>SDG 7 —
-                Affordable and Clean Energy.</em> Available at: <a href="https://sdgs.un.org/goals/goal7">https://sdgs.un.org/goals/goal7</a>
+                Affordable and Clean Energy.</em> Available at: <a
+                href="https://sdgs.un.org/goals/goal7">https://sdgs.un.org/goals/goal7</a>
               (Accessed: 20 Mar 2026).</li>
             <li style="padding:0.4rem 0;">Energy Saving Trust (2024) <em>Solar Panels.</em> Available at: <a
-                href="https://energysavingtrust.org.uk/">https://energysavingtrust.org.uk/</a> (Accessed: 21 Mar 2026).</li>
+                href="https://energysavingtrust.org.uk/">https://energysavingtrust.org.uk/</a> (Accessed: 21 Mar 2026).
+            </li>
           </ul>
         </section>
 
