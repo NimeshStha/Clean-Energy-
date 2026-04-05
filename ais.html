@@ -172,6 +172,18 @@
       min-width: 180px;
     }
 
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+
     .feedback-msg .level-badge {
       display: inline-block;
       padding: 0.2rem 0.7rem;
@@ -281,7 +293,7 @@
     <p style="color:var(--text-muted);font-size:0.9rem;margin-top:0.5rem;">
       <strong>Scoring:</strong> Low impact = 1–6 pts · Medium = 7–13 pts · High = 14+ pts
     </p>
-    <div class="actions-grid" id="actions-grid" aria-label="Action cards — click to select"></div>
+    <section class="actions-grid" id="actions-grid" aria-label="Action cards — click to select"></section>
   </main>
 
   <div id="feedback-panel" role="region" aria-live="polite" aria-label="Impact score summary">
@@ -303,6 +315,7 @@
   </div>
 
   <footer>
+    <h2 class="visually-hidden">Footer links</h2>
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="logo">
@@ -328,6 +341,7 @@
         <p>The Westminster College group project promoting SDG 7.</p>
       </div>
       <div class="footer-links">
+        <h3 class="visually-hidden">Footer links</h3>
         <h4>Pages</h4>
         <ul>
           <li><a href="home.html">Home</a></li>

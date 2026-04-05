@@ -156,6 +156,16 @@
       cursor: pointer;
       transition: all 0.2s;
     }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
 
     .revisit-btn:hover {
       border-color: var(--primary);
@@ -320,6 +330,7 @@
   </div>
 
   <main id="main-content">
+    <h2 class="visually-hidden">Footer nav</h2>
     <p style="color:var(--text-muted);font-size:0.88rem;margin-top:0.5rem;">
       Click a step to provide your details using prompts. You can skip steps and return later.
     </p>
@@ -337,7 +348,7 @@
             <div class="progress-bar-fill" id="progress-fill"></div>
           </div>
         </div>
-        <div class="steps-row" aria-label="Profile building steps">
+        <section class="steps-row" aria-label="Profile building steps">
           <button class="step-btn" id="btn-step1" onclick="runStep(1)" aria-label="Step 1: Basic Details">
             <span class="step-icon">👤</span> Step 1: Basic Details
           </button>
@@ -347,7 +358,7 @@
           <button class="step-btn" id="btn-step3" onclick="runStep(3)" aria-label="Step 3: Actions &amp; Goals">
             <span class="step-icon">🌱</span> Step 3: Actions &amp; Goals
           </button>
-        </div>
+        </section>
         <div class="revisit-row">
           <h4>Revisit a step</h4>
           <button class="revisit-btn" onclick="runStep(1)" aria-label="Revisit step 1">Revisit Step 1</button>
@@ -363,7 +374,7 @@
           <div class="icon">🔋</div>
           <p>Your profile is empty. Click a step on the left to begin!</p>
         </div>
-        <div class="profile-section" id="section-1" aria-label="Basic details section">
+        <section class="profile-section" id="section-1" aria-label="Basic details section">
           <h4>Step 1 · Basic Details</h4>
           <div class="profile-row">
             <div class="profile-field">
@@ -379,8 +390,8 @@
               <div class="val" id="out-role">—</div>
             </div>
           </div>
-        </div>
-        <div class="profile-section" id="section-2" aria-label="Energy interests section">
+        </section>
+        <section class="profile-section" id="section-2" aria-label="Energy interests section">
           <h4>Step 2 · Energy Interests</h4>
           <div class="profile-row">
             <div class="profile-field">
@@ -396,8 +407,8 @@
               <div class="val" id="out-time">—</div>
             </div>
           </div>
-        </div>
-        <div class="profile-section" id="section-3" aria-label="Actions and goals section">
+        </section>
+        <section class="profile-section" id="section-3" aria-label="Actions and goals section">
           <h4>Step 3 · Actions &amp; Goals</h4>
           <div class="profile-row">
             <div class="profile-field">
@@ -413,7 +424,7 @@
               <div class="val" id="out-inspire">—</div>
             </div>
           </div>
-        </div>
+        </section>
         <div id="confirmation" class="confirmation" role="alert">
           🎉 Profile complete! You're a SolarBears Clean Energy Champion. Consider sharing your commitments with others.
         </div>
