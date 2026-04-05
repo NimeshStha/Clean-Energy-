@@ -301,6 +301,16 @@
     .success-msg.show {
       display: block;
     }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
 
     @media(max-width:640px) {
       .form-row {
@@ -316,6 +326,7 @@
         width: 100%;
         height: 160px;
       }
+
     }
   </style>
 </head>
@@ -370,6 +381,7 @@
         <div>
           <div class="section-label">Opportunities</div>
           <h2 class="section-title" id="prog-heading">Clean Energy Programmes</h2>
+          <h3 class="visually-hidden">Footer sections</h3>
         </div>
         <select class="sort-select" aria-label="Sort programmes">
           <option>Most Popular</option>
@@ -563,6 +575,7 @@
         <p>The Westminster College group project promoting SDG 7.</p>
       </div>
       <div class="footer-links">
+        <h3 class="visually-hidden">Footer nav</h3>
         <h4>Pages</h4>
         <ul>
           <li><a href="home.html">Home</a></li>
