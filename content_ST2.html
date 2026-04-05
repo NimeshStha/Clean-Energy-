@@ -119,6 +119,17 @@
             font-style: italic;
         }
 
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+
         @media(max-width:768px) {
             .page-layout {
                 grid-template-columns: 1fr;
@@ -197,10 +208,11 @@
 
             <!-- Article Content -->
             <article>
-
+                <h1 class="visually-hidden">Solar Power — SDG 7 Clean Energy</h1>
+                <h2 class="visually-hidden">Solar Power Article</h2>
                 <section id="intro">
                     <div class="section-label">SDG 7 · Content Page</div>
-                    <h1>Wind Energy: Harnessing the Power of Air</h1>
+                    <h2>Wind Energy: Harnessing the Power of Air</h2>
                     <p>Wind energy is one of the fastest-growing and most cost-effective sources of renewable
                         electricity in the
                         world. By converting the kinetic energy of moving air into electricity, wind turbines offer a
@@ -347,7 +359,8 @@
                     <ul style="list-style:none;">
                         <li style="padding:0.4rem 0;border-bottom:1px dashed var(--border);">Global Wind Energy Council
                             (2024)
-                            <em>Global Wind Report 2024.</em> Available at: <a href="https://gwec.net/">https://gwec.net/</a> (Accessed:
+                            <em>Global Wind Report 2024.</em> Available at: <a
+                                href="https://gwec.net/">https://gwec.net/</a> (Accessed:
                             20 Mar
                             2026).
                         </li>
@@ -361,9 +374,12 @@
                             <em>SDG 7 —
                                 Affordable and Clean Energy.</em> Available at: <a
                                 href="https://sdgs.un.org/goals/goal7">https://sdgs.un.org/goals/goal7</a>
-                            (Accessed: 20 Mar 2026).</li>
+                            (Accessed: 20 Mar 2026).
+                        </li>
                         <li style="padding:0.4rem 0;">Energy Saving Trust (2024) <em>Wind Turbines.</em> Available at:
-                            <a href="https://energysavingtrust.org.uk/">https://energysavingtrust.org.uk/</a> (Accessed: 21 Mar 2026).</li>
+                            <a href="https://energysavingtrust.org.uk/">https://energysavingtrust.org.uk/</a> (Accessed:
+                            21 Mar 2026).
+                        </li>
                     </ul>
                 </section>
 
