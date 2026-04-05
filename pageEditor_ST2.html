@@ -222,7 +222,7 @@
                         radial-gradient
                         and animated with a @keyframes pulseGlow rule that scales and fades the element continuously,
                         adding visual depth without JavaScript. The CSS loader animation uses a rotating border element
-                        created with border-top-color on a circular div, animated via @keyframes spin — a pure CSS
+                        created with border-top-color on a circular div, animated via @keyframes spin a pure CSS
                         technique requiring no images or JavaScript. All text elements use CSS animation with @keyframes
                         fadeDown and animation-delay staggering to produce a sequential reveal effect as the page loads.
                     </p>
@@ -268,11 +268,11 @@
                         bottom of the viewport as the user scrolls through the action cards.</p>
                     <h3>JavaScript Functionality</h3>
                     <p>A JavaScript Set object tracks which action IDs are currently selected. When a card is clicked,
-                        a toggle function checks whether the ID is in the Set using has() — if so it removes it with
+                        a toggle function checks whether the ID is in the Set using has() if so it removes it with
                         delete(), otherwise it adds it with add(). After every toggle, an updateFeedback() function
                         iterates over the selected Set, looks up the corresponding action object, and sums the impact
-                        points. Conditional logic (if/else if/else) compares the total against three thresholds — Low
-                        (0–6), Medium (7–13), and High (14+) — and updates the badge text, badge CSS class, feedback
+                        points. Conditional logic (if/else if/else) compares the total against three thresholds Low
+                        (0–6), Medium (7–13), and High (14+) and updates the badge text, badge CSS class, feedback
                         message, and page background colour accordingly using document.body.style.background. A reset
                         button clears the Set, removes all .selected classes from cards, and resets the feedback panel
                         to its default state. Keyboard accessibility is implemented by listening for the Enter and Space
@@ -303,15 +303,15 @@
                         carries a scroll-margin-top value to account for the fixed header when users navigate via anchor
                         links in the sidebar. The callout block uses a left border accent (border-left: 4px solid
                         var(--primary)) with a semi-transparent amber background created using rgba() to visually
-                        distinguish key statistics from body text. Seven distinct content sections — Introduction, How
-                        Wind Works, Types of Wind Energy, Benefits, Student Actions, Global Picture, and References —
+                        distinguish key statistics from body text. Seven distinct content sections Introduction, How
+                        Wind Works, Types of Wind Energy, Benefits, Student Actions, Global Picture, and References
                         ensure sufficient depth for meaningful internal navigation.</p>
                     <h3>Accessibility</h3>
                     <p>The sidebar nav is wrapped in an &lt;aside&gt; element with aria-label="On-page navigation" to
                         distinguish it from the main navigation. All seven images carry descriptive alt text specific to
                         their content context. A visible "Go to Top" button with aria-label is fixed to the bottom-right
-                        of the viewport using position: fixed. Heading hierarchy is maintained strictly throughout —
-                        one h1 for the page title, h2 for major sections, and h3 for subsections — supporting both
+                        of the viewport using position: fixed. Heading hierarchy is maintained strictly throughout
+                        one h1 for the page title, h2 for major sections, and h3 for subsections supporting both
                         readability and screen reader navigation.</p>
                     <h3>Link to Validation</h3>
                     <p><a href="validation_ST2.html#contentVal">View Content Page validation evidence →</a></p>
@@ -326,12 +326,12 @@
                         independently of JavaScript, so if the skip button cleared the JS timer but the meta tag still
                         redirected, users would be forced to the home page regardless. The solution was to rely on
                         JavaScript's window.location.href for the actual redirect and treat the meta tag purely as a
-                        no-JS fallback — a distinction that required careful thinking about progressive enhancement.
+                        no-JS fallback a distinction that required careful thinking about progressive enhancement.
                         For the Action Impact Simulator, the main challenge was managing the dynamic rendering of cards
                         alongside accessible ARIA state. Initially, aria-checked was not being updated on selection,
                         meaning screen reader users received no feedback when selecting or deselecting cards. Adding
                         setAttribute('aria-checked', 'true/false') inside the toggle function resolved this. This
-                        experience taught me that accessibility cannot be bolted on after the fact — it must be
+                        experience taught me that accessibility cannot be bolted on after the fact it must be
                         considered at every stage of JavaScript-driven DOM manipulation.</p>
                 </div>
 
@@ -341,8 +341,8 @@
                         an afterthought. The Splash Screen uses ARIA roles on the loader and hidden attributes on
                         decorative elements. The Action Impact Simulator uses role="checkbox" and aria-live to keep
                         screen reader users informed of both card selection state and score updates in real time. The
-                        Wind Energy content page uses semantic HTML5 sectioning elements throughout — &lt;article&gt;,
-                        &lt;section&gt;, &lt;aside&gt;, &lt;nav&gt; — to provide a meaningful document outline.
+                        Wind Energy content page uses semantic HTML5 sectioning elements throughout &lt;article&gt;,
+                        &lt;section&gt;, &lt;aside&gt;, &lt;nav&gt; to provide a meaningful document outline.
                         All interactive elements across my pages are keyboard accessible, tested by navigating with
                         Tab and Enter keys only. Colour contrast on all text elements meets or exceeds the WCAG 2.1
                         AA standard of 4.5:1 for normal text.</p>
@@ -352,10 +352,10 @@
                     <h2>Compliance with JANET Regulations</h2>
                     <p>All pages I created comply with JANET regulations governing web page publication at UK
                         universities.
-                        All content is original and written specifically for this coursework — no text has been copied
+                        All content is original and written specifically for this coursework no text has been copied
                         from the UN SDGs website or any other external source. Statistical claims (e.g. wind capacity
-                        growth figures) are attributed to named sources — the Global Wind Energy Council and the
-                        International Energy Agency — and referenced in full in the References section of each page.
+                        growth figures) are attributed to named sources the Global Wind Energy Council and the
+                        International Energy Agency and referenced in full in the References section of each page.
                         All images are sourced from Unsplash under their free commercial licence, with no attribution
                         legally required, though sources are noted in references as good practice. The Splash Screen
                         and Simulator collect no personal data. No offensive, discriminatory, or defamatory content
