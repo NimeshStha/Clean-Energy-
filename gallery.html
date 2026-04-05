@@ -4,12 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery | LumEn — SDG 7 Clean Energy</title>
+  <title>Gallery | SolarBears — SDG 7 Clean Energy</title>
   <link rel="stylesheet" href="style.css">
   <style>
     /* ── Gallery Page Embedded CSS ── */
 
-    /* 1. Page header banner */
     .page-banner {
       background: linear-gradient(135deg, var(--secondary) 0%, var(--mid) 100%);
       padding: 3.5rem 2rem;
@@ -38,7 +37,6 @@
       margin-top: 0.5rem;
     }
 
-    /* 2. Thumbnail grid */
     .thumb-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -46,7 +44,6 @@
       padding: 2rem 0;
     }
 
-    /* 3. Individual thumbnail card */
     .thumb-card {
       position: relative;
       border-radius: var(--radius);
@@ -94,7 +91,6 @@
       margin-top: 0.2rem;
     }
 
-    /* 4. Modal overlay */
     #modal-overlay {
       display: none;
       position: fixed;
@@ -111,7 +107,6 @@
       display: flex;
     }
 
-    /* 5. Modal box */
     #modal-box {
       background: var(--white);
       border-radius: var(--radius-lg);
@@ -181,7 +176,6 @@
       background: rgba(0, 0, 0, 0.7);
     }
 
-    /* User customisation controls */
     .modal-controls {
       display: flex;
       gap: 0.8rem;
@@ -221,13 +215,28 @@
 
 <body>
 
-  <!-- HEADER -->
   <span id="top" style="position:absolute;top:0;"></span>
   <header>
     <div class="header-inner">
-      <a href="home.html" class="logo" aria-label="LumEn Home">
-        <div class="logo-icon" aria-hidden="true">☀️</div>
-        <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+      <a href="home.html" class="logo" aria-label="SolarBears Home">
+        <div class="logo-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 26 26" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <line x1="13" y1="1" x2="13" y2="4" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="13" y1="22" x2="13" y2="25" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="1" y1="13" x2="4" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="22" y1="13" x2="25" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="19.7" y1="19.7" x2="21.8" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="21.8" y1="4.2" x2="19.7" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="6.3" y1="19.7" x2="4.2" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <circle cx="13" cy="13" r="7" fill="#0d1f17" />
+            <circle cx="8.5" cy="8" r="2.2" fill="#0d1f17" />
+            <circle cx="17.5" cy="8" r="2.2" fill="#0d1f17" />
+            <rect x="8" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+            <rect x="14" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+            <line x1="12" y1="12.9" x2="14" y2="12.9" stroke="#f4a020" stroke-width="1.2" />
+          </svg></div>
+        <div class="logo-text">SolarBears <span>SDG 7 · Clean Energy</span></div>
       </a>
       <nav aria-label="Main Navigation">
         <ul>
@@ -243,22 +252,17 @@
     </div>
   </header>
 
-  <!-- BANNER -->
   <div class="page-banner">
     <h1>Clean Energy Gallery</h1>
     <p>Click any image to explore — and personalise the view to your taste</p>
   </div>
 
-  <!-- MAIN -->
   <main id="main-content">
     <section aria-label="Photo gallery of clean energy topics">
-      <div class="thumb-grid" id="thumb-grid">
-        <!-- Thumbnails injected by JS -->
-      </div>
+      <div class="thumb-grid" id="thumb-grid"></div>
     </section>
   </main>
 
-  <!-- MODAL -->
   <div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div id="modal-box">
       <button id="modal-close" aria-label="Close modal">✕</button>
@@ -270,7 +274,6 @@
       <div class="modal-controls">
         <label for="bg-color-pick">Background:</label>
         <input type="color" id="bg-color-pick" value="#f0f7f2" aria-label="Choose modal background colour">
-
         <label for="font-pick">Font:</label>
         <select id="font-pick" aria-label="Choose modal font style">
           <option value="'DM Sans', sans-serif">DM Sans (default)</option>
@@ -282,13 +285,28 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="logo">
-          <div class="logo-icon" aria-hidden="true">☀️</div>
-          <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+          <div class="logo-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 26 26" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <line x1="13" y1="1" x2="13" y2="4" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="13" y1="22" x2="13" y2="25" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="1" y1="13" x2="4" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="22" y1="13" x2="25" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="19.7" y1="19.7" x2="21.8" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="21.8" y1="4.2" x2="19.7" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="6.3" y1="19.7" x2="4.2" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <circle cx="13" cy="13" r="7" fill="#0d1f17" />
+              <circle cx="8.5" cy="8" r="2.2" fill="#0d1f17" />
+              <circle cx="17.5" cy="8" r="2.2" fill="#0d1f17" />
+              <rect x="8" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+              <rect x="14" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+              <line x1="12" y1="12.9" x2="14" y2="12.9" stroke="#f4a020" stroke-width="1.2" />
+            </svg></div>
+          <div class="logo-text">SolarBears <span>SDG 7 · Clean Energy</span></div>
         </div>
         <p>The Westminster College group project promoting SDG 7.</p>
       </div>
@@ -312,7 +330,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 LumEn Team — The Westminster College</span>
+      <span>© 2026 SolarBears Team — The Westminster College</span>
       <span>Student 1 — Gallery Page</span>
     </div>
   </footer>
@@ -320,102 +338,32 @@
   <a href="#top" class="go-top" aria-label="Return to top">↑</a>
 
   <script>
-    // ── Gallery Data ──
     const galleryItems = [
-      {
-        id: 1,
-        title: 'Rooftop Solar Panels',
-        label: 'Solar Energy',
-        src: 'rooftop solar panel.jpg',
-        alt: 'Solar panels mounted on a rooftop generating electricity',
-        desc: 'Photovoltaic solar panels convert sunlight directly into electricity. Modern panels achieve 20–23% efficiency and can power an average UK home from just 12–15 panels. The cost of solar has dropped 89% since 2010, making rooftop solar the most affordable electricity source in history.'
-      },
-      {
-        id: 2,
-        title: 'Offshore Wind Farm',
-        label: 'Wind Power',
-        src: 'offshore wind farm.jpg',
-        alt: 'Offshore wind turbines in the North Sea generating clean electricity',
-        desc: 'Offshore wind turbines harness powerful, consistent coastal winds to generate electricity. The UK is the world leader in offshore wind capacity. A single large turbine can power over 1,000 homes for a year, and the sector is rapidly reducing costs through innovation.'
-      },
-      {
-        id: 3,
-        title: 'Hydroelectric Dam',
-        label: 'Hydro Power',
-        src: 'hydroelectric dam.jpg',
-        alt: 'A large hydroelectric dam generating renewable energy from flowing water',
-        desc: 'Hydroelectric power harnesses the kinetic energy of falling or flowing water to generate electricity. It accounts for about 16% of global electricity production and is one of the oldest and most reliable renewable energy technologies, providing both baseload and flexible power.'
-      },
-      {
-        id: 4,
-        title: 'EV Battery Charging',
-        label: 'Energy Storage',
-        src: 'ev battery charging.jpg',
-        alt: 'Electric vehicle plugged in and charging at a station',
-        desc: 'Battery storage is critical to enabling widespread renewable energy adoption. By storing surplus solar and wind power, batteries allow clean energy to be used when the sun isn\'t shining or wind isn\'t blowing. EV batteries can even feed power back to the grid via Vehicle-to-Grid technology.'
-      },
-      {
-        id: 5,
-        title: 'Smart Energy Meter',
-        label: 'Efficiency',
-        src: 'smart energy meter.jpg',
-        alt: 'Smart energy meter display showing real-time electricity consumption',
-        desc: 'Smart meters give households and businesses real-time visibility of energy use, helping to reduce waste and shift consumption to off-peak hours. Studies show smart meters can cut household energy bills by up to 15% through behaviour change alone — no new technology required.'
-      },
-      {
-        id: 6,
-        title: 'Community Solar Garden',
-        label: 'Community Energy',
-        src: 'community solar garden.jpg',
-        alt: 'A community solar installation with many panels in a field',
-        desc: 'Community energy projects allow people who can\'t install solar on their own homes to share the benefits of renewable energy. Subscribers receive credits on their bills from power generated by a shared array. Community solar democratises access to clean energy regardless of income or housing type.'
-      },
-      {
-        id: 7,
-        title: 'Geothermal Energy Plant',
-        label: 'Geothermal',
-        src: 'geothermal energy plant.jpg',
-        alt: 'Steam rising from a geothermal energy generation plant',
-        desc: 'Geothermal energy taps heat from beneath the Earth\'s surface to produce electricity and heating. Iceland meets nearly 100% of its heating needs geothermally, and countries near tectonic plate boundaries have enormous untapped potential that could contribute significantly to global clean energy goals.'
-      },
-      {
-        id: 8,
-        title: 'Bioenergy from Waste',
-        label: 'Bioenergy',
-        src: 'bio energy from waste.jpg',
-        alt: 'Anaerobic digestion facility converting organic waste to biogas',
-        desc: 'Bioenergy converts organic waste — food scraps, agricultural residues, and sewage — into biogas or electricity. This creates a circular economy where waste becomes a resource, reducing landfill emissions while generating clean power. Campus food waste could power student accommodation heating systems.'
-      }
+      { id: 1, title: 'Rooftop Solar Panels', label: 'Solar Energy', src: 'rooftop solar panel.jpg', alt: 'Solar panels mounted on a rooftop generating electricity', desc: 'Photovoltaic solar panels convert sunlight directly into electricity. Modern panels achieve 20–23% efficiency and can power an average UK home from just 12–15 panels. The cost of solar has dropped 89% since 2010, making rooftop solar the most affordable electricity source in history.' },
+      { id: 2, title: 'Offshore Wind Farm', label: 'Wind Power', src: 'offshore wind farm.jpg', alt: 'Offshore wind turbines in the North Sea generating clean electricity', desc: 'Offshore wind turbines harness powerful, consistent coastal winds to generate electricity. The UK is the world leader in offshore wind capacity. A single large turbine can power over 1,000 homes for a year, and the sector is rapidly reducing costs through innovation.' },
+      { id: 3, title: 'Hydroelectric Dam', label: 'Hydro Power', src: 'hydroelectric dam.jpg', alt: 'A large hydroelectric dam generating renewable energy from flowing water', desc: 'Hydroelectric power harnesses the kinetic energy of falling or flowing water to generate electricity. It accounts for about 16% of global electricity production and is one of the oldest and most reliable renewable energy technologies, providing both baseload and flexible power.' },
+      { id: 4, title: 'EV Battery Charging', label: 'Energy Storage', src: 'ev battery charging.jpg', alt: 'Electric vehicle plugged in and charging at a station', desc: 'Battery storage is critical to enabling widespread renewable energy adoption. By storing surplus solar and wind power, batteries allow clean energy to be used when the sun isn\'t shining or wind isn\'t blowing. EV batteries can even feed power back to the grid via Vehicle-to-Grid technology.' },
+      { id: 5, title: 'Smart Energy Meter', label: 'Efficiency', src: 'smart energy meter.jpg', alt: 'Smart energy meter display showing real-time electricity consumption', desc: 'Smart meters give households and businesses real-time visibility of energy use, helping to reduce waste and shift consumption to off-peak hours. Studies show smart meters can cut household energy bills by up to 15% through behaviour change alone — no new technology required.' },
+      { id: 6, title: 'Community Solar Garden', label: 'Community Energy', src: 'community solar garden.jpg', alt: 'A community solar installation with many panels in a field', desc: 'Community energy projects allow people who can\'t install solar on their own homes to share the benefits of renewable energy. Subscribers receive credits on their bills from power generated by a shared array. Community solar democratises access to clean energy regardless of income or housing type.' },
+      { id: 7, title: 'Geothermal Energy Plant', label: 'Geothermal', src: 'geothermal energy plant.jpg', alt: 'Steam rising from a geothermal energy generation plant', desc: 'Geothermal energy taps heat from beneath the Earth\'s surface to produce electricity and heating. Iceland meets nearly 100% of its heating needs geothermally, and countries near tectonic plate boundaries have enormous untapped potential that could contribute significantly to global clean energy goals.' },
+      { id: 8, title: 'Bioenergy from Waste', label: 'Bioenergy', src: 'bio energy from waste.jpg', alt: 'Anaerobic digestion facility converting organic waste to biogas', desc: 'Bioenergy converts organic waste — food scraps, agricultural residues, and sewage — into biogas or electricity. This creates a circular economy where waste becomes a resource, reducing landfill emissions while generating clean power. Campus food waste could power student accommodation heating systems.' }
     ];
 
-    // Build thumbnails
     const grid = document.getElementById('thumb-grid');
-
     galleryItems.forEach(item => {
       const card = document.createElement('div');
       card.className = 'thumb-card';
       card.tabIndex = 0;
       card.setAttribute('role', 'button');
       card.setAttribute('aria-label', `Open details for ${item.title}`);
-
-      card.innerHTML = `
-        <img src="${item.src}" alt="${item.alt}" loading="lazy">
-        <div class="thumb-label">${item.title}<span>${item.label}</span></div>
-      `;
-
-      // Click to open modal
+      card.innerHTML = `<img src="${item.src}" alt="${item.alt}" loading="lazy"><div class="thumb-label">${item.title}<span>${item.label}</span></div>`;
       card.addEventListener('click', () => openModal(item));
-      // Keyboard accessibility
       card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openModal(item); });
-
-      // JS-driven hover interaction feedback
       card.addEventListener('mouseenter', () => card.style.outline = '3px solid rgba(244,160,32,0.5)');
       card.addEventListener('mouseleave', () => card.style.outline = '');
-
       grid.appendChild(card);
     });
 
-    // Open modal
     const overlay = document.getElementById('modal-overlay');
     const modalImg = document.getElementById('modal-img');
     const modalTitle = document.getElementById('modal-title');
@@ -424,39 +372,16 @@
     const closeBtn = document.getElementById('modal-close');
 
     function openModal(item) {
-      modalImg.src = item.src;
-      modalImg.alt = item.alt;
-      modalTitle.textContent = item.title;
-      modalDesc.textContent = item.desc;
-      overlay.classList.add('open');
-      closeBtn.focus();
+      modalImg.src = item.src; modalImg.alt = item.alt;
+      modalTitle.textContent = item.title; modalDesc.textContent = item.desc;
+      overlay.classList.add('open'); closeBtn.focus();
     }
-
-    function closeModal() {
-      overlay.classList.remove('open');
-    }
-
+    function closeModal() { overlay.classList.remove('open'); }
     closeBtn.addEventListener('click', closeModal);
-
-    // Close on overlay click (outside box)
-    overlay.addEventListener('click', e => {
-      if (e.target === overlay) closeModal();
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
-    });
-
-    // User customisation — background colour
-    document.getElementById('bg-color-pick').addEventListener('input', function () {
-      modalBox.querySelector('.modal-body').style.backgroundColor = this.value;
-    });
-
-    // User customisation — font style
-    document.getElementById('font-pick').addEventListener('change', function () {
-      modalBox.querySelector('.modal-body').style.fontFamily = this.value;
-    });
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    document.getElementById('bg-color-pick').addEventListener('input', function () { modalBox.querySelector('.modal-body').style.backgroundColor = this.value; });
+    document.getElementById('font-pick').addEventListener('change', function () { modalBox.querySelector('.modal-body').style.fontFamily = this.value; });
   </script>
 
 </body>

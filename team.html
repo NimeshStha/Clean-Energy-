@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Team | LumEn — SDG 7</title>
+  <title>Team | SolarBears — SDG 7</title>
   <link rel="stylesheet" href="style.css">
   <style>
     .page-banner {
@@ -46,14 +46,12 @@
       margin: 0 auto;
     }
 
-    /* Member card container */
     .member-block {
       position: relative;
       cursor: pointer;
       outline: none;
     }
 
-    /* Thumbnail */
     .member-thumb {
       position: relative;
       border-radius: var(--radius-lg);
@@ -70,7 +68,6 @@
       transition: transform 0.4s ease, opacity 0.3s ease;
     }
 
-    /* Hover / focus effects on thumbnail */
     .member-block:hover .member-thumb,
     .member-block:focus .member-thumb {
       transform: translateY(-6px);
@@ -83,7 +80,6 @@
       opacity: 0.85;
     }
 
-    /* Colour overlay */
     .member-thumb::after {
       content: '';
       position: absolute;
@@ -92,7 +88,6 @@
       transition: opacity 0.35s;
     }
 
-    /* SDG role badge on thumb */
     .member-role-badge {
       position: absolute;
       bottom: 1rem;
@@ -115,7 +110,6 @@
       font-weight: 600;
     }
 
-    /* Expandable details panel — CSS-only reveal on hover/focus */
     .member-details {
       background: var(--white);
       border-radius: 0 0 var(--radius-lg) var(--radius-lg);
@@ -172,7 +166,6 @@
         gap: 1rem;
       }
     }
-  
   </style>
 </head>
 
@@ -180,9 +173,25 @@
   <span id="top" style="position:absolute;top:0;"></span>
   <header>
     <div class="header-inner">
-      <a href="home.html" class="logo" aria-label="LumEn Home">
-        <div class="logo-icon" aria-hidden="true">☀️</div>
-        <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+      <a href="home.html" class="logo" aria-label="SolarBears Home">
+        <div class="logo-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 26 26" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <line x1="13" y1="1" x2="13" y2="4" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="13" y1="22" x2="13" y2="25" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="1" y1="13" x2="4" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="22" y1="13" x2="25" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="19.7" y1="19.7" x2="21.8" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="21.8" y1="4.2" x2="19.7" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="6.3" y1="19.7" x2="4.2" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <circle cx="13" cy="13" r="7" fill="#0d1f17" />
+            <circle cx="8.5" cy="8" r="2.2" fill="#0d1f17" />
+            <circle cx="17.5" cy="8" r="2.2" fill="#0d1f17" />
+            <rect x="8" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+            <rect x="14" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+            <line x1="12" y1="12.9" x2="14" y2="12.9" stroke="#f4a020" stroke-width="1.2" />
+          </svg></div>
+        <div class="logo-text">SolarBears <span>SDG 7 · Clean Energy</span></div>
       </a>
       <nav aria-label="Main Navigation">
         <ul>
@@ -204,7 +213,7 @@
   </div>
 
   <main id="main-content">
-    <div class="section-label" style="margin-top:2rem;">The LumEn Team</div>
+    <div class="section-label" style="margin-top:2rem;">The SolarBears Team</div>
     <p class="section-sub">Three students from The Westminster College collaborating to promote SDG 7 — Affordable
       and Clean Energy.</p>
 
@@ -213,16 +222,15 @@
       <!-- Member 1 -->
       <div class="member-block" tabindex="0" aria-label="Student 1 — Template and Home Page developer">
         <div class="member-thumb">
-          <img src="st1.jpg"
-            alt="Portrait of Student 1 — template and home page developer">
+          <img src="st1.jpg" alt="Portrait of Student 1 — template and home page developer">
           <div class="member-role-badge">
             Student 1<span>Template &amp; Home Page</span>
           </div>
         </div>
         <div class="member-details">
           <h4>Full Name — Student 1</h4>
-          <p>Led the visual design of LumEn, building the shared HTML template and global CSS used by all team members.
-          </p>
+          <p>Led the visual design of SolarBears, building the shared HTML template and global CSS used by all team
+            members.</p>
           <ul>
             <li>HTML Template &amp; Global CSS</li>
             <li>Home Page &amp; Gallery</li>
@@ -234,8 +242,7 @@
       <!-- Member 2 -->
       <div class="member-block" tabindex="0" aria-label="Student 2 — Splash screen and simulator developer">
         <div class="member-thumb">
-          <img src="st2.jpg"
-            alt="Portrait of Student 2 — splash screen and simulator developer">
+          <img src="st2.jpg" alt="Portrait of Student 2 — splash screen and simulator developer">
           <div class="member-role-badge">
             Student 2<span>Splash &amp; Simulator</span>
           </div>
@@ -255,8 +262,7 @@
       <!-- Member 3 -->
       <div class="member-block" tabindex="0" aria-label="Student 3 — Feedback and team page developer">
         <div class="member-thumb">
-          <img src="st3.jpg"
-            alt="Portrait of Student 3 — feedback and team page developer">
+          <img src="st3.jpg" alt="Portrait of Student 3 — feedback and team page developer">
           <div class="member-role-badge">
             Student 3<span>Feedback &amp; Team</span>
           </div>
@@ -273,7 +279,6 @@
         </div>
       </div>
 
-
     </div>
   </main>
 
@@ -281,8 +286,24 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="logo">
-          <div class="logo-icon" aria-hidden="true">☀️</div>
-          <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+          <div class="logo-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 26 26" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <line x1="13" y1="1" x2="13" y2="4" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="13" y1="22" x2="13" y2="25" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="1" y1="13" x2="4" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="22" y1="13" x2="25" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="19.7" y1="19.7" x2="21.8" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="21.8" y1="4.2" x2="19.7" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="6.3" y1="19.7" x2="4.2" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <circle cx="13" cy="13" r="7" fill="#0d1f17" />
+              <circle cx="8.5" cy="8" r="2.2" fill="#0d1f17" />
+              <circle cx="17.5" cy="8" r="2.2" fill="#0d1f17" />
+              <rect x="8" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+              <rect x="14" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+              <line x1="12" y1="12.9" x2="14" y2="12.9" stroke="#f4a020" stroke-width="1.2" />
+            </svg></div>
+          <div class="logo-text">SolarBears <span>SDG 7 · Clean Energy</span></div>
         </div>
         <p>The Westminster College — 4COSC011W Group Project 2026.</p>
       </div>
@@ -303,7 +324,7 @@
         </ul>
       </div>
     </div>
-    <div class="footer-bottom"><span>©️ 2026 LumEn Team — The Westminster College</span><span>Student 3 — Team
+    <div class="footer-bottom"><span>© 2026 SolarBears Team — The Westminster College</span><span>Student 3 — Team
         Page</span></div>
   </footer>
 

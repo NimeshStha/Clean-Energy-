@@ -4,12 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impact Simulator | LumEn — SDG 7</title>
+  <title>Impact Simulator | SolarBears — SDG 7</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ── AIS Embedded CSS (min 5 rules) ── */
-
-    /* 1. Page background — changes dynamically via JS */
     body {
       transition: background 0.6s ease;
     }
@@ -44,7 +41,6 @@
       margin-top: 0.4rem;
     }
 
-    /* 2. Action cards grid */
     .actions-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -52,7 +48,6 @@
       margin: 2.5rem 0;
     }
 
-    /* 3. Individual action card */
     .action-card {
       background: var(--white);
       border-radius: var(--radius);
@@ -72,7 +67,6 @@
       box-shadow: var(--shadow-lg);
     }
 
-    /* 4. Selected state */
     .action-card.selected {
       border-color: var(--primary);
       background: rgba(244, 160, 32, 0.06);
@@ -130,7 +124,6 @@
       font-family: var(--font-display);
     }
 
-    /* 5. Feedback panel */
     #feedback-panel {
       position: sticky;
       bottom: 0;
@@ -231,11 +224,6 @@
       color: var(--primary);
     }
 
-    #reset-btn:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
     @media (max-width: 640px) {
       #feedback-panel {
         flex-direction: column;
@@ -247,13 +235,28 @@
 
 <body>
 
-  <!-- HEADER -->
   <span id="top" style="position:absolute;top:0;"></span>
   <header>
     <div class="header-inner">
-      <a href="home.html" class="logo" aria-label="LumEn Home">
-        <div class="logo-icon" aria-hidden="true">☀️</div>
-        <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+      <a href="home.html" class="logo" aria-label="SolarBears Home">
+        <div class="logo-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 26 26" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <line x1="13" y1="1" x2="13" y2="4" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="13" y1="22" x2="13" y2="25" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="1" y1="13" x2="4" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="22" y1="13" x2="25" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="19.7" y1="19.7" x2="21.8" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="21.8" y1="4.2" x2="19.7" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="6.3" y1="19.7" x2="4.2" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <circle cx="13" cy="13" r="7" fill="#0d1f17" />
+            <circle cx="8.5" cy="8" r="2.2" fill="#0d1f17" />
+            <circle cx="17.5" cy="8" r="2.2" fill="#0d1f17" />
+            <rect x="8" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+            <rect x="14" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+            <line x1="12" y1="12.9" x2="14" y2="12.9" stroke="#f4a020" stroke-width="1.2" />
+          </svg></div>
+        <div class="logo-text">SolarBears <span>SDG 7 · Clean Energy</span></div>
       </a>
       <nav aria-label="Main Navigation">
         <ul>
@@ -278,13 +281,9 @@
     <p style="color:var(--text-muted);font-size:0.9rem;margin-top:0.5rem;">
       <strong>Scoring:</strong> Low impact = 1–6 pts · Medium = 7–13 pts · High = 14+ pts
     </p>
-
-    <div class="actions-grid" id="actions-grid" aria-label="Action cards — click to select">
-      <!-- Injected by JS -->
-    </div>
+    <div class="actions-grid" id="actions-grid" aria-label="Action cards — click to select"></div>
   </main>
 
-  <!-- Sticky Feedback Panel -->
   <div id="feedback-panel" role="region" aria-live="polite" aria-label="Impact score summary">
     <div class="feedback-stats">
       <div class="fb-stat">
@@ -303,13 +302,28 @@
     <button id="reset-btn" aria-label="Reset all selections">Reset</button>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="logo">
-          <div class="logo-icon" aria-hidden="true">☀️</div>
-          <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+          <div class="logo-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 26 26" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <line x1="13" y1="1" x2="13" y2="4" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="13" y1="22" x2="13" y2="25" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="1" y1="13" x2="4" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="22" y1="13" x2="25" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="19.7" y1="19.7" x2="21.8" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="21.8" y1="4.2" x2="19.7" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="6.3" y1="19.7" x2="4.2" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <circle cx="13" cy="13" r="7" fill="#0d1f17" />
+              <circle cx="8.5" cy="8" r="2.2" fill="#0d1f17" />
+              <circle cx="17.5" cy="8" r="2.2" fill="#0d1f17" />
+              <rect x="8" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+              <rect x="14" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+              <line x1="12" y1="12.9" x2="14" y2="12.9" stroke="#f4a020" stroke-width="1.2" />
+            </svg></div>
+          <div class="logo-text">SolarBears <span>SDG 7 · Clean Energy</span></div>
         </div>
         <p>The Westminster College group project promoting SDG 7.</p>
       </div>
@@ -331,7 +345,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 LumEn Team — The Westminster College</span>
+      <span>© 2026 SolarBears Team — The Westminster College</span>
       <span>Student 2 — Action Impact Simulator</span>
     </div>
   </footer>
@@ -339,84 +353,18 @@
   <a href="#top" class="go-top" aria-label="Return to top">↑</a>
 
   <script>
-    // ── Action card data
-    // Thresholds: Low 0–6, Medium 7–13, High 14+
     const actions = [
-      {
-        id: 'a1', title: 'Switch to Renewable Tariff',
-        category: 'Home',
-        img: 'rooftop solar panel.jpg',
-        alt: 'Solar panels on a house roof',
-        desc: 'Choose a 100% renewable electricity tariff for your home. This directly funds more clean energy generation.',
-        points: 4
-      },
-      {
-        id: 'a2', title: 'Use Public Transport',
-        category: 'Travel',
-        img: 'use public transports.jpg',
-        alt: 'Modern electric bus on city street',
-        desc: 'Swap one car journey per week for public transport. Buses and trains use far less energy per passenger.',
-        points: 2
-      },
-      {
-        id: 'a3', title: 'Buy Second-Hand Electronics',
-        category: 'Shopping',
-        img: 'buy second hand electronics.jpg',
-        alt: 'Circuit board representing electronics manufacturing',
-        desc: 'Manufacturing new devices is energy-intensive. Buying refurbished or second-hand significantly reduces embedded energy.',
-        points: 2
-      },
-      {
-        id: 'a4', title: 'Volunteer for Energy Charity',
-        category: 'Community',
-        img: 'volunteer for energy charity.jpg',
-        alt: 'Volunteers working together outdoors',
-        desc: 'Give time to a local energy-access initiative, such as insulating homes for vulnerable residents or installing community solar.',
-        points: 4
-      },
-      {
-        id: 'a5', title: 'Turn Off Standby Devices',
-        category: 'Home',
-        img: 'turn off standby devices.jpg',
-        alt: 'Power button and energy saving light bulb',
-        desc: 'Standby power accounts for up to 10% of household electricity. Switching off fully saves energy and money.',
-        points: 1
-      },
-      {
-        id: 'a6', title: 'Advocate for Campus Solar',
-        category: 'Activism',
-        img: 'advocate for campus solar.jpg',
-        alt: 'University campus with solar installation',
-        desc: 'Lobby your student union and university management to install solar panels on campus buildings. Collective student voice is powerful.',
-        points: 3
-      },
-      {
-        id: 'a7', title: 'Share Clean Energy Facts',
-        category: 'Social',
-        img: 'clean energy facts.jpg',
-        alt: 'Person on phone sharing content on social media',
-        desc: 'Share accurate, motivating content about clean energy progress and actions on social media. Awareness drives behaviour change at scale.',
-        points: 1
-      },
-      {
-        id: 'a8', title: 'Install LED Lighting',
-        category: 'Home',
-        img: 'install led lightings.jpg',
-        alt: 'Modern LED bulb glowing efficiently',
-        desc: 'LED lights use 75% less energy than traditional incandescents and last 25 times longer. A simple, high-impact switch.',
-        points: 2
-      },
-      {
-        id: 'a9', title: 'Join a Green Energy Co-op',
-        category: 'Community',
-        img: 'green energy coop.jpg',
-        alt: 'Wind turbines in a cooperative energy farm',
-        desc: 'Energy cooperatives let citizens own and profit from renewable energy installations collectively. Your investment drives new clean capacity.',
-        points: 5
-      }
+      { id: 'a1', title: 'Switch to Renewable Tariff', category: 'Home', img: 'rooftop solar panel.jpg', alt: 'Solar panels on a house roof', desc: 'Choose a 100% renewable electricity tariff for your home. This directly funds more clean energy generation.', points: 4 },
+      { id: 'a2', title: 'Use Public Transport', category: 'Travel', img: 'use public transports.jpg', alt: 'Modern electric bus on city street', desc: 'Swap one car journey per week for public transport. Buses and trains use far less energy per passenger.', points: 2 },
+      { id: 'a3', title: 'Buy Second-Hand Electronics', category: 'Shopping', img: 'buy second hand electronics.jpg', alt: 'Circuit board representing electronics manufacturing', desc: 'Manufacturing new devices is energy-intensive. Buying refurbished or second-hand significantly reduces embedded energy.', points: 2 },
+      { id: 'a4', title: 'Volunteer for Energy Charity', category: 'Community', img: 'volunteer for energy charity.jpg', alt: 'Volunteers working together outdoors', desc: 'Give time to a local energy-access initiative, such as insulating homes for vulnerable residents or installing community solar.', points: 4 },
+      { id: 'a5', title: 'Turn Off Standby Devices', category: 'Home', img: 'turn off standby devices.jpg', alt: 'Power button and energy saving light bulb', desc: 'Standby power accounts for up to 10% of household electricity. Switching off fully saves energy and money.', points: 1 },
+      { id: 'a6', title: 'Advocate for Campus Solar', category: 'Activism', img: 'advocate for campus solar.jpg', alt: 'University campus with solar installation', desc: 'Lobby your student union and university management to install solar panels on campus buildings. Collective student voice is powerful.', points: 3 },
+      { id: 'a7', title: 'Share Clean Energy Facts', category: 'Social', img: 'clean energy facts.jpg', alt: 'Person on phone sharing content on social media', desc: 'Share accurate, motivating content about clean energy progress and actions on social media. Awareness drives behaviour change at scale.', points: 1 },
+      { id: 'a8', title: 'Install LED Lighting', category: 'Home', img: 'install led lightings.jpg', alt: 'Modern LED bulb glowing efficiently', desc: 'LED lights use 75% less energy than traditional incandescents and last 25 times longer. A simple, high-impact switch.', points: 2 },
+      { id: 'a9', title: 'Join a Green Energy Co-op', category: 'Community', img: 'green energy coop.jpg', alt: 'Wind turbines in a cooperative energy farm', desc: 'Energy cooperatives let citizens own and profit from renewable energy installations collectively. Your investment drives new clean capacity.', points: 5 }
     ];
 
-    // Render cards
     const grid = document.getElementById('actions-grid');
     const selected = new Set();
 
@@ -428,78 +376,34 @@
       card.setAttribute('role', 'checkbox');
       card.setAttribute('aria-checked', 'false');
       card.setAttribute('aria-label', `${action.title} — ${action.points} impact points`);
-
-      card.innerHTML = `
-        <img src="${action.img}" alt="${action.alt}" loading="lazy">
-        <h4>${action.title}</h4>
-        <p>${action.desc}</p>
-        <span class="impact-badge">⚡ ${action.points} pts · ${action.category}</span>
-      `;
+      card.innerHTML = `<img src="${action.img}" alt="${action.alt}" loading="lazy"><h4>${action.title}</h4><p>${action.desc}</p><span class="impact-badge">⚡ ${action.points} pts · ${action.category}</span>`;
 
       function toggleCard() {
-        if (selected.has(action.id)) {
-          selected.delete(action.id);
-          card.classList.remove('selected');
-          card.setAttribute('aria-checked', 'false');
-        } else {
-          selected.add(action.id);
-          card.classList.add('selected');
-          card.setAttribute('aria-checked', 'true');
-        }
+        if (selected.has(action.id)) { selected.delete(action.id); card.classList.remove('selected'); card.setAttribute('aria-checked', 'false'); }
+        else { selected.add(action.id); card.classList.add('selected'); card.setAttribute('aria-checked', 'true'); }
         updateFeedback();
       }
-
       card.addEventListener('click', toggleCard);
       card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleCard(); } });
-
       grid.appendChild(card);
     });
 
-    // Update feedback panel
     function updateFeedback() {
       let total = 0;
-      selected.forEach(id => {
-        const a = actions.find(x => x.id === id);
-        if (a) total += a.points;
-      });
-
+      selected.forEach(id => { const a = actions.find(x => x.id === id); if (a) total += a.points; });
       document.getElementById('score-num').textContent = total;
       document.getElementById('selected-num').textContent = selected.size;
-
       const badge = document.getElementById('level-badge');
       const msg = document.getElementById('level-msg');
-
-      // Impact levels — Low: 0–6, Medium: 7–13, High: 14+
-      if (total === 0) {
-        badge.textContent = 'No Impact Yet';
-        badge.className = 'level-badge level-low';
-        msg.textContent = 'Select actions above to begin calculating your clean energy impact.';
-        document.body.style.background = '';
-      } else if (total <= 6) {
-        badge.textContent = '🌱 Low Impact';
-        badge.className = 'level-badge level-low';
-        msg.textContent = `Good start! ${total} points. Small actions add up — try selecting a few more to increase your impact.`;
-        document.body.style.background = 'linear-gradient(135deg, #f0f7f2 0%, #e8f5eb 100%)';
-      } else if (total <= 13) {
-        badge.textContent = '⚡ Medium Impact';
-        badge.className = 'level-badge level-medium';
-        msg.textContent = `Impressive! ${total} points. You're making a real difference. Keep going — high impact is within reach!`;
-        document.body.style.background = 'linear-gradient(135deg, #fff8e7 0%, #fef3cc 100%)';
-      } else {
-        badge.textContent = '🌟 High Impact';
-        badge.className = 'level-badge level-high';
-        msg.textContent = `Outstanding! ${total} points. You're a clean energy champion. Consider sharing these actions with others!`;
-        document.body.style.background = 'linear-gradient(135deg, #e8f8ef 0%, #c9f0db 100%)';
-      }
+      if (total === 0) { badge.textContent = 'No Impact Yet'; badge.className = 'level-badge level-low'; msg.textContent = 'Select actions above to begin calculating your clean energy impact.'; document.body.style.background = ''; }
+      else if (total <= 6) { badge.textContent = '🌱 Low Impact'; badge.className = 'level-badge level-low'; msg.textContent = `Good start! ${total} points. Small actions add up — try selecting a few more to increase your impact.`; document.body.style.background = 'linear-gradient(135deg, #f0f7f2 0%, #e8f5eb 100%)'; }
+      else if (total <= 13) { badge.textContent = '⚡ Medium Impact'; badge.className = 'level-badge level-medium'; msg.textContent = `Impressive! ${total} points. You're making a real difference. Keep going — high impact is within reach!`; document.body.style.background = 'linear-gradient(135deg, #fff8e7 0%, #fef3cc 100%)'; }
+      else { badge.textContent = '🌟 High Impact'; badge.className = 'level-badge level-high'; msg.textContent = `Outstanding! ${total} points. You're a clean energy champion. Consider sharing these actions with others!`; document.body.style.background = 'linear-gradient(135deg, #e8f8ef 0%, #c9f0db 100%)'; }
     }
 
-    // Reset
     document.getElementById('reset-btn').addEventListener('click', () => {
       selected.clear();
-      document.querySelectorAll('.action-card').forEach(c => {
-        c.classList.remove('selected');
-        c.setAttribute('aria-checked', 'false');
-      });
+      document.querySelectorAll('.action-card').forEach(c => { c.classList.remove('selected'); c.setAttribute('aria-checked', 'false'); });
       updateFeedback();
     });
   </script>

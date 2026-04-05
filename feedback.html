@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feedback & Programmes | LumEn — SDG 7</title>
+  <title>Feedback &amp; Programmes | SolarBears — SDG 7</title>
   <link rel="stylesheet" href="style.css">
   <style>
     .page-banner {
@@ -37,7 +37,6 @@
       margin-top: 0.4rem;
     }
 
-    /* Programme section */
     .programmes-header {
       display: flex;
       justify-content: space-between;
@@ -123,7 +122,6 @@
       box-shadow: 0 4px 14px rgba(244, 160, 32, 0.3);
     }
 
-    /* Reviews */
     .rating-banner {
       background: var(--secondary);
       border-radius: var(--radius-lg);
@@ -201,7 +199,6 @@
       font-weight: 600;
     }
 
-    /* Feedback form */
     .form-section {
       background: var(--white);
       border-radius: var(--radius-lg);
@@ -327,9 +324,25 @@
   <span id="top" style="position:absolute;top:0;"></span>
   <header>
     <div class="header-inner">
-      <a href="home.html" class="logo" aria-label="LumEn Home">
-        <div class="logo-icon" aria-hidden="true">☀️</div>
-        <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+      <a href="home.html" class="logo" aria-label="SolarBears Home">
+        <div class="logo-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 26 26" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <line x1="13" y1="1" x2="13" y2="4" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="13" y1="22" x2="13" y2="25" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="1" y1="13" x2="4" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="22" y1="13" x2="25" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="19.7" y1="19.7" x2="21.8" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="21.8" y1="4.2" x2="19.7" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="6.3" y1="19.7" x2="4.2" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <circle cx="13" cy="13" r="7" fill="#0d1f17" />
+            <circle cx="8.5" cy="8" r="2.2" fill="#0d1f17" />
+            <circle cx="17.5" cy="8" r="2.2" fill="#0d1f17" />
+            <rect x="8" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+            <rect x="14" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+            <line x1="12" y1="12.9" x2="14" y2="12.9" stroke="#f4a020" stroke-width="1.2" />
+          </svg></div>
+        <div class="logo-text">SolarBears <span>SDG 7 · Clean Energy</span></div>
       </a>
       <nav aria-label="Main Navigation">
         <ul>
@@ -352,7 +365,6 @@
 
   <main id="main-content">
 
-    <!-- PROGRAMMES -->
     <section aria-labelledby="prog-heading">
       <div class="programmes-header">
         <div>
@@ -415,13 +427,9 @@
       </div>
     </section>
 
-    <!-- REVIEWS -->
     <div class="rating-banner" role="region" aria-label="Overall ratings">
       <div class="big-rating" aria-label="9.1 out of 10">9.1/10</div>
-      <div class="rating-info">
-        <strong>Excellent</strong>
-        Based on 247 verified participant reviews
-      </div>
+      <div class="rating-info"><strong>Excellent</strong>Based on 247 verified participant reviews</div>
     </div>
 
     <div class="reviews-grid" aria-label="Participant reviews">
@@ -448,17 +456,12 @@
       </div>
     </div>
 
-    <!-- FEEDBACK FORM -->
     <section class="form-section" aria-labelledby="form-heading">
       <div class="section-label">Your Voice</div>
       <h2 id="form-heading">Submit Your Feedback</h2>
-
-      <div id="success-msg" class="success-msg" role="alert">
-        ✅ Thank you for your feedback! Your response has been received.
-      </div>
-
+      <div id="success-msg" class="success-msg" role="alert">✅ Thank you for your feedback! Your response has been
+        received.</div>
       <form id="feedback-form" novalidate>
-
         <fieldset>
           <legend>Personal Details</legend>
           <div class="form-row">
@@ -488,7 +491,6 @@
             <textarea id="address" name="address" rows="2" placeholder="Optional postal address"></textarea>
           </div>
         </fieldset>
-
         <fieldset>
           <legend>Feedback Details</legend>
           <div class="form-group">
@@ -503,7 +505,6 @@
             </select>
             <span class="field-error" id="err-prog">Please select a programme.</span>
           </div>
-
           <div class="form-group">
             <label for="interests">Related Interests (select all that apply)</label>
             <select id="interests" name="interests" multiple size="4" aria-label="Select your interests">
@@ -514,12 +515,10 @@
               <option>Policy &amp; Advocacy</option>
             </select>
           </div>
-
           <div class="form-group">
             <label for="visit-time">Preferred Contact Time</label>
             <input type="datetime-local" id="visit-time" name="visit-time">
           </div>
-
           <div class="form-group">
             <label for="message">Your Feedback * <span id="char-counter" class="char-counter">500 characters
                 remaining</span></label>
@@ -528,7 +527,6 @@
             <span class="field-error" id="err-msg">Please enter your feedback message.</span>
           </div>
         </fieldset>
-
         <button type="submit" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2.5rem;">Submit
           Feedback</button>
       </form>
@@ -540,8 +538,24 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="logo">
-          <div class="logo-icon" aria-hidden="true">☀️</div>
-          <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+          <div class="logo-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 26 26" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <line x1="13" y1="1" x2="13" y2="4" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="13" y1="22" x2="13" y2="25" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="1" y1="13" x2="4" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="22" y1="13" x2="25" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="19.7" y1="19.7" x2="21.8" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="21.8" y1="4.2" x2="19.7" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="6.3" y1="19.7" x2="4.2" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <circle cx="13" cy="13" r="7" fill="#0d1f17" />
+              <circle cx="8.5" cy="8" r="2.2" fill="#0d1f17" />
+              <circle cx="17.5" cy="8" r="2.2" fill="#0d1f17" />
+              <rect x="8" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+              <rect x="14" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+              <line x1="12" y1="12.9" x2="14" y2="12.9" stroke="#f4a020" stroke-width="1.2" />
+            </svg></div>
+          <div class="logo-text">SolarBears <span>SDG 7 · Clean Energy</span></div>
         </div>
         <p>The Westminster College group project promoting SDG 7.</p>
       </div>
@@ -562,49 +576,37 @@
         </ul>
       </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 LumEn Team — The Westminster College</span><span>Student 3 — Feedback
+    <div class="footer-bottom"><span>© 2026 SolarBears Team — The Westminster College</span><span>Student 3 — Feedback
         &amp; Programmes</span></div>
   </footer>
 
   <a href="#top" class="go-top" aria-label="Return to top">↑</a>
 
   <script>
-    // Live character counter
     const msgEl = document.getElementById('message');
     const counterEl = document.getElementById('char-counter');
     const maxChars = 500;
-
     msgEl.addEventListener('input', function () {
       const remaining = maxChars - this.value.length;
       counterEl.textContent = remaining + ' characters remaining';
       counterEl.style.color = remaining < 50 ? '#e74c3c' : 'var(--text-muted)';
     });
 
-    // Form validation with JavaScript
     document.getElementById('feedback-form').addEventListener('submit', function (e) {
       e.preventDefault();
       let valid = true;
-
       const fields = [
         { id: 'fname', err: 'err-fname', check: v => v.trim().length >= 2 },
         { id: 'email', err: 'err-email', check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
         { id: 'programme', err: 'err-prog', check: v => v !== '' },
         { id: 'message', err: 'err-msg', check: v => v.trim().length >= 10 }
       ];
-
       fields.forEach(f => {
         const el = document.getElementById(f.id);
         const err = document.getElementById(f.err);
-        if (!f.check(el.value)) {
-          err.classList.add('show');
-          el.style.borderColor = '#e74c3c';
-          valid = false;
-        } else {
-          err.classList.remove('show');
-          el.style.borderColor = 'var(--accent)';
-        }
+        if (!f.check(el.value)) { err.classList.add('show'); el.style.borderColor = '#e74c3c'; valid = false; }
+        else { err.classList.remove('show'); el.style.borderColor = 'var(--accent)'; }
       });
-
       if (valid) {
         document.getElementById('feedback-form').style.display = 'none';
         document.getElementById('success-msg').classList.add('show');

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Profile | LumEn — SDG 7</title>
+  <title>User Profile | SolarBears — SDG 7</title>
   <link rel="stylesheet" href="style.css">
   <style>
     .page-banner {
@@ -44,7 +44,6 @@
       margin-top: 2.5rem;
     }
 
-    /* Controls Panel */
     .controls-panel {
       background: var(--white);
       border-radius: var(--radius-lg);
@@ -56,7 +55,6 @@
       margin-bottom: 1.2rem;
     }
 
-    /* Progress Bar */
     .progress-wrap {
       margin-bottom: 1.5rem;
     }
@@ -85,7 +83,6 @@
       width: 0%;
     }
 
-    /* Step buttons */
     .steps-row {
       display: flex;
       flex-direction: column;
@@ -165,7 +162,6 @@
       color: var(--primary);
     }
 
-    /* Profile Output */
     .profile-output {
       background: var(--white);
       border-radius: var(--radius-lg);
@@ -284,9 +280,25 @@
   <span id="top" style="position:absolute;top:0;"></span>
   <header>
     <div class="header-inner">
-      <a href="home.html" class="logo" aria-label="LumEn Home">
-        <div class="logo-icon" aria-hidden="true">☀️</div>
-        <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+      <a href="home.html" class="logo" aria-label="SolarBears Home">
+        <div class="logo-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 26 26" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <line x1="13" y1="1" x2="13" y2="4" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="13" y1="22" x2="13" y2="25" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="1" y1="13" x2="4" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="22" y1="13" x2="25" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="19.7" y1="19.7" x2="21.8" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="21.8" y1="4.2" x2="19.7" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="6.3" y1="19.7" x2="4.2" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <circle cx="13" cy="13" r="7" fill="#0d1f17" />
+            <circle cx="8.5" cy="8" r="2.2" fill="#0d1f17" />
+            <circle cx="17.5" cy="8" r="2.2" fill="#0d1f17" />
+            <rect x="8" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+            <rect x="14" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+            <line x1="12" y1="12.9" x2="14" y2="12.9" stroke="#f4a020" stroke-width="1.2" />
+          </svg></div>
+        <div class="logo-text">SolarBears <span>SDG 7 · Clean Energy</span></div>
       </a>
       <nav aria-label="Main Navigation">
         <ul>
@@ -314,10 +326,8 @@
 
     <div class="profile-layout">
 
-      <!-- Controls -->
       <div class="controls-panel">
         <h3>Build Your Profile</h3>
-
         <div class="progress-wrap">
           <div class="progress-label">
             <span id="progress-text">0% complete</span>
@@ -327,7 +337,6 @@
             <div class="progress-bar-fill" id="progress-fill"></div>
           </div>
         </div>
-
         <div class="steps-row" aria-label="Profile building steps">
           <button class="step-btn" id="btn-step1" onclick="runStep(1)" aria-label="Step 1: Basic Details">
             <span class="step-icon">👤</span> Step 1: Basic Details
@@ -339,7 +348,6 @@
             <span class="step-icon">🌱</span> Step 3: Actions &amp; Goals
           </button>
         </div>
-
         <div class="revisit-row">
           <h4>Revisit a step</h4>
           <button class="revisit-btn" onclick="runStep(1)" aria-label="Revisit step 1">Revisit Step 1</button>
@@ -348,17 +356,13 @@
         </div>
       </div>
 
-      <!-- Profile Output -->
       <div class="profile-output">
         <h3>Your Profile <span style="font-size:0.75rem;font-weight:400;color:var(--text-muted);">(Updates
             Progressively)</span></h3>
-
         <div id="empty-state" class="empty-state">
           <div class="icon">🔋</div>
           <p>Your profile is empty. Click a step on the left to begin!</p>
         </div>
-
-        <!-- Step 1 Section -->
         <div class="profile-section" id="section-1" aria-label="Basic details section">
           <h4>Step 1 · Basic Details</h4>
           <div class="profile-row">
@@ -376,8 +380,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Step 2 Section -->
         <div class="profile-section" id="section-2" aria-label="Energy interests section">
           <h4>Step 2 · Energy Interests</h4>
           <div class="profile-row">
@@ -395,8 +397,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Step 3 Section -->
         <div class="profile-section" id="section-3" aria-label="Actions and goals section">
           <h4>Step 3 · Actions &amp; Goals</h4>
           <div class="profile-row">
@@ -414,9 +414,8 @@
             </div>
           </div>
         </div>
-
         <div id="confirmation" class="confirmation" role="alert">
-          🎉 Profile complete! You're a LumEn Clean Energy Champion. Consider sharing your commitments with others.
+          🎉 Profile complete! You're a SolarBears Clean Energy Champion. Consider sharing your commitments with others.
         </div>
       </div>
     </div>
@@ -426,8 +425,24 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="logo">
-          <div class="logo-icon" aria-hidden="true">☀️</div>
-          <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+          <div class="logo-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 26 26" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <line x1="13" y1="1" x2="13" y2="4" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="13" y1="22" x2="13" y2="25" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="1" y1="13" x2="4" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="22" y1="13" x2="25" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="19.7" y1="19.7" x2="21.8" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="21.8" y1="4.2" x2="19.7" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="6.3" y1="19.7" x2="4.2" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <circle cx="13" cy="13" r="7" fill="#0d1f17" />
+              <circle cx="8.5" cy="8" r="2.2" fill="#0d1f17" />
+              <circle cx="17.5" cy="8" r="2.2" fill="#0d1f17" />
+              <rect x="8" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+              <rect x="14" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+              <line x1="12" y1="12.9" x2="14" y2="12.9" stroke="#f4a020" stroke-width="1.2" />
+            </svg></div>
+          <div class="logo-text">SolarBears <span>SDG 7 · Clean Energy</span></div>
         </div>
         <p>The Westminster College — 4COSC011W Group Project 2026.</p>
       </div>
@@ -448,31 +463,28 @@
         </ul>
       </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 LumEn Team — The Westminster College</span><span>Student 4 — User
-        Profile</span></div>
+    <div class="footer-bottom">
+      <span>© 2026 SolarBears Team — The Westminster College</span>
+      <span>Student 4 — User Profile</span>
+    </div>
   </footer>
 
   <a href="#top" class="go-top" aria-label="Return to top">↑</a>
 
   <script>
-    // Profile data store using variables/object
     const profileData = {
       step1: { name: null, username: null, role: null },
       step2: { energy: null, goal: null, time: null },
       step3: { action: null, commit: null, inspire: null }
     };
 
-    const stepComplete = { 1: false, 2: false, 3: false };
     const totalPrompts = 9;
-    let filledPrompts = 0;
 
-    // Helper: ask a prompt, return value or null if skipped
     function askPrompt(question) {
       const val = prompt(question + '\n\n(Press Cancel to skip this question)');
       return (val !== null && val.trim() !== '') ? val.trim() : null;
     }
 
-    // Reveal a profile section
     function showSection(stepNum) {
       const section = document.getElementById('section-' + stepNum);
       const emptyState = document.getElementById('empty-state');
@@ -480,86 +492,61 @@
       if (emptyState) emptyState.style.display = 'none';
     }
 
-    // Update progress bar
     function updateProgress() {
       let count = 0;
       Object.values(profileData).forEach(step => {
         Object.values(step).forEach(v => { if (v !== null) count++; });
       });
-      filledPrompts = count;
-
-      const pct = Math.round((filledPrompts / totalPrompts) * 100);
+      const pct = Math.round((count / totalPrompts) * 100);
       document.getElementById('progress-fill').style.width = pct + '%';
       document.getElementById('progress-text').textContent = pct + '% complete';
-      document.getElementById('prompts-done').textContent = filledPrompts + '/' + totalPrompts + ' prompts';
-
-      // Show confirmation if all 9 filled
-      if (filledPrompts === totalPrompts) {
-        document.getElementById('confirmation').classList.add('show');
-      }
+      document.getElementById('prompts-done').textContent = count + '/' + totalPrompts + ' prompts';
+      if (count === totalPrompts) document.getElementById('confirmation').classList.add('show');
     }
 
-    // Set output field helper
     function setOut(id, value) {
       const el = document.getElementById(id);
       if (el) el.textContent = value || '(skipped)';
     }
 
-    // Step functions
     function runStep(num) {
       if (num === 1) {
         const name = askPrompt('Step 1 of 3 — Basic Details\n\nWhat is your full name?');
-        const username = askPrompt('Step 1 of 3\n\nChoose a username for your LumEn profile:');
+        const username = askPrompt('Step 1 of 3\n\nChoose a username for your SolarBears profile:');
         const role = askPrompt('Step 1 of 3\n\nWhat is your role or occupation? (e.g. Student, Engineer)');
-
         if (name) profileData.step1.name = name;
         if (username) profileData.step1.username = username;
         if (role) profileData.step1.role = role;
-
         setOut('out-name', profileData.step1.name);
         setOut('out-username', profileData.step1.username);
         setOut('out-role', profileData.step1.role);
-
-        showSection(1);
-        markDone(1, name || username || role);
-
+        showSection(1); markDone(1, name || username || role);
       } else if (num === 2) {
         const energy = askPrompt('Step 2 of 3 — Energy Interests\n\nWhich clean energy type interests you most?\n(e.g. Solar, Wind, Hydro, Nuclear)');
         const goal = askPrompt('Step 2 of 3\n\nWhat is your main clean energy learning goal this year?');
         const time = askPrompt('Step 2 of 3\n\nHow much time per week can you dedicate to green activities?\n(e.g. 1 hour, 3 hours)');
-
         if (energy) profileData.step2.energy = energy;
         if (goal) profileData.step2.goal = goal;
         if (time) profileData.step2.time = time;
-
         setOut('out-energy', profileData.step2.energy);
         setOut('out-goal', profileData.step2.goal);
         setOut('out-time', profileData.step2.time);
-
-        showSection(2);
-        markDone(2, energy || goal || time);
-
+        showSection(2); markDone(2, energy || goal || time);
       } else if (num === 3) {
         const action = askPrompt('Step 3 of 3 — Actions & Goals\n\nWhat clean energy action are you already taking?\n(e.g. Recycling, switched to LED bulbs)');
         const commit = askPrompt('Step 3 of 3\n\nWhat SDG 7 commitment will you make this year?');
         const inspire = askPrompt('Step 3 of 3\n\nWould you encourage others to take clean energy action? (Yes/No — and why?)');
-
         if (action) profileData.step3.action = action;
         if (commit) profileData.step3.commit = commit;
         if (inspire) profileData.step3.inspire = inspire;
-
         setOut('out-action', profileData.step3.action);
         setOut('out-commit', profileData.step3.commit);
         setOut('out-inspire', profileData.step3.inspire);
-
-        showSection(3);
-        markDone(3, action || commit || inspire);
+        showSection(3); markDone(3, action || commit || inspire);
       }
-
       updateProgress();
     }
 
-    // Mark step button as done
     function markDone(num, hasData) {
       const btn = document.getElementById('btn-step' + num);
       if (btn && hasData) btn.classList.add('done');

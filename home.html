@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | LumEn — SDG 7 Clean Energy</title>
+  <title>Home | SolarBears — SDG 7 Clean Energy</title>
   <link rel="stylesheet" href="style.css">
   <style>
     /* ── Home Page Embedded CSS (min 5 rules) ── */
@@ -24,14 +25,21 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 80% 70% at 70% 50%, rgba(244,160,32,0.18) 0%, transparent 70%),
-                  radial-gradient(ellipse 50% 50% at 20% 80%, rgba(126,207,155,0.1) 0%, transparent 60%);
+      background: radial-gradient(ellipse 80% 70% at 70% 50%, rgba(244, 160, 32, 0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(126, 207, 155, 0.1) 0%, transparent 60%);
       animation: pulseGlow 6s ease-in-out infinite alternate;
     }
 
     @keyframes pulseGlow {
-      from { opacity: 0.7; transform: scale(1); }
-      to   { opacity: 1;   transform: scale(1.05); }
+      from {
+        opacity: 0.7;
+        transform: scale(1);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1.05);
+      }
     }
 
     /* 3. Hero content layout */
@@ -72,7 +80,7 @@
     .gallery-grid .g-item .g-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(13,31,23,0.85) 0%, transparent 50%);
+      background: linear-gradient(to top, rgba(13, 31, 23, 0.85) 0%, transparent 50%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -81,7 +89,9 @@
       transition: opacity 0.3s ease;
     }
 
-    .gallery-grid .g-item:hover .g-overlay { opacity: 1; }
+    .gallery-grid .g-item:hover .g-overlay {
+      opacity: 1;
+    }
 
     /* 5. Stat counters row */
     .stats-row {
@@ -135,13 +145,22 @@
       margin-bottom: 2rem;
     }
 
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
 
     /* 7. Cards section */
-    .cards-section { padding: 4rem 0; }
+    .cards-section {
+      padding: 4rem 0;
+    }
 
     /* 8. Highlights list inside cards */
-    .highlights { margin-top: 1rem; }
+    .highlights {
+      margin-top: 1rem;
+    }
+
     .highlights li {
       display: flex;
       align-items: flex-start;
@@ -151,7 +170,11 @@
       padding: 0.3rem 0;
       border-bottom: 1px dashed var(--border);
     }
-    .highlights li:last-child { border-bottom: none; }
+
+    .highlights li:last-child {
+      border-bottom: none;
+    }
+
     .highlights li::before {
       content: '⚡';
       flex-shrink: 0;
@@ -175,7 +198,9 @@
       transition: transform 0.3s ease;
     }
 
-    .cg-item:hover { transform: translateY(-5px); }
+    .cg-item:hover {
+      transform: translateY(-5px);
+    }
 
     .cg-bg {
       width: 100%;
@@ -188,43 +213,81 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(to top, rgba(13,31,23,0.92) 0%, transparent 100%);
+      background: linear-gradient(to top, rgba(13, 31, 23, 0.92) 0%, transparent 100%);
       padding: 1.5rem 1rem 1rem;
       transform: translateY(40%);
       transition: transform 0.35s ease;
     }
 
-    .cg-item:hover .cg-info { transform: translateY(0); }
+    .cg-item:hover .cg-info {
+      transform: translateY(0);
+    }
 
-    .cg-info h4 { color: var(--white); font-size: 1rem; margin-bottom: 0.3rem; }
-    .cg-info p  { color: var(--accent); font-size: 0.8rem; }
+    .cg-info h4 {
+      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .cg-info p {
+      color: var(--accent);
+      font-size: 0.8rem;
+    }
 
     @media (max-width: 768px) {
-      .hero-content { grid-template-columns: 1fr; gap: 2rem; }
-      .stats-row { grid-template-columns: 1fr 1fr; }
-      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .stats-row {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- ════ HEADER ════ -->
   <span id="top" style="position:absolute;top:0;"></span>
-  <header >
+  <header>
     <div class="header-inner">
-      <a href="home.html" class="logo" aria-label="LumEn — SDG 7 Home">
-        <div class="logo-icon" aria-hidden="true">☀️</div>
-        <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+      <a href="home.html" class="logo" aria-label="SolarBears — SDG 7 Home">
+        <div class="logo-icon" aria-hidden="true">
+          <!-- Bear + sun SVG logo icon -->
+          <svg width="24" height="24" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="13" y1="1" x2="13" y2="4" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="13" y1="22" x2="13" y2="25" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="1" y1="13" x2="4" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="22" y1="13" x2="25" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="19.7" y1="19.7" x2="21.8" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="21.8" y1="4.2" x2="19.7" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <line x1="6.3" y1="19.7" x2="4.2" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+            <circle cx="13" cy="13" r="7" fill="#0d1f17" />
+            <circle cx="8.5" cy="8" r="2.2" fill="#0d1f17" />
+            <circle cx="17.5" cy="8" r="2.2" fill="#0d1f17" />
+            <rect x="8" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+            <rect x="14" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+            <line x1="12" y1="12.9" x2="14" y2="12.9" stroke="#f4a020" stroke-width="1.2" />
+          </svg>
+        </div>
+        <div class="logo-text">SolarBears <span>SDG 7 · Clean Energy</span></div>
       </a>
       <nav aria-label="Main Navigation">
         <ul>
-          <li><a href="home.html"     class="active">Home</a></li>
-          <li><a href="gallery.html"          >Gallery</a></li>
-          <li><a href="ais.html"              >Simulator</a></li>
-          <li><a href="feedback.html"         >Feedback</a></li>
-          <li><a href="team.html"             >Team</a></li>
-          <li><a href="profile.html"          >Profile</a></li>
-          <li><a href="sitemap.html"          >Sitemap</a></li>
+          <li><a href="home.html" class="active">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="ais.html">Simulator</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
         </ul>
       </nav>
     </div>
@@ -235,24 +298,27 @@
     <div class="hero-content">
       <div class="hero-text">
         <div class="sdg-badge">⚡ SDG 7</div>
-        <h1>Power the <em>Future</em>  Clean &amp; Affordable</h1>
-        <p>Discover how students, communities, and everyday actions can accelerate the transition to affordable, reliable, and sustainable energy for all.</p>
+        <h1>Power the <em>Future</em> Clean &amp; Affordable</h1>
+        <p>Discover how students, communities, and everyday actions can accelerate the transition to affordable,
+          reliable, and sustainable energy for all.</p>
         <div class="hero-btns">
-          <a href="ais.html"      class="btn btn-primary">Measure Your Impact</a>
-          <a href="#mission"      class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.3);">Explore Mission</a>
+          <a href="ais.html" class="btn btn-primary">Measure Your Impact</a>
+          <a href="#mission" class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.3);">Explore
+            Mission</a>
         </div>
       </div>
-      <!-- Interactive gallery linking to content pages -->
       <div class="gallery-grid" aria-label="Content pages gallery">
         <a href="content_ST1.html" class="g-item">
-          <img src="rooftop solar panel.jpg" alt="Solar panels on rooftop" style="width:100%;height:100%;object-fit:cover;">
+          <img src="rooftop solar panel.jpg" alt="Solar panels on rooftop"
+            style="width:100%;height:100%;object-fit:cover;">
           <div class="g-overlay">
             <h4 style="color:#fff;font-family:var(--font-display);font-size:0.95rem;">Solar Power</h4>
             <p style="color:var(--accent);font-size:0.75rem;">Student 1 · Content</p>
           </div>
         </a>
         <a href="content_ST2.html" class="g-item">
-          <img src="offshore wind farm.jpg" alt="Wind turbines in field" style="width:100%;height:100%;object-fit:cover;">
+          <img src="offshore wind farm.jpg" alt="Wind turbines in field"
+            style="width:100%;height:100%;object-fit:cover;">
           <div class="g-overlay">
             <h4 style="color:#fff;font-family:var(--font-display);font-size:0.95rem;">Wind Energy</h4>
             <p style="color:var(--accent);font-size:0.75rem;">Student 2 · Content</p>
@@ -266,7 +332,8 @@
           </div>
         </a>
         <a href="content_ST4.html" class="g-item">
-          <img src="EV battery charging.jpg" alt="Electric vehicle charging" style="width:100%;height:100%;object-fit:cover;">
+          <img src="EV battery charging.jpg" alt="Electric vehicle charging"
+            style="width:100%;height:100%;object-fit:cover;">
           <div class="g-overlay">
             <h4 style="color:#fff;font-family:var(--font-display);font-size:0.95rem;">Energy Storage</h4>
             <p style="color:var(--accent);font-size:0.75rem;">Student 4 · Content</p>
@@ -279,7 +346,6 @@
   <!-- ════ MAIN ════ -->
   <main id="mission">
 
-    <!-- Stats Row -->
     <div class="stats-row" aria-label="Key energy statistics">
       <div class="stat-box">
         <div class="stat-num">733M</div>
@@ -295,24 +361,20 @@
       </div>
     </div>
 
-    <!-- Mission Cards -->
     <section class="cards-section" aria-labelledby="mission-heading">
       <div class="section-label">Our Mission</div>
       <h2 class="section-title" id="mission-heading">Why SDG 7 Matters Today</h2>
-      <p class="section-sub">Energy poverty is not a distant issue — it affects communities everywhere. As students and citizens, we have real power to accelerate clean energy adoption.</p>
+      <p class="section-sub">Energy poverty is not a distant issue — it affects communities everywhere. As students and
+        citizens, we have real power to accelerate clean energy adoption.</p>
 
       <div class="grid-3">
-
-        <!-- Card 1 -->
         <article class="card" aria-labelledby="card1-heading">
-          <img class="card-img"
-               src="rooftop solar panel.jpg"
-               alt="Rooftop solar panels  generating electricity">
-          <div class="card-body">
+          <img class="card-img" src="rooftop solar panel.jpg" alt="Rooftop solar panels generating electricity">
           <div class="card-body">
             <span class="card-tag">Access for All</span>
             <h3 id="card1-heading">Universal Energy Access</h3>
-            <p>Over 700 million people still lack access to electricity. Affordable solar solutions can transform lives — powering schools, clinics, and businesses in remote areas.</p>
+            <p>Over 700 million people still lack access to electricity. Affordable solar solutions can transform lives
+              — powering schools, clinics, and businesses in remote areas.</p>
             <ul class="highlights" aria-label="Key actions">
               <li>Advocate for community solar micro-grids in your area</li>
               <li>Support energy-access charities with donations or volunteering</li>
@@ -321,16 +383,13 @@
           </div>
         </article>
 
-        <!-- Card 2 -->
         <article class="card" aria-labelledby="card2-heading">
-          <img class="card-img"
-               src="offshore wind farm.jpg"
-               alt="Wind turbines at sunset generating clean electricity">
-          <div class="card-body">
+          <img class="card-img" src="offshore wind farm.jpg" alt="Wind turbines at sunset generating clean electricity">
           <div class="card-body">
             <span class="card-tag">Student Action</span>
             <h3 id="card2-heading">What Students Can Do</h3>
-            <p>You don't need a solar farm to make a difference. Small, consistent actions create measurable impact — especially when adopted collectively across campuses.</p>
+            <p>You don't need a solar farm to make a difference. Small, consistent actions create measurable impact —
+              especially when adopted collectively across campuses.</p>
             <ul class="highlights" aria-label="Student actions">
               <li>Switch to a renewable-energy tariff at home</li>
               <li>Join or start an energy-saving society at university</li>
@@ -339,16 +398,13 @@
           </div>
         </article>
 
-        <!-- Card 3 -->
         <article class="card" aria-labelledby="card3-heading">
-          <img class="card-img"
-               src="hydroelectric dam.jpg"
-               alt="Energy efficient LED light bulb glowing">
-          <div class="card-body">
+          <img class="card-img" src="hydroelectric dam.jpg" alt="Energy efficient LED light bulb glowing">
           <div class="card-body">
             <span class="card-tag">Outcomes</span>
             <h3 id="card3-heading">The World We Build Together</h3>
-            <p>If widespread clean energy adoption were achieved, global CO₂ emissions could fall by 70%, energy costs could halve, and millions could escape poverty.</p>
+            <p>If widespread clean energy adoption were achieved, global CO₂ emissions could fall by 70%, energy costs
+              could halve, and millions could escape poverty.</p>
             <ul class="highlights" aria-label="Potential outcomes">
               <li>70% reduction in energy-related CO₂ emissions</li>
               <li>Millions lifted out of energy poverty by 2030</li>
@@ -356,20 +412,18 @@
             </ul>
           </div>
         </article>
-
       </div>
     </section>
 
-    <!-- Content Page Gallery -->
     <section aria-labelledby="explore-heading" style="margin-top:4rem;">
       <div class="section-label">Explore Topics</div>
       <h2 class="section-title" id="explore-heading">Dive Deeper Into Clean Energy</h2>
-      <p class="section-sub">Each team member has authored an in-depth content page on a key clean energy topic. Hover to reveal more.</p>
+      <p class="section-sub">Each team member has authored an in-depth content page on a key clean energy topic. Hover
+        to reveal more.</p>
 
       <div class="content-gallery">
-       <a href="content_ST1.html" class="cg-item" aria-label="Read Solar Power content page by Student 1">
+        <a href="content_ST1.html" class="cg-item" aria-label="Read Solar Power content page by Student 1">
           <img class="cg-bg" src="rooftop solar panel.jpg" alt="Solar panels on rooftop">
-
           <div class="cg-info">
             <h4>Solar Power</h4>
             <p>Harnessing sunlight to power our world</p>
@@ -406,10 +460,28 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="logo">
-          <div class="logo-icon" aria-hidden="true">☀️</div>
-          <div class="logo-text">LumEn <span>SDG 7 · Clean Energy</span></div>
+          <div class="logo-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="13" y1="1" x2="13" y2="4" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="13" y1="22" x2="13" y2="25" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="1" y1="13" x2="4" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="22" y1="13" x2="25" y2="13" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="19.7" y1="19.7" x2="21.8" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="21.8" y1="4.2" x2="19.7" y2="6.3" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <line x1="6.3" y1="19.7" x2="4.2" y2="21.8" stroke="#0d1f17" stroke-width="2" stroke-linecap="round" />
+              <circle cx="13" cy="13" r="7" fill="#0d1f17" />
+              <circle cx="8.5" cy="8" r="2.2" fill="#0d1f17" />
+              <circle cx="17.5" cy="8" r="2.2" fill="#0d1f17" />
+              <rect x="8" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+              <rect x="14" y="11.5" width="4" height="2.8" rx="1.4" fill="#f4a020" />
+              <line x1="12" y1="12.9" x2="14" y2="12.9" stroke="#f4a020" stroke-width="1.2" />
+            </svg>
+          </div>
+          <div class="logo-text">SolarBears <span>SDG 7 · Clean Energy</span></div>
         </div>
-        <p>The Westminster College group project promoting SDG 7 — Affordable and Clean Energy. All content is original and created for educational purposes.</p>
+        <p>The Westminster College group project promoting SDG 7 — Affordable and Clean Energy. All content is original
+          and created for educational purposes.</p>
       </div>
       <div class="footer-links">
         <h4>Pages</h4>
@@ -432,13 +504,13 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 LumEn Team — The Westminster College · 4COSC011W</span>
+      <span>© 2026 SolarBears Team — The Westminster College · 4COSC011W</span>
       <span>Student 1 — Template &amp; Home</span>
     </div>
   </footer>
 
-  <!-- Go to top -->
   <a href="#top" class="go-top" aria-label="Return to top of page">↑</a>
 
 </body>
+
 </html>

@@ -1,6 +1,6 @@
 /* ============================================================
    GLOBAL CSS — SDG 7: Affordable & Clean Energy
-   Team Website — Shared stylesheet (DO NOT MODIFY per-page styles here)
+   Team Website — SolarBears
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600&display=swap');
@@ -156,6 +156,7 @@ header {
   justify-content: center;
   font-size: 1.2rem;
   flex-shrink: 0;
+  overflow: hidden;
 }
 
 .logo-text {
